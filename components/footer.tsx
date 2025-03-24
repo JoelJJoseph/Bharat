@@ -98,15 +98,15 @@ export default function Footer() {
             <ul className="space-y-3 text-white">
               <li className="flex items-start">
                 <MapPin className="mr-2 h-5 w-5 shrink-0 text-blue-400" />
-                <span>123 Financial District, Mumbai, India 400001</span>
+                <span>71/48 Prem Nagar, Janakpuri, New Delhi 110058</span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2 h-5 w-5 shrink-0 text-blue-400" />
-                <span>+91 98765 43210</span>
+                <span>+91 85275 12552</span>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-2 h-5 w-5 shrink-0 text-blue-400" />
-                <span>info@bharatalternates.com</span>
+                <span>Bharatalternates@gmail.com</span>
               </li>
             </ul>
           </div>

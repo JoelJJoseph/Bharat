@@ -59,15 +59,15 @@ export function GlassmorphicHeader() {
               alt="Bharat Alternates Logo"
               width={48}
               height={48}
-              className="h-12 w-12"
+              className="h-10 w-10 sm:h-12 sm:w-12"
             />
-            <span className="text-2xl font-bold text-blue-600">Bharat Alternates</span>
+            <span className="text-xl sm:text-2xl font-bold text-blue-600">Bharat Alternates</span>
           </Link>
 
-          <div>
+          <div className="flex items-center">
             <Button
               asChild
-              className="bg-blue-600 hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+              className="bg-blue-600 hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base px-3 sm:px-4 py-1.5 sm:py-2"
             >
               <Link href="/contact">Get Started</Link>
             </Button>

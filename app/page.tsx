@@ -51,23 +51,17 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimationWrapper animation="fade-in">
             <div className="mx-auto max-w-4xl text-center">
-              <div>
+              <div className="flex flex-col items-center">
                 <TextReveal
                   as="h2"
-                  className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed"
+                  className="text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed text-center"
                   stagger={0.05}
                 >
-                  <span style={{ wordSpacing: "0.2em" }}>
-                    India's&nbsp;Leading&nbsp;Portfolio&nbsp;Management&nbsp;Services
+                  <span className="block sm:inline">
+                    India's Leading Portfolio Management Services
                   </span>
-                </TextReveal>
-                <TextReveal
-                  as="span"
-                  className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed mt-1 md:mt-0 md:ml-2"
-                  stagger={0.05}
-                >
-                  <span style={{ wordSpacing: "0.2em" }}>
-                    &amp;&nbsp;Alternative&nbsp;Investment&nbsp;Fund&nbsp;Platform
+                  <span className="block sm:inline mt-1 sm:mt-0 sm:ml-2">
+                    & Alternative Investment Fund Platform
                   </span>
                 </TextReveal>
               </div>
@@ -173,11 +167,11 @@ export default function Home() {
                 className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed"
                 stagger={0.05}
               >
-                <span style={{ wordSpacing: "0.2em" }}>Why&nbsp;Choose&nbsp;Bharat&nbsp;Alternates</span>
+                <span style={{ wordSpacing: "0.2em" }}>Why&nbsp;Choose&nbsp;Bharat&nbsp;Alternates&nbsp;for&nbsp;Your&nbsp;Investment&nbsp;Needs?</span>
               </TextReveal>
             </div>
             <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-800">
-              We combine deep market expertise with personalized strategies to deliver exceptional value to our clients.
+              In today's competitive investment landscape, choosing the right PMS (Portfolio Management Service) or AIF (Alternative Investment Fund) can be overwhelming. Bharat Alternates simplifies this process by offering a curated selection from over 500+ PMS and 300+ AIFs, helping you make informed, stress-free investment decisions.
             </p>
           </div>
 
@@ -185,9 +179,9 @@ export default function Home() {
             {[
               {
                 icon: TrendingUp,
-                title: "Consistent Performance",
+                title: "Extensive Selection of PMS & AIFs",
                 description:
-                  "Our strategies have consistently outperformed market benchmarks with 18-22% CAGR over the long term.",
+                  "Access a handpicked selection of over 500 PMS options and 300+ AIFs, offering a variety of strategies, risk profiles, and asset classes for every investor.",
                 hoverClass: "hover:bg-blue-50 hover:border-blue-300",
                 iconClass: "bg-blue-100 text-blue-600",
                 iconHoverClass: "group-hover:bg-blue-200 group-hover:text-blue-700",
@@ -195,10 +189,10 @@ export default function Home() {
                 accentClass: "bg-blue-500",
               },
               {
-                icon: Shield,
-                title: "Risk Management",
+                icon: Users,
+                title: "Expert Guidance & Personalized Recommendations",
                 description:
-                  "Sophisticated risk management techniques to protect and grow your wealth in all market conditions.",
+                  "Receive expert advice tailored to your financial goals, risk tolerance, and investment horizon, ensuring informed decision-making.",
                 hoverClass: "hover:bg-indigo-50 hover:border-indigo-300",
                 iconClass: "bg-indigo-100 text-indigo-600",
                 iconHoverClass: "group-hover:bg-indigo-200 group-hover:text-indigo-700",
@@ -206,10 +200,10 @@ export default function Home() {
                 accentClass: "bg-indigo-500",
               },
               {
-                icon: Users,
-                title: "Expert Team",
+                icon: LineChart,
+                title: "In-Depth Research & Transparency",
                 description:
-                  "Seasoned investment professionals with decades of combined experience across various market cycles.",
+                  "Benefit from thorough research and transparent performance metrics, helping you understand each PMS and AIF's track record and potential.",
                 hoverClass: "hover:bg-purple-50 hover:border-purple-300",
                 iconClass: "bg-purple-100 text-purple-600",
                 iconHoverClass: "group-hover:bg-purple-200 group-hover:text-purple-700",
@@ -218,9 +212,9 @@ export default function Home() {
               },
               {
                 icon: Briefcase,
-                title: "Customized Solutions",
+                title: "Custom-Tailored Solutions for Every Investor",
                 description:
-                  "Tailored investment strategies aligned with your financial goals, risk appetite, and time horizon.",
+                  "Whether you're a beginner or seasoned investor, Bharat Alternates provides customized solutions that align with your unique financial objectives.",
                 hoverClass: "hover:bg-teal-50 hover:border-teal-300",
                 iconClass: "bg-teal-100 text-teal-600",
                 iconHoverClass: "group-hover:bg-teal-200 group-hover:text-teal-700",
@@ -229,9 +223,9 @@ export default function Home() {
               },
               {
                 icon: BarChart2,
-                title: "Transparent Reporting",
+                title: "Cutting-Edge Technology & User-Friendly Platform",
                 description:
-                  "Comprehensive performance reports with complete transparency on fees and investment decisions.",
+                  "Enjoy an intuitive platform powered by advanced technology, making it easy to browse, compare, and select the best PMS and AIFs for your needs.",
                 hoverClass: "hover:bg-cyan-50 hover:border-cyan-300",
                 iconClass: "bg-cyan-100 text-cyan-600",
                 iconHoverClass: "group-hover:bg-cyan-200 group-hover:text-cyan-700",
@@ -239,15 +233,48 @@ export default function Home() {
                 accentClass: "bg-cyan-500",
               },
               {
-                icon: LineChart,
-                title: "Research-Driven",
+                icon: Shield,
+                title: "Dedicated Customer Support",
                 description:
-                  "In-depth research and analysis driving our investment decisions for optimal portfolio construction.",
+                  "Our customer support team is available to guide you through every step of your investment journey, ensuring a seamless experience.",
                 hoverClass: "hover:bg-sky-50 hover:border-sky-300",
                 iconClass: "bg-sky-100 text-sky-600",
                 iconHoverClass: "group-hover:bg-sky-200 group-hover:text-sky-700",
                 titleClass: "text-sky-800",
                 accentClass: "bg-sky-500",
+              },
+              {
+                icon: TrendingUp,
+                title: "Cost-Effective Investment Options",
+                description:
+                  "Access high-quality PMS and AIF products at competitive prices, minimizing fees while maximizing returns.",
+                hoverClass: "hover:bg-blue-50 hover:border-blue-300",
+                iconClass: "bg-blue-100 text-blue-600",
+                iconHoverClass: "group-hover:bg-blue-200 group-hover:text-blue-700",
+                titleClass: "text-blue-800",
+                accentClass: "bg-blue-500",
+              },
+              {
+                icon: LineChart,
+                title: "Performance-Driven Results",
+                description:
+                  "We focus on selecting top-performing PMS and AIFs to help you achieve superior investment returns while minimizing risk.",
+                hoverClass: "hover:bg-indigo-50 hover:border-indigo-300",
+                iconClass: "bg-indigo-100 text-indigo-600",
+                iconHoverClass: "group-hover:bg-indigo-200 group-hover:text-indigo-700",
+                titleClass: "text-indigo-800",
+                accentClass: "bg-indigo-500",
+              },
+              {
+                icon: Shield,
+                title: "Trust and Reputation",
+                description:
+                  "Bharat Alternates has earned a solid reputation for reliability, transparency, and customer-first service.",
+                hoverClass: "hover:bg-purple-50 hover:border-purple-300",
+                iconClass: "bg-purple-100 text-purple-600",
+                iconHoverClass: "group-hover:bg-purple-200 group-hover:text-purple-700",
+                titleClass: "text-purple-800",
+                accentClass: "bg-purple-500",
               },
             ].map((feature, index) => (
               <AnimationWrapper key={index} animation="scale-in" delay={index * 0.1}>
@@ -661,8 +688,7 @@ export default function Home() {
                 <span style={{ wordSpacing: "0.2em" }}>Ready to Start Your Investment Journey?</span>
               </TextReveal>
               <p className="mt-4 text-lg opacity-90">
-                Schedule a consultation with our investment experts to discuss how our solutions can help you achieve
-                your financial goals.
+                Start your investment journey with Bharat Alternates today and make your financial goals a reality!
               </p>
               <div className="mt-10">
                 <AnimatedButton href="/contact" variant="secondary" size="lg">
