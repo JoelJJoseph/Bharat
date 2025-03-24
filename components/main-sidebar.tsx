@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation"
 import { ChevronDown, ChevronRight, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { gsap } from "gsap"
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, useSidebar } from "@/components/ui/sidebar"
 
 // Navigation items
@@ -88,16 +87,7 @@ export function MainSidebar() {
       }
     })
     setOpenDropdowns(newOpenState)
-
-    // Animate sidebar items
-    if (sidebarRef.current && state === "expanded") {
-      gsap.fromTo(
-        ".sidebar-item",
-        { x: -20, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.5, stagger: 0.05, ease: "power2.out" },
-      )
-    }
-  }, [pathname, state])
+  }, [pathname])
 
   const toggleDropdown = (name: string) => {
     setOpenDropdowns((prev) => ({
@@ -109,7 +99,7 @@ export function MainSidebar() {
   return (
     <Sidebar
       collapsible="offcanvas"
-      className="border-r border-gray-200 bg-white shadow-md fixed h-screen z-50 transition-all duration-500"
+      className="border-r border-gray-200 bg-white shadow-md fixed h-screen z-[100] transition-all duration-500"
     >
       <SidebarHeader className="border-b py-6">
         <div className="flex items-center justify-between px-4">
@@ -125,7 +115,7 @@ export function MainSidebar() {
           </Button>
         </div>
       </SidebarHeader>
-      <SidebarContent className="px-4 py-6 overflow-y-auto" ref={sidebarRef}>
+      <SidebarContent className="px-4 py-6 overflow-y-auto h-[calc(100vh-140px)]" ref={sidebarRef}>
         <nav>
           <ul className="space-y-4">
             {navItems.map((item, index) => (

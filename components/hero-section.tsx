@@ -97,7 +97,6 @@ export default function HeroSection() {
       </div>
 
       {/* Parallax background elements */}
-      
 
       {/* Content */}
       <div className="container relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-4 text-center">

@@ -25,7 +25,7 @@ export function AnimatedButton({
   showArrow = true,
 }: AnimatedButtonProps) {
   const [isHovered, setIsHovered] = useState(false)
-  
+
   const baseStyles =
     "relative inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 overflow-hidden"
 
@@ -52,10 +52,7 @@ export function AnimatedButton({
         {children}
         {showArrow && (
           <ArrowRight
-            className={cn(
-              "ml-2 h-4 w-4 transition-transform duration-300",
-              isHovered ? "translate-x-1" : ""
-            )}
+            className={cn("ml-2 h-4 w-4 transition-transform duration-300", isHovered ? "translate-x-1" : "")}
           />
         )}
       </span>
@@ -76,7 +73,7 @@ export function AnimatedButton({
           "absolute inset-0 -z-10 rounded-full opacity-0 blur transition-opacity duration-300 group-hover:opacity-50",
           variant === "primary" && "bg-blue-600",
           variant === "secondary" && "bg-blue-200",
-          variant === "outline" && "bg-white"
+          variant === "outline" && "bg-white",
         )}
       />
 

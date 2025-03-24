@@ -35,13 +35,7 @@ export function GlassmorphicHeader() {
   }, [scrolled])
 
   return (
-    <header
-      className={`fixed top-0 right-0 z-40 w-full transition-all duration-500 ${
-        scrolled
-          ? "bg-white/70 backdrop-blur-md supports-[backdrop-filter]:bg-white/60 shadow-sm"
-          : "bg-transparent backdrop-blur-sm supports-[backdrop-filter]:bg-white/10"
-      }`}
-    >
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm`}>
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Sidebar Toggle Button - now shows X when sidebar is open */}

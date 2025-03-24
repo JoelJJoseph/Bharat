@@ -1,5 +1,4 @@
 import HeroSection from "@/components/hero-section"
-import { FaqAccordion } from "@/components/faq-accordion"
 import { InteractiveTable } from "@/components/interactive-table"
 import { AnimatedButton } from "@/components/ui/animated-button"
 import { TrendingUp, Shield, Users, Briefcase, BarChart2, LineChart } from "lucide-react"
@@ -53,30 +52,37 @@ export default function Home() {
           <AnimationWrapper animation="fade-in">
             <div className="mx-auto max-w-4xl text-center">
               <div>
-              <TextReveal
-                as="h2"
+                <TextReveal
+                  as="h2"
                   className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed"
                   stagger={0.05}
                 >
-                  <span style={{ wordSpacing: '0.2em' }}>
+                  <span style={{ wordSpacing: "0.2em" }}>
                     India's&nbsp;Leading&nbsp;Portfolio&nbsp;Management&nbsp;Services
                   </span>
                 </TextReveal>
                 <TextReveal
                   as="span"
                   className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed mt-1 md:mt-0 md:ml-2"
-                stagger={0.05}
-              >
-                  <span style={{ wordSpacing: '0.2em' }}>
+                  stagger={0.05}
+                >
+                  <span style={{ wordSpacing: "0.2em" }}>
                     &amp;&nbsp;Alternative&nbsp;Investment&nbsp;Fund&nbsp;Platform
                   </span>
-              </TextReveal>
+                </TextReveal>
               </div>
               <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-800 leading-relaxed">
-                At Bharat Alternates, we specialize in providing high-net-worth individuals and qualified investors with access to India's top-performing Portfolio Management Services (PMS) and Alternative Investment Funds (AIF). Our comprehensive investment platform offers expert wealth management solutions, data-driven market insights, and a seamless digital investment experience tailored to your specific financial objectives.
+                At Bharat Alternates, we specialize in providing high-net-worth individuals and ultra-high networth
+                individuals and qualified investors with access to India's top-performing Portfolio Management Services
+                (PMS) and Alternative Investment Funds (AIF). Our comprehensive investment platform offers expert wealth
+                management solutions, data-driven market insights, and a seamless digital investment experience tailored
+                to your specific financial objectives.
               </p>
               <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-800 leading-relaxed">
-                With a proven track record in wealth creation and capital appreciation, our team of SEBI-registered investment advisors guides you through the diverse landscape of alternative investments in India, helping you make strategic investment decisions aligned with your risk tolerance, tax planning needs, and long-term financial goals.
+                With a proven track record in wealth creation and capital appreciation, our team of SEBI-registered
+                distributors guides you through the diverse landscape of alternative investments in India, helping you
+                make strategic investment decisions aligned with your risk tolerance, tax planning needs, and long-term
+                financial goals.
               </p>
             </div>
           </AnimationWrapper>
@@ -89,53 +95,66 @@ export default function Home() {
           <AnimationWrapper animation="fade-in">
             <div className="mx-auto max-w-3xl text-center mb-8 sm:mb-12">
               <div>
-              <TextReveal
-                as="h2"
+                <TextReveal
+                  as="h2"
                   className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed"
                   stagger={0.05}
                 >
-                  <span style={{ wordSpacing: '0.2em' }}>
-                    Strategic&nbsp;Wealth&nbsp;Management:
-                  </span>
+                  <span style={{ wordSpacing: "0.2em" }}>Strategic&nbsp;Wealth&nbsp;Management:</span>
                 </TextReveal>
                 <TextReveal
                   as="span"
                   className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed mt-1 md:mt-0 md:ml-2"
-                stagger={0.05}
-              >
-                  <span style={{ wordSpacing: '0.2em' }}>
-                    Our&nbsp;Systematic&nbsp;Investment&nbsp;Approach
-                  </span>
-              </TextReveal>
+                  stagger={0.05}
+                >
+                  <span style={{ wordSpacing: "0.2em" }}>Our&nbsp;Systematic&nbsp;Investment&nbsp;Approach</span>
+                </TextReveal>
               </div>
               <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-800">
-                A research-backed, disciplined approach to sustainable wealth creation through strategic asset allocation, portfolio diversification, and professional investment management
+                A research-backed, disciplined approach to sustainable wealth creation through strategic asset
+                allocation, portfolio diversification, and professional investment management
               </p>
               <div className="mt-6 sm:mt-8 text-left max-w-2xl mx-auto px-2 sm:px-0">
                 <ul className="space-y-2 sm:space-y-3">
                   <li className="flex items-start">
                     <span className="text-blue-600 font-bold mr-2">1.</span>
-                    <span><strong>Personalized Financial Assessment:</strong> Comprehensive evaluation of your investment goals, risk profile, and time horizon</span>
+                    <span>
+                      <strong>Personalized Financial Assessment:</strong> Comprehensive evaluation of your investment
+                      goals, risk profile, and time horizon
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 font-bold mr-2">2.</span>
-                    <span><strong>Strategic Asset Allocation:</strong> Data-driven portfolio construction across equity, debt, and alternative investments</span>
+                    <span>
+                      <strong>Strategic Asset Allocation:</strong> Data-driven portfolio construction across equity,
+                      debt, and alternative investments
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 font-bold mr-2">3.</span>
-                    <span><strong>Expert Fund Selection:</strong> Rigorous analysis and selection of top-performing PMS schemes and AIF categories</span>
+                    <span>
+                      <strong>Expert Fund Selection:</strong> Rigorous analysis and selection of top-performing PMS
+                      schemes and AIF categories
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 font-bold mr-2">4.</span>
-                    <span><strong>Continuous Portfolio Monitoring:</strong> Regular performance tracking and market-responsive rebalancing</span>
+                    <span>
+                      <strong>Continuous Portfolio Monitoring:</strong> Regular performance tracking and
+                      market-responsive rebalancing
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 font-bold mr-2">5.</span>
-                    <span><strong>Tax-Efficient Wealth Optimization:</strong> Strategies to maximize returns while minimizing tax implications</span>
+                    <span>
+                      <strong>Tax-Efficient Wealth Optimization:</strong> Strategies to maximize returns while
+                      minimizing tax implications
+                    </span>
                   </li>
                 </ul>
                 <p className="mt-4 text-center text-base sm:text-lg text-gray-800">
-                  Our investment methodology combines fundamental research, quantitative analysis, and market expertise to deliver consistent risk-adjusted returns across market cycles.
+                  Our investment methodology combines fundamental research, quantitative analysis, and market expertise
+                  to deliver consistent risk-adjusted returns across market cycles.
                 </p>
               </div>
             </div>
@@ -154,10 +173,8 @@ export default function Home() {
                 className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed"
                 stagger={0.05}
               >
-                <span style={{ wordSpacing: '0.2em' }}>
-                  Why&nbsp;Choose&nbsp;Bharat&nbsp;Alternates
-                </span>
-            </TextReveal>
+                <span style={{ wordSpacing: "0.2em" }}>Why&nbsp;Choose&nbsp;Bharat&nbsp;Alternates</span>
+              </TextReveal>
             </div>
             <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-800">
               We combine deep market expertise with personalized strategies to deliver exceptional value to our clients.
@@ -175,7 +192,7 @@ export default function Home() {
                 iconClass: "bg-blue-100 text-blue-600",
                 iconHoverClass: "group-hover:bg-blue-200 group-hover:text-blue-700",
                 titleClass: "text-blue-800",
-                accentClass: "bg-blue-500"
+                accentClass: "bg-blue-500",
               },
               {
                 icon: Shield,
@@ -186,7 +203,7 @@ export default function Home() {
                 iconClass: "bg-indigo-100 text-indigo-600",
                 iconHoverClass: "group-hover:bg-indigo-200 group-hover:text-indigo-700",
                 titleClass: "text-indigo-800",
-                accentClass: "bg-indigo-500"
+                accentClass: "bg-indigo-500",
               },
               {
                 icon: Users,
@@ -197,7 +214,7 @@ export default function Home() {
                 iconClass: "bg-purple-100 text-purple-600",
                 iconHoverClass: "group-hover:bg-purple-200 group-hover:text-purple-700",
                 titleClass: "text-purple-800",
-                accentClass: "bg-purple-500"
+                accentClass: "bg-purple-500",
               },
               {
                 icon: Briefcase,
@@ -208,7 +225,7 @@ export default function Home() {
                 iconClass: "bg-teal-100 text-teal-600",
                 iconHoverClass: "group-hover:bg-teal-200 group-hover:text-teal-700",
                 titleClass: "text-teal-800",
-                accentClass: "bg-teal-500"
+                accentClass: "bg-teal-500",
               },
               {
                 icon: BarChart2,
@@ -219,7 +236,7 @@ export default function Home() {
                 iconClass: "bg-cyan-100 text-cyan-600",
                 iconHoverClass: "group-hover:bg-cyan-200 group-hover:text-cyan-700",
                 titleClass: "text-cyan-800",
-                accentClass: "bg-cyan-500"
+                accentClass: "bg-cyan-500",
               },
               {
                 icon: LineChart,
@@ -230,15 +247,19 @@ export default function Home() {
                 iconClass: "bg-sky-100 text-sky-600",
                 iconHoverClass: "group-hover:bg-sky-200 group-hover:text-sky-700",
                 titleClass: "text-sky-800",
-                accentClass: "bg-sky-500"
+                accentClass: "bg-sky-500",
               },
             ].map((feature, index) => (
               <AnimationWrapper key={index} animation="scale-in" delay={index * 0.1}>
-                <Card className={`feature-card relative overflow-hidden transition-all duration-500 
-                  hover:-translate-y-2 hover:shadow-xl group border border-gray-200 ${feature.hoverClass}`}>
+                <Card
+                  className={`feature-card relative overflow-hidden transition-all duration-500 
+                  hover:-translate-y-2 hover:shadow-xl group border border-gray-200 ${feature.hoverClass}`}
+                >
                   <CardHeader className="relative z-10">
-                    <div className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full 
-                      transition-all duration-500 group-hover:scale-110 ${feature.iconClass} ${feature.iconHoverClass}`}>
+                    <div
+                      className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full 
+                      transition-all duration-500 group-hover:scale-110 ${feature.iconClass} ${feature.iconHoverClass}`}
+                    >
                       <feature.icon className="h-6 w-6" />
                     </div>
                     <CardTitle className={`transition-all duration-500 ${feature.titleClass}`}>
@@ -250,7 +271,9 @@ export default function Home() {
                       {feature.description}
                     </p>
                   </CardContent>
-                  <div className={`absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-500 ${feature.accentClass}`}></div>
+                  <div
+                    className={`absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-500 ${feature.accentClass}`}
+                  ></div>
                 </Card>
               </AnimationWrapper>
             ))}
@@ -263,17 +286,16 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <AnimationWrapper animation="slide-up">
             <div className="mx-auto mb-12 max-w-3xl text-center">
-              <TextReveal 
-                as="h2" 
+              <TextReveal
+                as="h2"
                 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed"
                 stagger={0.05}
               >
-                <span style={{ wordSpacing: '0.4em' }}>
-                  High&nbsp;Performance&nbsp;Investment&nbsp;Strategies
-                </span>
+                <span style={{ wordSpacing: "0.4em" }}>High&nbsp;Performance&nbsp;Investment&nbsp;Strategies</span>
               </TextReveal>
               <p className="mt-4 text-base sm:text-lg text-gray-800">
-                Explore our range of premium investment solutions designed to meet diverse financial goals and maximize returns
+                Explore our range of premium investment solutions designed to meet diverse financial goals and maximize
+                returns
               </p>
             </div>
           </AnimationWrapper>
@@ -303,9 +325,7 @@ export default function Home() {
                     <button
                       key={index}
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                        index === 0
-                          ? 'bg-blue-600 text-white'
-                          : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+                        index === 0 ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                       }`}
                     >
                       {strategy.name}
@@ -315,8 +335,10 @@ export default function Home() {
 
                 {/* Interactive Performance Visualization */}
                 <div className="mb-10">
-                  <h3 className="text-lg font-semibold mb-6 text-blue-800 text-center">Performance Comparison (2018-2023)</h3>
-                  
+                  <h3 className="text-lg font-semibold mb-6 text-blue-800 text-center">
+                    Performance Comparison (2018-2023)
+                  </h3>
+
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Line Chart */}
                     <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
@@ -331,7 +353,7 @@ export default function Home() {
                           <span>5%</span>
                           <span>0%</span>
                         </div>
-                        
+
                         {/* Chart Area */}
                         <div className="absolute left-8 right-0 inset-y-0">
                           {/* X-axis labels */}
@@ -343,35 +365,39 @@ export default function Home() {
                             <span>2022</span>
                             <span>2023</span>
                           </div>
-                          
+
                           {/* Grid lines */}
                           <div className="absolute inset-0 grid grid-rows-5 h-[calc(100%-20px)]">
                             {[...Array(6)].map((_, i) => (
                               <div key={i} className="border-t border-gray-100"></div>
                             ))}
                           </div>
-                          
+
                           {/* Line for Equity Growth Strategy */}
-                          <svg className="absolute inset-0 h-[calc(100%-20px)]" preserveAspectRatio="none" viewBox="0 0 100 100">
-                            <path 
-                              d="M0,40 L20,35 L40,50 L60,30 L80,25 L100,15" 
-                              fill="none" 
-                              stroke="rgba(59, 130, 246, 0.8)" 
+                          <svg
+                            className="absolute inset-0 h-[calc(100%-20px)]"
+                            preserveAspectRatio="none"
+                            viewBox="0 0 100 100"
+                          >
+                            <path
+                              d="M0,40 L20,35 L40,50 L60,30 L80,25 L100,15"
+                              fill="none"
+                              stroke="rgba(59, 130, 246, 0.8)"
                               strokeWidth="2"
                               className="transition-all duration-500"
                             />
-                            <path 
-                              d="M0,40 L20,35 L40,50 L60,30 L80,25 L100,15" 
+                            <path
+                              d="M0,40 L20,35 L40,50 L60,30 L80,25 L100,15"
                               fill="rgba(59, 130, 246, 0.1)"
                               stroke="none"
                               className="transition-all duration-500"
                             />
-                            
+
                             {/* Benchmark line */}
-                            <path 
-                              d="M0,45 L20,42 L40,55 L60,40 L80,38 L100,30" 
-                              fill="none" 
-                              stroke="rgba(156, 163, 175, 0.8)" 
+                            <path
+                              d="M0,45 L20,42 L40,55 L60,40 L80,38 L100,30"
+                              fill="none"
+                              stroke="rgba(156, 163, 175, 0.8)"
                               strokeWidth="2"
                               strokeDasharray="4"
                               className="transition-all duration-500"
@@ -379,7 +405,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      
+
                       {/* Legend */}
                       <div className="flex justify-center gap-4 text-xs mt-2">
                         <div className="flex items-center">
@@ -392,7 +418,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Bar Chart */}
                     <div className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
                       <h4 className="text-sm font-medium text-gray-700 mb-4">Strategy Comparison (2023)</h4>
@@ -406,7 +432,7 @@ export default function Home() {
                           <span>5%</span>
                           <span>0%</span>
                         </div>
-                        
+
                         {/* Chart Area */}
                         <div className="absolute left-8 right-0 inset-y-0">
                           {/* Grid lines */}
@@ -415,42 +441,46 @@ export default function Home() {
                               <div key={i} className="border-t border-gray-100"></div>
                             ))}
                           </div>
-                          
+
                           {/* Bars */}
                           <div className="absolute inset-x-0 bottom-5 h-[calc(100%-25px)] flex items-end justify-around">
                             {tableData.map((strategy, index) => (
                               <div key={index} className="relative group w-8 sm:w-12">
-                                <div 
+                                <div
                                   className="absolute bottom-0 w-full bg-gradient-to-t from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 transition-all duration-300 rounded-t-sm cursor-pointer"
-                                  style={{ height: `${parseFloat(strategy.returns) * 3.5}%` }}
+                                  style={{ height: `${Number.parseFloat(strategy.returns) * 3.5}%` }}
                                 >
                                   <div className="invisible group-hover:visible absolute -top-10 left-1/2 transform -translate-x-1/2 bg-blue-800 text-white text-xs rounded py-1 px-2 whitespace-nowrap z-10">
                                     {strategy.returns}
                                   </div>
                                 </div>
                                 <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 text-xs text-gray-500 whitespace-nowrap">
-                                  {strategy.name.split(' ')[0]}
+                                  {strategy.name.split(" ")[0]}
                                 </div>
                               </div>
                             ))}
-                            
+
                             {/* Benchmark line */}
-                            <div className="absolute border-t-2 border-dashed border-gray-400 w-full" style={{ bottom: '45%' }}>
-                              <div className="absolute -right-16 -top-3 text-xs text-gray-500">
-                                Benchmark: 15%
-                              </div>
+                            <div
+                              className="absolute border-t-2 border-dashed border-gray-400 w-full"
+                              style={{ bottom: "45%" }}
+                            >
+                              <div className="absolute -right-16 -top-3 text-xs text-gray-500">Benchmark: 15%</div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="text-sm text-gray-600 text-center mt-4">
-                    <p>* Historical annual returns shown before fees. Past performance is not indicative of future results.</p>
+                    <p>
+                      * Historical annual returns shown before fees. Past performance is not indicative of future
+                      results.
+                    </p>
                   </div>
                 </div>
-                
+
                 {/* Strategy Details */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                   <div className="col-span-1 lg:col-span-2">
@@ -458,56 +488,76 @@ export default function Home() {
                       <div className="p-4 border-b border-gray-200 flex justify-between items-center">
                         <h3 className="text-lg font-semibold text-blue-800">Investment Strategy Comparison</h3>
                         <div className="relative">
-                          <input 
-                            type="text" 
-                            placeholder="Search strategies..." 
+                          <input
+                            type="text"
+                            placeholder="Search strategies..."
                             className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                           />
                         </div>
                       </div>
                       <div className="overflow-x-auto">
-            <InteractiveTable
-              data={tableData}
-              columns={[
-                { header: "Strategy Name", accessor: "name" },
-                { header: "Historical Returns", accessor: "returns" },
-                { header: "Risk Profile", accessor: "risk" },
-                { header: "Min. Investment", accessor: "minInvestment" },
-              ]}
-            />
+                        <InteractiveTable
+                          data={tableData}
+                          columns={[
+                            { header: "Strategy Name", accessor: "name" },
+                            { header: "Historical Returns", accessor: "returns" },
+                            { header: "Risk Profile", accessor: "risk" },
+                            { header: "Min. Investment", accessor: "minInvestment" },
+                          ]}
+                        />
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="col-span-1">
                     <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border border-blue-100 p-5 h-full">
                       <h3 className="text-lg font-semibold mb-4 text-blue-800">Strategy Highlights</h3>
                       <ul className="space-y-3">
                         <li className="flex items-start">
                           <span className="text-blue-600 mr-2 mt-1 text-lg">•</span>
-                          <span><strong className="text-blue-800">Equity Growth:</strong> Focused on capital appreciation through carefully selected high-growth potential stocks</span>
+                          <span>
+                            <strong className="text-blue-800">Equity Growth:</strong> Focused on capital appreciation
+                            through carefully selected high-growth potential stocks
+                          </span>
                         </li>
                         <li className="flex items-start">
                           <span className="text-blue-600 mr-2 mt-1 text-lg">•</span>
-                          <span><strong className="text-blue-800">Balanced Portfolio:</strong> Optimal mix of equity and debt instruments for moderate growth with reduced volatility</span>
+                          <span>
+                            <strong className="text-blue-800">Balanced Portfolio:</strong> Optimal mix of equity and
+                            debt instruments for moderate growth with reduced volatility
+                          </span>
                         </li>
                         <li className="flex items-start">
                           <span className="text-blue-600 mr-2 mt-1 text-lg">•</span>
-                          <span><strong className="text-blue-800">Special Situations:</strong> Targets unique investment opportunities like mergers, acquisitions, and restructuring</span>
+                          <span>
+                            <strong className="text-blue-800">Special Situations:</strong> Targets unique investment
+                            opportunities like mergers, acquisitions, and restructuring
+                          </span>
                         </li>
                       </ul>
                       <div className="mt-6 text-center">
                         <button className="inline-flex items-center justify-center text-blue-600 hover:text-blue-800 font-medium transition-colors">
                           Download detailed prospectus
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-4 w-4 ml-1"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                            />
                           </svg>
                         </button>
                       </div>
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Key Metrics */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {[
@@ -521,13 +571,33 @@ export default function Home() {
                       <div className="flex items-center mt-1">
                         <div className="text-xl font-bold text-gray-900">{metric.value}</div>
                         {metric.trend === "up" && (
-                          <svg className="w-4 h-4 ml-1 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                          <svg
+                            className="w-4 h-4 ml-1 text-green-500"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 10l7-7m0 0l7 7m-7-7v18"
+                            />
                           </svg>
                         )}
                         {metric.trend === "down" && (
-                          <svg className="w-4 h-4 ml-1 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                          <svg
+                            className="w-4 h-4 ml-1 text-red-500"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                            />
                           </svg>
                         )}
                       </div>
@@ -546,9 +616,7 @@ export default function Home() {
           <AnimationWrapper animation="fade-in">
             <div className="mx-auto mb-16 max-w-3xl text-center">
               <TextReveal as="h2" className="text-3xl font-bold tracking-tight text-blue-900 md:text-4xl">
-                <span style={{ wordSpacing: '0.2em' }}>
-                Frequently Asked Questions
-                </span>
+                <span style={{ wordSpacing: "0.2em" }}>Frequently Asked Questions</span>
               </TextReveal>
               <p className="mt-6 text-lg text-gray-900">
                 Find answers to common questions about our investment services
@@ -559,13 +627,16 @@ export default function Home() {
           <div className="mx-auto max-w-3xl">
             <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
               {faqData.map((item, index) => (
-                <div key={index} className={`border-b border-gray-100 ${index === faqData.length - 1 ? 'border-b-0' : ''}`}>
+                <div
+                  key={index}
+                  className={`border-b border-gray-100 ${index === faqData.length - 1 ? "border-b-0" : ""}`}
+                >
                   <button className="flex justify-between items-center w-full px-8 py-6 text-left focus:outline-none group hover:bg-blue-50 transition-colors duration-300">
                     <span className="text-lg font-medium text-blue-800">{item.question}</span>
-                    <svg 
-                      className="w-6 h-6 text-blue-600 transform transition-transform duration-300 group-hover:rotate-180" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
+                    <svg
+                      className="w-6 h-6 text-blue-600 transform transition-transform duration-300 group-hover:rotate-180"
+                      fill="none"
+                      viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -587,9 +658,7 @@ export default function Home() {
           <AnimationWrapper animation="fade-in">
             <div className="mx-auto max-w-3xl text-center">
               <TextReveal as="h2" className="text-3xl font-bold tracking-tight md:text-4xl" stagger={0.05}>
-                <span style={{ wordSpacing: '0.2em' }}>
-                Ready to Start Your Investment Journey?
-                </span>
+                <span style={{ wordSpacing: "0.2em" }}>Ready to Start Your Investment Journey?</span>
               </TextReveal>
               <p className="mt-4 text-lg opacity-90">
                 Schedule a consultation with our investment experts to discuss how our solutions can help you achieve

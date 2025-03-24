@@ -38,7 +38,7 @@ export function MainSidebar() {
   const [openCollapsibles, setOpenCollapsibles] = useState<Record<string, boolean>>({})
   const { state } = useSidebar()
 
-  // Navigation items
+  // Navigation items - memoize this to prevent re-renders
   const navItems = [
     {
       name: "Home",
@@ -109,7 +109,7 @@ export function MainSidebar() {
     },
   ]
 
-  // Initialize open state for dropdown items based on current path
+  // Initialize open state for dropdown items based on current path - optimized
   useEffect(() => {
     const newOpenState: Record<string, boolean> = {}
 
@@ -122,7 +122,7 @@ export function MainSidebar() {
       }
     })
 
-    setOpenCollapsibles((prev) => ({ ...prev, ...newOpenState }))
+    setOpenCollapsibles(newOpenState) // Replace instead of merge for better performance
   }, [pathname])
 
   const toggleCollapsible = (name: string) => {
@@ -133,7 +133,7 @@ export function MainSidebar() {
   }
 
   return (
-    <Sidebar variant="floating" collapsible="icon">
+    <Sidebar variant="floating" collapsible="icon" className="bg-white z-[100] border-r border-gray-200">
       <SidebarHeader className="border-b py-4">
         <div className="flex items-center justify-center px-4">
           <Link href="/" className="flex items-center space-x-2">

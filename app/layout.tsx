@@ -53,9 +53,10 @@ export const metadata: Metadata = {
       "India's most trusted platform for Portfolio Management Services (PMS) and Alternative Investment Funds (AIF).",
     creator: "@bharatalternates",
   },
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
+// Update the layout structure to improve responsiveness
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -65,13 +66,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <SidebarProvider defaultOpen={false}>
-          <div className="flex">
-            <MainSidebar />
-            <div className="flex min-h-screen w-full flex-col">
-              <GlassmorphicHeader />
-              <main className="flex-1 pt-16">{children}</main>
-              <Footer />
+          <div className="flex flex-col min-h-screen w-full">
+            <GlassmorphicHeader />
+            <div className="flex flex-1 relative">
+              <MainSidebar />
+              <main className="flex-1 w-full pt-16 px-4 md:px-6 lg:px-8">{children}</main>
             </div>
+            <Footer />
           </div>
         </SidebarProvider>
         <Toaster />

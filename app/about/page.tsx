@@ -8,16 +8,15 @@ import { cn } from "@/lib/utils"
 // Import components from the main app
 import AnimationWrapper from "@/components/animation-wrapper"
 import TextReveal from "@/components/text-reveal"
-import { ParallaxSection } from "@/components/parallax-section"
 
 // Types for the AnimatedButton component
 interface AnimatedButtonProps {
-  href: string;
-  children: React.ReactNode;
-  variant?: "primary" | "secondary" | "outline";
-  size?: "default" | "lg";
-  className?: string;
-  showArrow?: boolean;
+  href: string
+  children: React.ReactNode
+  variant?: "primary" | "secondary" | "outline"
+  size?: "default" | "lg"
+  className?: string
+  showArrow?: boolean
 }
 
 // Memoized AnimatedButton component for better performance
@@ -30,7 +29,7 @@ const AnimatedButton = React.memo(function AnimatedButton({
   showArrow = true,
 }: AnimatedButtonProps) {
   const [isHovered, setIsHovered] = React.useState(false)
-  
+
   const baseStyles =
     "relative inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 overflow-hidden"
 
@@ -57,10 +56,7 @@ const AnimatedButton = React.memo(function AnimatedButton({
         {children}
         {showArrow && (
           <ArrowRight
-            className={cn(
-              "ml-2 h-4 w-4 transition-transform duration-300",
-              isHovered ? "translate-x-1" : ""
-            )}
+            className={cn("ml-2 h-4 w-4 transition-transform duration-300", isHovered ? "translate-x-1" : "")}
           />
         )}
       </span>
@@ -81,7 +77,7 @@ const AnimatedButton = React.memo(function AnimatedButton({
           "absolute inset-0 -z-10 rounded-full opacity-0 blur transition-opacity duration-300 group-hover:opacity-50",
           variant === "primary" && "bg-blue-600",
           variant === "secondary" && "bg-blue-200",
-          variant === "outline" && "bg-white"
+          variant === "outline" && "bg-white",
         )}
       />
 
@@ -93,29 +89,32 @@ const AnimatedButton = React.memo(function AnimatedButton({
       )}
     </Link>
   )
-});
+})
 
 // Values data - moved outside component to prevent recreation on each render
 const valuesData = [
   {
     title: "Excellence",
-    description: "We pursue excellence in every aspect of our operations, from investment research to client service. Our team is committed to continuous learning and improvement to deliver exceptional results.",
+    description:
+      "We pursue excellence in every aspect of our operations, from investment research to client service. Our team is committed to continuous learning and improvement to deliver exceptional results.",
     icon: "🏆",
-    color: "from-blue-500 to-blue-700"
+    color: "from-blue-500 to-blue-700",
   },
   {
     title: "Integrity",
-    description: "We operate with unwavering integrity and transparency in all our dealings. Our clients' interests always come first, and we maintain the highest ethical standards in the industry.",
+    description:
+      "We operate with unwavering integrity and transparency in all our dealings. Our clients' interests always come first, and we maintain the highest ethical standards in the industry.",
     icon: "⚖️",
-    color: "from-indigo-500 to-indigo-700"
+    color: "from-indigo-500 to-indigo-700",
   },
   {
     title: "Innovation",
-    description: "We constantly innovate to stay ahead of market trends and provide cutting-edge investment solutions. Our proprietary research methodologies and technology platforms give our clients a competitive edge.",
+    description:
+      "We constantly innovate to stay ahead of market trends and provide cutting-edge investment solutions. Our proprietary research methodologies and technology platforms give our clients a competitive edge.",
     icon: "💡",
-    color: "from-purple-500 to-purple-700"
-  }
-];
+    color: "from-purple-500 to-purple-700",
+  },
+]
 
 // Team data - moved outside component to prevent recreation on each render
 const teamData = [
@@ -123,41 +122,45 @@ const teamData = [
     name: "Rajiv Sharma",
     position: "Founder & CEO",
     bio: "Former Head of Equity at a leading asset management company with over 20 years of experience in Indian capital markets.",
-    image: "bg-gradient-to-br from-blue-400 to-blue-600"
+    image: "bg-gradient-to-br from-blue-400 to-blue-600",
   },
   {
     name: "Priya Mehta",
     position: "Chief Investment Officer",
     bio: "Ex-Portfolio Manager with 15+ years of experience managing multi-billion dollar portfolios across various market cycles.",
-    image: "bg-gradient-to-br from-indigo-400 to-indigo-600"
+    image: "bg-gradient-to-br from-indigo-400 to-indigo-600",
   },
   {
     name: "Vikram Desai",
     position: "Head of Research",
     bio: "Renowned market analyst with expertise in quantitative research methodologies and alternative investment strategies.",
-    image: "bg-gradient-to-br from-purple-400 to-purple-600"
-  }
-];
+    image: "bg-gradient-to-br from-purple-400 to-purple-600",
+  },
+]
 
 // Expertise data - moved outside component to prevent recreation on each render
 const expertiseData = [
   {
     title: "Portfolio Management Services",
-    description: "Our PMS offerings are designed to deliver consistent alpha through disciplined investment processes, rigorous risk management, and active portfolio monitoring. We specialize in equity-focused strategies that capitalize on India's growth story."
+    description:
+      "Our PMS offerings are designed to deliver consistent alpha through disciplined investment processes, rigorous risk management, and active portfolio monitoring. We specialize in equity-focused strategies that capitalize on India's growth story.",
   },
   {
     title: "Alternative Investment Funds",
-    description: "Our AIF platform provides access to sophisticated investment strategies including private equity, venture capital, real estate, and structured credit opportunities that offer diversification beyond traditional asset classes."
+    description:
+      "Our AIF platform provides access to sophisticated investment strategies including private equity, venture capital, real estate, and structured credit opportunities that offer diversification beyond traditional asset classes.",
   },
   {
     title: "Research & Analytics",
-    description: "Our proprietary research framework combines fundamental analysis with quantitative models to identify investment opportunities across market cycles, sectors, and themes."
+    description:
+      "Our proprietary research framework combines fundamental analysis with quantitative models to identify investment opportunities across market cycles, sectors, and themes.",
   },
   {
     title: "Wealth Advisory",
-    description: "Beyond investment management, we provide comprehensive wealth advisory services including financial planning, tax optimization, and estate planning to help clients achieve their holistic financial objectives."
-  }
-];
+    description:
+      "Beyond investment management, we provide comprehensive wealth advisory services including financial planning, tax optimization, and estate planning to help clients achieve their holistic financial objectives.",
+  },
+]
 
 export default function AboutPage() {
   return (
@@ -167,18 +170,16 @@ export default function AboutPage() {
         <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-blue-900 to-transparent pointer-events-none"></div>
         <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-blue-700 rounded-full opacity-20 transform translate-x-1/4 translate-y-1/4"></div>
         <div className="absolute top-1/4 left-0 w-1/4 h-1/4 bg-blue-700 rounded-full opacity-20 transform -translate-x-1/2"></div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <AnimationWrapper animation="fade-in">
             <div className="mx-auto max-w-4xl text-center mb-16">
-              <TextReveal 
-                as="h1" 
+              <TextReveal
+                as="h1"
                 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl"
                 stagger={0.03}
               >
-                <span style={{ wordSpacing: '0.2em' }}>
-                  About Bharat Alternates
-                </span>
+                <span style={{ wordSpacing: "0.2em" }}>About Bharat Alternates</span>
               </TextReveal>
               <p className="mt-6 text-xl text-blue-100 italic">
                 Your trusted partner in Portfolio Management Services and Alternative Investment Funds
@@ -201,10 +202,16 @@ export default function AboutPage() {
                   <div className="p-8">
                     <h2 className="text-2xl font-bold text-blue-800 mb-6">Our Journey</h2>
                     <p className="text-gray-700 leading-relaxed mb-4">
-                      Bharat Alternates was born from a vision to transform how high-net-worth individuals access India's premium investment opportunities. Founded in 2015 by a team of seasoned investment professionals with backgrounds from India's top financial institutions, we set out to create a platform that combines deep market expertise with technological innovation.
+                      Bharat Alternates was born from a vision to transform how high-net-worth individuals access
+                      India's premium investment opportunities. Founded in 2015 by a team of seasoned investment
+                      professionals with backgrounds from India's top financial institutions, we set out to create a
+                      platform that combines deep market expertise with technological innovation.
                     </p>
                     <p className="text-gray-700 leading-relaxed">
-                      What began as a boutique advisory firm has evolved into one of India's most respected investment platforms, managing over ₹5,000 crores in assets for more than 1,200 families across the country. Our journey reflects our commitment to excellence, integrity, and the relentless pursuit of superior returns for our clients.
+                      What began as a boutique advisory firm has evolved into one of India's most respected investment
+                      platforms, managing over ₹5,000 crores in assets for more than 1,200 families across the country.
+                      Our journey reflects our commitment to excellence, integrity, and the relentless pursuit of
+                      superior returns for our clients.
                     </p>
                   </div>
                 </div>
@@ -216,17 +223,21 @@ export default function AboutPage() {
                 <div className="bg-white rounded-xl shadow-lg p-6 transform hover:translate-y-[-8px] transition-all duration-500 border-l-4 border-blue-600">
                   <h2 className="text-xl font-bold text-blue-800 mb-3">Our Vision</h2>
                   <p className="text-gray-700 italic leading-relaxed">
-                    "To be India's most trusted and comprehensive platform for Portfolio Management Services (PMS) and Alternative Investment Funds (AIF), empowering investors with data-driven insights, expert analysis, and seamless investment solutions that maximize wealth creation."
+                    "To be India's most trusted and comprehensive platform for Portfolio Management Services (PMS) and
+                    Alternative Investment Funds (AIF), empowering investors with data-driven insights, expert analysis,
+                    and seamless investment solutions that maximize wealth creation."
                   </p>
                 </div>
 
                 <div className="bg-white rounded-xl shadow-lg p-6 transform hover:translate-y-[-8px] transition-all duration-500 border-l-4 border-blue-600">
                   <h2 className="text-xl font-bold text-blue-800 mb-3">Our Mission</h2>
                   <p className="text-gray-700 leading-relaxed">
-                    Our mission is to empower high-net-worth individuals to achieve their financial goals through expert portfolio management and personalized investment strategies.
+                    Our mission is to empower high-net-worth individuals to achieve their financial goals through expert
+                    portfolio management and personalized investment strategies.
                   </p>
                   <p className="text-gray-700 leading-relaxed mt-3">
-                    We are committed to delivering superior risk-adjusted returns while maintaining the highest standards of integrity, transparency, and client service.
+                    We are committed to delivering superior risk-adjusted returns while maintaining the highest
+                    standards of integrity, transparency, and client service.
                   </p>
                 </div>
               </div>
@@ -240,11 +251,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <AnimationWrapper animation="fade-in" delay={0.1}>
             <div className="text-center mb-12">
-              <TextReveal 
-                as="h2" 
-                className="text-3xl font-bold text-blue-800 mb-8"
-                stagger={0.03}
-              >
+              <TextReveal as="h2" className="text-3xl font-bold text-blue-800 mb-8" stagger={0.03}>
                 Our Core Values
               </TextReveal>
             </div>
@@ -252,7 +259,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 max-w-6xl mx-auto">
             {valuesData.map((value, index) => (
-              <AnimationWrapper key={index} animation="scale-in" delay={0.1 + (index * 0.1)}>
+              <AnimationWrapper key={index} animation="scale-in" delay={0.1 + index * 0.1}>
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-500 group h-full">
                   <div className={`h-2 w-full bg-gradient-to-r ${value.color}`}></div>
                   <div className="p-6">
@@ -274,26 +281,26 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <AnimationWrapper animation="fade-in" delay={0.1}>
             <div className="text-center mb-12">
-              <TextReveal 
-                as="h2" 
-                className="text-3xl font-bold text-blue-800 mb-4"
-                stagger={0.03}
-              >
+              <TextReveal as="h2" className="text-3xl font-bold text-blue-800 mb-4" stagger={0.03}>
                 Leadership Team
               </TextReveal>
               <p className="text-gray-700 max-w-2xl mx-auto">
-                Our team brings together decades of experience from India's premier financial institutions, combining deep market knowledge with innovative thinking.
+                Our team brings together decades of experience from India's premier financial institutions, combining
+                deep market knowledge with innovative thinking.
               </p>
             </div>
           </AnimationWrapper>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto">
             {teamData.map((member, index) => (
-              <AnimationWrapper key={index} animation="slide-up" delay={0.1 + (index * 0.1)}>
+              <AnimationWrapper key={index} animation="slide-up" delay={0.1 + index * 0.1}>
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:translate-y-[-8px] transition-all duration-500 h-full">
                   <div className={`h-32 ${member.image} flex items-center justify-center`}>
                     <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center text-2xl font-bold text-blue-800">
-                      {member.name.split(' ').map(n => n[0]).join('')}
+                      {member.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
                     </div>
                   </div>
                   <div className="p-6">
@@ -322,7 +329,7 @@ export default function AboutPage() {
                     <div className="w-3 h-3 rounded-full bg-blue-200"></div>
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {expertiseData.map((item, index) => (
                     <div key={index} className="relative pl-8 border-l-2 border-blue-200">
@@ -345,7 +352,8 @@ export default function AboutPage() {
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-2xl font-bold text-white mb-4">Ready to Start Your Investment Journey?</h2>
               <p className="text-blue-100 max-w-2xl mx-auto mb-8">
-                Schedule a consultation with our investment experts to discuss how we can help you achieve your financial goals.
+                Schedule a consultation with our investment experts to discuss how we can help you achieve your
+                financial goals.
               </p>
               <AnimatedButton href="/contact" variant="secondary" size="lg">
                 Schedule a Consultation
