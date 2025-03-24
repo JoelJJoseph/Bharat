@@ -7,6 +7,7 @@ import { ParallaxSection } from "@/components/parallax-section"
 import AnimationWrapper from "@/components/animation-wrapper"
 import TextReveal from "@/components/text-reveal"
 import { StrategyTimeline } from "@/components/strategy-timeline"
+import { CalendlyButton } from "../components/calendly-button"
 
 export default function Home() {
   // Sample data for table
@@ -691,9 +692,9 @@ export default function Home() {
                 Start your investment journey with Bharat Alternates today and make your financial goals a reality!
               </p>
               <div className="mt-10">
-                <AnimatedButton href="/contact" variant="secondary" size="lg">
-                  Get Started Today
-                </AnimatedButton>
+                <CalendlyButton variant="secondary" size="lg" showArrow>
+                  Schedule a Consultation
+                </CalendlyButton>
               </div>
             </div>
           </AnimationWrapper>
