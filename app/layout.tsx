@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { MainSidebar } from "@/components/main-sidebar"
 import { GlassmorphicHeader } from "@/components/glassmorphic-header"
+import { WhatsAppFloat } from "@/components/whatsapp-float"
 import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -75,6 +76,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </SidebarProvider>
+        <WhatsAppFloat />
         <Toaster />
 
         {/* GSAP Scripts */}
