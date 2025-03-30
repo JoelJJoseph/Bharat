@@ -84,76 +84,121 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Strategic Wealth Management Section */}
+      <section className="py-20 bg-gradient-to-b from-blue-900 to-blue-950 relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }} />
+        </div>
+
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center mb-16">
+            <TextReveal
+              as="h2"
+              className="text-3xl sm:text-4xl font-bold text-white mb-4"
+              stagger={0.05}
+            >
+              <span style={{ wordSpacing: "0.1em" }}>Strategic Wealth Management</span>
+            </TextReveal>
+            <TextReveal
+              as="h3"
+              className="text-xl sm:text-2xl text-blue-200 mt-4"
+              stagger={0.05}
+            >
+              <span style={{ wordSpacing: "0.1em" }}>Our Systematic Investment Approach</span>
+            </TextReveal>
+            <p className="mt-6 text-lg text-blue-100/80 max-w-3xl mx-auto">
+              A research-backed, disciplined approach to sustainable wealth creation through strategic asset allocation,
+              portfolio diversification, and professional investment management
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {[
+              {
+                title: "Personalized Financial Assessment",
+                description: "Comprehensive evaluation of your investment goals, risk profile, and time horizon",
+                icon: (
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 8V16M8 12H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                )
+              },
+              {
+                title: "Strategic Asset Allocation",
+                description: "Data-driven portfolio construction across equity, debt, and alternative investments",
+                icon: (
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                )
+              },
+              {
+                title: "Expert Fund Selection",
+                description: "Rigorous analysis and selection of top-performing PMS schemes and AIF categories",
+                icon: (
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 17L15 17M9 13L15 13M9 9L15 9M5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                )
+              },
+              {
+                title: "Continuous Portfolio Monitoring",
+                description: "Regular performance tracking and market-responsive rebalancing",
+                icon: (
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                )
+              },
+              {
+                title: "Tax-Efficient Wealth Optimization",
+                description: "Strategies to maximize returns while minimizing tax implications",
+                icon: (
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 14L15 8M9.5 8.5H9.51M14.5 13.5H14.51M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                )
+              }
+            ].map((item, index) => (
+              <AnimationWrapper
+                key={index}
+                animation="fade-in"
+                delay={index * 0.1}
+                className={`${index === 4 ? "md:col-start-2 lg:col-start-2" : ""}`}
+              >
+                <div className="group h-full">
+                  <div className="h-full backdrop-blur-lg bg-white/10 rounded-xl p-8 transition-all duration-300 
+                    hover:bg-white/15 border border-white/10 hover:border-white/20">
+                    {/* Icon */}
+                    <div className="w-16 h-16 mx-auto mb-6 bg-blue-500/20 rounded-xl flex items-center justify-center
+                      text-blue-200 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-500/30">
+                      {item.icon}
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-xl font-semibold mb-4 text-white text-center">
+                      {item.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-blue-100/80 text-center leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </AnimationWrapper>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Strategy Timeline Section */}
       <section className="py-8 sm:py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimationWrapper animation="fade-in">
-            <div className="mx-auto max-w-3xl text-center mb-8 sm:mb-12">
-              <div>
-                <TextReveal
-                  as="h2"
-                  className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed"
-                  stagger={0.05}
-                >
-                  <span style={{ wordSpacing: "0.2em" }}>Strategic&nbsp;Wealth&nbsp;Management:</span>
-                </TextReveal>
-                <TextReveal
-                  as="span"
-                  className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed mt-1 md:mt-0 md:ml-2"
-                  stagger={0.05}
-                >
-                  <span style={{ wordSpacing: "0.2em" }}>Our&nbsp;Systematic&nbsp;Investment&nbsp;Approach</span>
-                </TextReveal>
-              </div>
-              <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-800">
-                A research-backed, disciplined approach to sustainable wealth creation through strategic asset
-                allocation, portfolio diversification, and professional investment management
-              </p>
-              <div className="mt-6 sm:mt-8 text-left max-w-2xl mx-auto px-2 sm:px-0">
-                <ul className="space-y-2 sm:space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-blue-600 font-bold mr-2">1.</span>
-                    <span>
-                      <strong>Personalized Financial Assessment:</strong> Comprehensive evaluation of your investment
-                      goals, risk profile, and time horizon
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 font-bold mr-2">2.</span>
-                    <span>
-                      <strong>Strategic Asset Allocation:</strong> Data-driven portfolio construction across equity,
-                      debt, and alternative investments
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 font-bold mr-2">3.</span>
-                    <span>
-                      <strong>Expert Fund Selection:</strong> Rigorous analysis and selection of top-performing PMS
-                      schemes and AIF categories
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 font-bold mr-2">4.</span>
-                    <span>
-                      <strong>Continuous Portfolio Monitoring:</strong> Regular performance tracking and
-                      market-responsive rebalancing
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 font-bold mr-2">5.</span>
-                    <span>
-                      <strong>Tax-Efficient Wealth Optimization:</strong> Strategies to maximize returns while
-                      minimizing tax implications
-                    </span>
-                  </li>
-                </ul>
-                <p className="mt-4 text-center text-base sm:text-lg text-gray-800">
-                  Our investment methodology combines fundamental research, quantitative analysis, and market expertise
-                  to deliver consistent risk-adjusted returns across market cycles.
-                </p>
-              </div>
-            </div>
-          </AnimationWrapper>
           <StrategyTimeline />
         </div>
       </section>
@@ -168,11 +213,11 @@ export default function Home() {
                 className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed"
                 stagger={0.05}
               >
-                <span style={{ wordSpacing: "0.2em" }}>Why&nbsp;Choose&nbsp;Bharat&nbsp;Alternates&nbsp;for&nbsp;Your&nbsp;Investment&nbsp;Needs?</span>
+                <span style={{ wordSpacing: "0.2em" }}>Why Choose Bharat Alternates</span>
               </TextReveal>
             </div>
             <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-800">
-              In today's competitive investment landscape, choosing the right PMS (Portfolio Management Service) or AIF (Alternative Investment Fund) can be overwhelming. Bharat Alternates simplifies this process by offering a curated selection from over 500+ PMS and 300+ AIFs, helping you make informed, stress-free investment decisions.
+              We combine deep market expertise with personalized strategies to deliver exceptional value to our clients.
             </p>
           </div>
 
@@ -180,9 +225,9 @@ export default function Home() {
             {[
               {
                 icon: TrendingUp,
-                title: "Extensive Selection of PMS & AIFs",
+                title: "Consistent Performance",
                 description:
-                  "Access a handpicked selection of over 500 PMS options and 300+ AIFs, offering a variety of strategies, risk profiles, and asset classes for every investor.",
+                  "Our strategies have consistently outperformed market benchmarks with 18-22% CAGR over the long term.",
                 hoverClass: "hover:bg-blue-50 hover:border-blue-300",
                 iconClass: "bg-blue-100 text-blue-600",
                 iconHoverClass: "group-hover:bg-blue-200 group-hover:text-blue-700",
@@ -190,10 +235,10 @@ export default function Home() {
                 accentClass: "bg-blue-500",
               },
               {
-                icon: Users,
-                title: "Expert Guidance & Personalized Recommendations",
+                icon: Shield,
+                title: "Risk Management",
                 description:
-                  "Receive expert advice tailored to your financial goals, risk tolerance, and investment horizon, ensuring informed decision-making.",
+                  "Sophisticated risk management techniques to protect and grow your wealth in all market conditions.",
                 hoverClass: "hover:bg-indigo-50 hover:border-indigo-300",
                 iconClass: "bg-indigo-100 text-indigo-600",
                 iconHoverClass: "group-hover:bg-indigo-200 group-hover:text-indigo-700",
@@ -201,10 +246,10 @@ export default function Home() {
                 accentClass: "bg-indigo-500",
               },
               {
-                icon: LineChart,
-                title: "In-Depth Research & Transparency",
+                icon: Users,
+                title: "Expert Team",
                 description:
-                  "Benefit from thorough research and transparent performance metrics, helping you understand each PMS and AIF's track record and potential.",
+                  "Seasoned investment professionals with decades of combined experience across various market cycles.",
                 hoverClass: "hover:bg-purple-50 hover:border-purple-300",
                 iconClass: "bg-purple-100 text-purple-600",
                 iconHoverClass: "group-hover:bg-purple-200 group-hover:text-purple-700",
@@ -213,9 +258,9 @@ export default function Home() {
               },
               {
                 icon: Briefcase,
-                title: "Custom-Tailored Solutions for Every Investor",
+                title: "Customized Solutions",
                 description:
-                  "Whether you're a beginner or seasoned investor, Bharat Alternates provides customized solutions that align with your unique financial objectives.",
+                  "Tailored investment strategies aligned with your financial goals, risk appetite, and time horizon.",
                 hoverClass: "hover:bg-teal-50 hover:border-teal-300",
                 iconClass: "bg-teal-100 text-teal-600",
                 iconHoverClass: "group-hover:bg-teal-200 group-hover:text-teal-700",
@@ -224,9 +269,9 @@ export default function Home() {
               },
               {
                 icon: BarChart2,
-                title: "Cutting-Edge Technology & User-Friendly Platform",
+                title: "Transparent Reporting",
                 description:
-                  "Enjoy an intuitive platform powered by advanced technology, making it easy to browse, compare, and select the best PMS and AIFs for your needs.",
+                  "Comprehensive performance reports with complete transparency on fees and investment decisions.",
                 hoverClass: "hover:bg-cyan-50 hover:border-cyan-300",
                 iconClass: "bg-cyan-100 text-cyan-600",
                 iconHoverClass: "group-hover:bg-cyan-200 group-hover:text-cyan-700",
@@ -234,49 +279,16 @@ export default function Home() {
                 accentClass: "bg-cyan-500",
               },
               {
-                icon: Shield,
-                title: "Dedicated Customer Support",
+                icon: LineChart,
+                title: "Research-Driven",
                 description:
-                  "Our customer support team is available to guide you through every step of your investment journey, ensuring a seamless experience.",
+                  "In-depth research and analysis driving our investment decisions for optimal portfolio construction.",
                 hoverClass: "hover:bg-sky-50 hover:border-sky-300",
                 iconClass: "bg-sky-100 text-sky-600",
                 iconHoverClass: "group-hover:bg-sky-200 group-hover:text-sky-700",
                 titleClass: "text-sky-800",
                 accentClass: "bg-sky-500",
-              },
-              {
-                icon: TrendingUp,
-                title: "Cost-Effective Investment Options",
-                description:
-                  "Access high-quality PMS and AIF products at competitive prices, minimizing fees while maximizing returns.",
-                hoverClass: "hover:bg-blue-50 hover:border-blue-300",
-                iconClass: "bg-blue-100 text-blue-600",
-                iconHoverClass: "group-hover:bg-blue-200 group-hover:text-blue-700",
-                titleClass: "text-blue-800",
-                accentClass: "bg-blue-500",
-              },
-              {
-                icon: LineChart,
-                title: "Performance-Driven Results",
-                description:
-                  "We focus on selecting top-performing PMS and AIFs to help you achieve superior investment returns while minimizing risk.",
-                hoverClass: "hover:bg-indigo-50 hover:border-indigo-300",
-                iconClass: "bg-indigo-100 text-indigo-600",
-                iconHoverClass: "group-hover:bg-indigo-200 group-hover:text-indigo-700",
-                titleClass: "text-indigo-800",
-                accentClass: "bg-indigo-500",
-              },
-              {
-                icon: Shield,
-                title: "Trust and Reputation",
-                description:
-                  "Bharat Alternates has earned a solid reputation for reliability, transparency, and customer-first service.",
-                hoverClass: "hover:bg-purple-50 hover:border-purple-300",
-                iconClass: "bg-purple-100 text-purple-600",
-                iconHoverClass: "group-hover:bg-purple-200 group-hover:text-purple-700",
-                titleClass: "text-purple-800",
-                accentClass: "bg-purple-500",
-              },
+              }
             ].map((feature, index) => (
               <AnimationWrapper key={index} animation="scale-in" delay={index * 0.1}>
                 <Card

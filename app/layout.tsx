@@ -4,8 +4,6 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import Footer from "@/components/footer"
 import { Toaster } from "@/components/ui/toaster"
-import { SidebarProvider } from "@/components/ui/sidebar"
-import { MainSidebar } from "@/components/main-sidebar"
 import { GlassmorphicHeader } from "@/components/glassmorphic-header"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import Script from "next/script"
@@ -66,16 +64,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SidebarProvider defaultOpen={false}>
-          <div className="flex flex-col min-h-screen w-full">
-            <GlassmorphicHeader />
-            <div className="flex flex-1 relative">
-              <MainSidebar />
-              <main className="flex-1 w-full pt-16 px-4 md:px-6 lg:px-8">{children}</main>
-            </div>
-            <Footer />
-          </div>
-        </SidebarProvider>
+        <div className="flex flex-col min-h-screen w-full">
+          <GlassmorphicHeader />
+          <main className="flex-1 w-full pt-16 px-4 md:px-6 lg:px-8">{children}</main>
+          <Footer />
+        </div>
         <WhatsAppFloat />
         <Toaster />
 
@@ -93,7 +86,5 @@ export default function RootLayout({
     </html>
   )
 }
-
-
 
 import './globals.css'
