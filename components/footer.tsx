@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -35,106 +36,112 @@ export default function Footer() {
   }, [])
 
   return (
-    <footer ref={footerRef} className="bg-navy-900 text-white">
-      <div className="container-custom section-padding">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div className="footer-column">
-            <h3 className="mb-4 text-xl font-bold text-white">Bharat Alternates</h3>
-            <p className="mb-4 text-white">
-              Professional Portfolio Management Services and Alternative Investment Funds for high-net-worth
-              individuals.
+    <footer ref={footerRef} className="bg-gray-50 border-t">
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="space-y-4">
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/Bharat.png"
+                alt="Bharat Alternates Logo"
+                width={100}
+                height={100}
+                className="h-8 w-8 sm:h-12 sm:w-12"
+              />
+              <span className="text-xl sm:text-2xl font-bold text-primary ml-2 sm:ml-3">Bharat Alternates</span>
+            </Link>
+            <p className="text-sm text-gray-600">
+              Empowering investors with data-driven insights and expert analysis for optimal wealth creation.
             </p>
-            <div className="flex space-x-4">
-              <Link href="#" className="text-white hover:text-blue-400 transition-colors duration-300">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="#" className="text-white hover:text-blue-400 transition-colors duration-300">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="#" className="text-white hover:text-blue-400 transition-colors duration-300">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-              <Link href="#" className="text-white hover:text-blue-400 transition-colors duration-300">
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-            </div>
           </div>
-          <div className="footer-column">
-            <h4 className="mb-4 text-lg font-semibold text-white">Quick Links</h4>
-            <ul className="space-y-2 text-white">
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+            <ul className="space-y-2">
               <li>
-                <Link href="/about" className="hover:text-blue-400 transition-colors duration-300">
+                <Link href="/about" className="text-sm text-gray-600 hover:text-primary transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/pms/what-is-pms" className="hover:text-blue-400 transition-colors duration-300">
+                <Link href="/contact" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/our-clients" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Our Clients
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* PMS Links */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">PMS</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/pms/what-is-pms" className="text-sm text-gray-600 hover:text-primary transition-colors">
                   What is PMS?
                 </Link>
               </li>
               <li>
-                <Link href="/aif/what-is-aif" className="hover:text-blue-400 transition-colors duration-300">
+                <Link href="/pms/do-you-need-pms" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Do you need PMS?
+                </Link>
+              </li>
+              <li>
+                <Link href="/pms/who-should-invest" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Who Should Invest?
+                </Link>
+              </li>
+              <li>
+                <Link href="/pms/top-pms-in-india" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Top PMSs in India
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* AIF Links */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">AIF</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/aif/what-is-aif" className="text-sm text-gray-600 hover:text-primary transition-colors">
                   What is AIF?
                 </Link>
               </li>
               <li>
-                <Link href="/resources/blog" className="hover:text-blue-400 transition-colors duration-300">
-                  Blog
+                <Link href="/aif/do-you-need-aif" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Do you need AIF?
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-blue-400 transition-colors duration-300">
-                  Contact Us
+                <Link href="/aif/who-should-invest" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Who Should Invest?
                 </Link>
               </li>
             </ul>
           </div>
-          <div className="footer-column">
-            <h4 className="mb-4 text-lg font-semibold text-white">Contact Information</h4>
-            <ul className="space-y-3 text-white">
-              <li className="flex items-start">
-                <MapPin className="mr-2 h-5 w-5 shrink-0 text-blue-400" />
-                <span>71/48 Prem Nagar, Janakpuri, New Delhi 110058</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="mr-2 h-5 w-5 shrink-0 text-blue-400" />
-                <span>+91 85275 12552</span>
-              </li>
-              <li className="flex items-center">
-                <Mail className="mr-2 h-5 w-5 shrink-0 text-blue-400" />
-                <span>Bharatalternates@gmail.com</span>
-              </li>
-            </ul>
-          </div>
-          <div className="footer-column">
-            <h4 className="mb-4 text-lg font-semibold text-white">Subscribe to Newsletter</h4>
-            <p className="mb-4 text-white">Stay updated with the latest investment insights and opportunities.</p>
-            <div className="space-y-2">
-              <Input
-                type="email"
-                placeholder="Your email address"
-                className="bg-navy-800 text-white border-blue-900 focus-visible:ring-blue-400"
-              />
-              <Button className="w-full bg-blue-600 hover:bg-blue-700 transition-all duration-300">Subscribe</Button>
-            </div>
-          </div>
         </div>
-        <div className="mt-8 border-t border-blue-900 pt-8 text-center text-sm text-white">
-          <p>© {new Date().getFullYear()} Bharat Alternates. All rights reserved.</p>
-          <div className="mt-2 flex justify-center space-x-4">
-            <Link href="/privacy-policy" className="text-white hover:text-blue-400 transition-colors duration-300">
-              Privacy Policy
-            </Link>
-            <Link href="/terms-of-service" className="text-white hover:text-blue-400 transition-colors duration-300">
-              Terms of Service
-            </Link>
-            <Link href="/disclaimer" className="text-white hover:text-blue-400 transition-colors duration-300">
-              Disclaimer
-            </Link>
+
+        {/* Bottom Bar */}
+        <div className="mt-8 pt-8 border-t">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-sm text-gray-600">
+              © {new Date().getFullYear()} Bharat Alternates. All rights reserved.
+            </p>
+            <div className="flex space-x-6">
+              <Link href="/privacy-policy" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-of-service" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                Terms of Service
+              </Link>
+            </div>
           </div>
         </div>
       </div>

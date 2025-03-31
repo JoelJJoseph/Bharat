@@ -1,13 +1,24 @@
 import HeroSection from "@/components/hero-section"
 import { InteractiveTable } from "@/components/interactive-table"
 import { AnimatedButton } from "@/components/ui/animated-button"
-import { TrendingUp, Shield, Users, Briefcase, BarChart2, LineChart } from "lucide-react"
+import {
+  TrendingUp,
+  Shield,
+  Users,
+  Briefcase,
+  BarChart2,
+  LineChart,
+  PlusCircle,
+  Search,
+  FileText,
+  Zap,
+  ClipboardCheck,
+} from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ParallaxSection } from "@/components/parallax-section"
 import AnimationWrapper from "@/components/animation-wrapper"
 import TextReveal from "@/components/text-reveal"
 import { StrategyTimeline } from "@/components/strategy-timeline"
-import { CalendlyButton } from "../components/calendly-button"
 
 export default function Home() {
   // Sample data for table
@@ -52,17 +63,32 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimationWrapper animation="fade-in">
             <div className="mx-auto max-w-4xl text-center">
-              <div className="flex flex-col items-center">
+              <div>
                 <TextReveal
                   as="h2"
-                  className="text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed text-center"
+                  className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed"
                   stagger={0.05}
                 >
-                  <span className="block sm:inline">
-                    India's Leading Portfolio Management Services
+                  <span className="whitespace-normal sm:whitespace-nowrap">
+                    India's&nbsp;Leading&nbsp;Portfolio&nbsp;Management
                   </span>
-                  <span className="block sm:inline mt-1 sm:mt-0 sm:ml-2">
-                    & Alternative Investment Fund Platform
+                </TextReveal>
+                <TextReveal
+                  as="span"
+                  className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed mt-1 md:mt-0 md:ml-2"
+                  stagger={0.05}
+                >
+                  <span className="whitespace-normal sm:whitespace-nowrap">
+                    Services&nbsp;&amp;&nbsp;Alternative&nbsp;Investment
+                  </span>
+                </TextReveal>
+                <TextReveal
+                  as="span"
+                  className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed mt-1 md:mt-0 md:ml-2"
+                  stagger={0.05}
+                >
+                  <span className="whitespace-normal sm:whitespace-nowrap">
+                    Fund&nbsp;Platform
                   </span>
                 </TextReveal>
               </div>
@@ -85,123 +111,102 @@ export default function Home() {
       </section>
 
       {/* Strategic Wealth Management Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-900 to-blue-950 relative overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }} />
-        </div>
+      <section className="py-16 bg-[#2a2a72]">
+        <div className="container mx-auto px-4">
+          <AnimationWrapper animation="fade-in">
+            <div className="mx-auto max-w-4xl text-center text-white">
+              <TextReveal as="h2" className="text-3xl font-bold md:text-4xl" stagger={0.05}>
+                <span style={{ wordSpacing: "0.1em" }}>Strategic&nbsp;Wealth&nbsp;Management</span>
+              </TextReveal>
+              <TextReveal as="h3" className="mt-3 text-xl font-semibold md:text-2xl" stagger={0.05}>
+                <span style={{ wordSpacing: "0.1em" }}>Our&nbsp;Systematic&nbsp;Investment&nbsp;Approach</span>
+              </TextReveal>
+              <p className="mt-4 text-base md:text-lg text-white/90 max-w-3xl mx-auto">
+                A research-backed, disciplined approach to sustainable wealth creation through strategic asset
+                allocation, portfolio diversification, and professional investment management
+              </p>
+            </div>
+          </AnimationWrapper>
 
-        <div className="container mx-auto px-4 relative">
-          <div className="text-center mb-16">
-            <TextReveal
-              as="h2"
-              className="text-3xl sm:text-4xl font-bold text-white mb-4"
-              stagger={0.05}
-            >
-              <span style={{ wordSpacing: "0.1em" }}>Strategic Wealth Management</span>
-            </TextReveal>
-            <TextReveal
-              as="h3"
-              className="text-xl sm:text-2xl text-blue-200 mt-4"
-              stagger={0.05}
-            >
-              <span style={{ wordSpacing: "0.1em" }}>Our Systematic Investment Approach</span>
-            </TextReveal>
-            <p className="mt-6 text-lg text-blue-100/80 max-w-3xl mx-auto">
-              A research-backed, disciplined approach to sustainable wealth creation through strategic asset allocation,
-              portfolio diversification, and professional investment management
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {[
-              {
-                title: "Personalized Financial Assessment",
-                description: "Comprehensive evaluation of your investment goals, risk profile, and time horizon",
-                icon: (
-                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 8V16M8 12H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2"/>
-                  </svg>
-                )
-              },
-              {
-                title: "Strategic Asset Allocation",
-                description: "Data-driven portfolio construction across equity, debt, and alternative investments",
-                icon: (
-                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                )
-              },
-              {
-                title: "Expert Fund Selection",
-                description: "Rigorous analysis and selection of top-performing PMS schemes and AIF categories",
-                icon: (
-                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 17L15 17M9 13L15 13M9 9L15 9M5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                )
-              },
-              {
-                title: "Continuous Portfolio Monitoring",
-                description: "Regular performance tracking and market-responsive rebalancing",
-                icon: (
-                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                )
-              },
-              {
-                title: "Tax-Efficient Wealth Optimization",
-                description: "Strategies to maximize returns while minimizing tax implications",
-                icon: (
-                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 14L15 8M9.5 8.5H9.51M14.5 13.5H14.51M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                )
-              }
-            ].map((item, index) => (
-              <AnimationWrapper
-                key={index}
-                animation="fade-in"
-                delay={index * 0.1}
-                className={`${index === 4 ? "md:col-start-2 lg:col-start-2" : ""}`}
-              >
-                <div className="group h-full">
-                  <div className="h-full backdrop-blur-lg bg-white/10 rounded-xl p-8 transition-all duration-300 
-                    hover:bg-white/15 border border-white/10 hover:border-white/20">
-                    {/* Icon */}
-                    <div className="w-16 h-16 mx-auto mb-6 bg-blue-500/20 rounded-xl flex items-center justify-center
-                      text-blue-200 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-500/30">
-                      {item.icon}
-                    </div>
-                    
-                    {/* Title */}
-                    <h3 className="text-xl font-semibold mb-4 text-white text-center">
-                      {item.title}
-                    </h3>
-                    
-                    {/* Description */}
-                    <p className="text-blue-100/80 text-center leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {/* Card 1 */}
+            <AnimationWrapper animation="scale-in" delay={0.1}>
+              <div className="bg-[#343483]/50 rounded-lg p-8 text-white text-center h-full">
+                <div className="bg-[#4747a1] w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <PlusCircle className="h-6 w-6" />
                 </div>
-              </AnimationWrapper>
-            ))}
+                <h3 className="text-xl font-bold mb-3">Personalized Financial Assessment</h3>
+                <p className="text-white/80">
+                  Comprehensive evaluation of your investment goals, risk profile, and time horizon
+                </p>
+              </div>
+            </AnimationWrapper>
+
+            {/* Card 2 */}
+            <AnimationWrapper animation="scale-in" delay={0.2}>
+              <div className="bg-[#343483]/50 rounded-lg p-8 text-white text-center h-full">
+                <div className="bg-[#4747a1] w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Search className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Strategic Asset Allocation</h3>
+                <p className="text-white/80">
+                  Data-driven portfolio construction across equity, debt, and alternative investments
+                </p>
+              </div>
+            </AnimationWrapper>
+
+            {/* Card 3 */}
+            <AnimationWrapper animation="scale-in" delay={0.3}>
+              <div className="bg-[#343483]/50 rounded-lg p-8 text-white text-center h-full">
+                <div className="bg-[#4747a1] w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <FileText className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Expert Fund Selection</h3>
+                <p className="text-white/80">
+                  Rigorous analysis and selection of top-performing PMS schemes and AIF categories
+                </p>
+              </div>
+            </AnimationWrapper>
+
+            {/* Card 4 */}
+            <AnimationWrapper animation="scale-in" delay={0.4}>
+              <div className="bg-[#343483]/50 rounded-lg p-8 text-white text-center h-full">
+                <div className="bg-[#4747a1] w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Zap className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Continuous Portfolio Monitoring</h3>
+                <p className="text-white/80">Regular performance tracking and market-responsive rebalancing</p>
+              </div>
+            </AnimationWrapper>
+
+            {/* Card 5 */}
+            <AnimationWrapper animation="scale-in" delay={0.5}>
+              <div className="bg-[#343483]/50 rounded-lg p-8 text-white text-center h-full">
+                <div className="bg-[#4747a1] w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <ClipboardCheck className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Tax-Efficient Wealth Optimization</h3>
+                <p className="text-white/80">Strategies to maximize returns while minimizing tax implications</p>
+              </div>
+            </AnimationWrapper>
+
+            {/* Card 6 */}
+            <AnimationWrapper animation="scale-in" delay={0.6}>
+              <div className="bg-[#343483]/50 rounded-lg p-8 text-white text-center h-full">
+                <div className="bg-[#4747a1] w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Long-term Wealth Creation</h3>
+                <p className="text-white/80">
+                  Focus on sustainable growth and capital appreciation through market cycles
+                </p>
+              </div>
+            </AnimationWrapper>
           </div>
         </div>
       </section>
 
-      {/* Strategy Timeline Section */}
-      <section className="py-8 sm:py-12 md:py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <StrategyTimeline />
-        </div>
-      </section>
+      <StrategyTimeline />
 
       {/* Features Section */}
       <ParallaxSection className="py-20 bg-white" speed={0.1} direction="up">
@@ -213,7 +218,7 @@ export default function Home() {
                 className="inline-block text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed"
                 stagger={0.05}
               >
-                <span style={{ wordSpacing: "0.2em" }}>Why Choose Bharat Alternates</span>
+                <span style={{ wordSpacing: "0.1em" }}>Why&nbsp;Choose&nbsp;Bharat&nbsp;Alternates</span>
               </TextReveal>
             </div>
             <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-800">
@@ -288,7 +293,7 @@ export default function Home() {
                 iconHoverClass: "group-hover:bg-sky-200 group-hover:text-sky-700",
                 titleClass: "text-sky-800",
                 accentClass: "bg-sky-500",
-              }
+              },
             ].map((feature, index) => (
               <AnimationWrapper key={index} animation="scale-in" delay={index * 0.1}>
                 <Card
@@ -331,7 +336,7 @@ export default function Home() {
                 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-normal text-blue-800 leading-relaxed"
                 stagger={0.05}
               >
-                <span style={{ wordSpacing: "0.4em" }}>High&nbsp;Performance&nbsp;Investment&nbsp;Strategies</span>
+                <span style={{ wordSpacing: "0.1em" }}>High&nbsp;Performance&nbsp;Investment&nbsp;Strategies</span>
               </TextReveal>
               <p className="mt-4 text-base sm:text-lg text-gray-800">
                 Explore our range of premium investment solutions designed to meet diverse financial goals and maximize
@@ -656,7 +661,7 @@ export default function Home() {
           <AnimationWrapper animation="fade-in">
             <div className="mx-auto mb-16 max-w-3xl text-center">
               <TextReveal as="h2" className="text-3xl font-bold tracking-tight text-blue-900 md:text-4xl">
-                <span style={{ wordSpacing: "0.2em" }}>Frequently Asked Questions</span>
+                <span style={{ wordSpacing: "0.1em" }}>Frequently&nbsp;Asked&nbsp;Questions</span>
               </TextReveal>
               <p className="mt-6 text-lg text-gray-900">
                 Find answers to common questions about our investment services
@@ -701,12 +706,13 @@ export default function Home() {
                 <span style={{ wordSpacing: "0.2em" }}>Ready to Start Your Investment Journey?</span>
               </TextReveal>
               <p className="mt-4 text-lg opacity-90">
-                Start your investment journey with Bharat Alternates today and make your financial goals a reality!
+                Schedule a consultation with our investment experts to discuss how our solutions can help you achieve
+                your financial goals.
               </p>
               <div className="mt-10">
-                <CalendlyButton variant="secondary" size="lg" showArrow>
-                  Schedule a Consultation
-                </CalendlyButton>
+                <AnimatedButton href="/contact" variant="secondary" size="lg">
+                  Book a call
+                </AnimatedButton>
               </div>
             </div>
           </AnimationWrapper>

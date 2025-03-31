@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, TrendingUp, Shield, Users, Briefcase, BarChart2, LineChart } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 
@@ -342,6 +342,83 @@ export default function AboutPage() {
               </div>
             </div>
           </AnimationWrapper>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <AnimationWrapper animation="fade-in" delay={0.1}>
+            <div className="text-center mb-12">
+              <TextReveal as="h2" className="text-3xl font-bold text-blue-800 mb-4" stagger={0.03}>
+                Why Choose Bharat Alternates
+              </TextReveal>
+              <p className="text-gray-700 max-w-2xl mx-auto">
+                We combine deep market expertise with personalized strategies to deliver exceptional value to our
+                clients.
+              </p>
+            </div>
+          </AnimationWrapper>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                icon: TrendingUp,
+                title: "Consistent Performance",
+                description:
+                  "Our strategies have consistently outperformed market benchmarks with 18-22% CAGR over the long term.",
+                color: "from-blue-500 to-blue-700",
+              },
+              {
+                icon: Shield,
+                title: "Risk Management",
+                description:
+                  "Sophisticated risk management techniques to protect and grow your wealth in all market conditions.",
+                color: "from-indigo-500 to-indigo-700",
+              },
+              {
+                icon: Users,
+                title: "Expert Team",
+                description:
+                  "Seasoned investment professionals with decades of combined experience across various market cycles.",
+                color: "from-purple-500 to-purple-700",
+              },
+              {
+                icon: Briefcase,
+                title: "Customized Solutions",
+                description:
+                  "Tailored investment strategies aligned with your financial goals, risk appetite, and time horizon.",
+                color: "from-teal-500 to-teal-700",
+              },
+              {
+                icon: BarChart2,
+                title: "Transparent Reporting",
+                description:
+                  "Comprehensive performance reports with complete transparency on fees and investment decisions.",
+                color: "from-cyan-500 to-cyan-700",
+              },
+              {
+                icon: LineChart,
+                title: "Research-Driven",
+                description:
+                  "In-depth research and analysis driving our investment decisions for optimal portfolio construction.",
+                color: "from-sky-500 to-sky-700",
+              },
+            ].map((feature, index) => (
+              <AnimationWrapper key={index} animation="scale-in" delay={0.1 + index * 0.1}>
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-500 group h-full">
+                  <div className={`h-2 w-full bg-gradient-to-r ${feature.color}`}></div>
+                  <div className="p-6">
+                    <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <feature.icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-xl font-bold text-center text-blue-800 mb-3">{feature.title}</h3>
+                    <p className="text-gray-700 text-center leading-relaxed">{feature.description}</p>
+                  </div>
+                </div>
+              </AnimationWrapper>
+            ))}
+          </div>
         </div>
       </section>
 
