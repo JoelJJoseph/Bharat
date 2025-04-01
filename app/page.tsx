@@ -7,7 +7,7 @@ import { ParallaxSection } from "@/components/parallax-section"
 import AnimationWrapper from "@/components/animation-wrapper"
 import TextReveal from "@/components/text-reveal"
 import { StrategyTimeline } from "@/components/strategy-timeline"
-import { CalendlyButton } from "../components/calendly-button"
+import { CalendlyButton } from "@/components/calendly-button"
 
 export default function Home() {
   // Sample data for table
