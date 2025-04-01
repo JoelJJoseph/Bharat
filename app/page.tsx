@@ -1,6 +1,7 @@
 import HeroSection from "@/components/hero-section"
 import { InteractiveTable } from "@/components/interactive-table"
 import { AnimatedButton } from "@/components/ui/animated-button"
+import { CalendlyButton } from "@/components/calendly-button"
 import {
   TrendingUp,
   Shield,
@@ -116,7 +117,10 @@ export default function Home() {
           <AnimationWrapper animation="fade-in">
             <div className="mx-auto max-w-4xl text-center text-white">
               <TextReveal as="h2" className="text-3xl font-bold md:text-4xl" stagger={0.05}>
-                <span style={{ wordSpacing: "0.1em" }}>Strategic&nbsp;Wealth&nbsp;Management</span>
+                <span style={{ wordSpacing: "0.1em" }}>Strategic&nbsp;Wealth</span>
+              </TextReveal>
+              <TextReveal as="span" className="text-3xl font-bold md:text-4xl" stagger={0.05}>
+                <span style={{ wordSpacing: "0.1em" }}>Management</span>
               </TextReveal>
               <TextReveal as="h3" className="mt-3 text-xl font-semibold md:text-2xl" stagger={0.05}>
                 <span style={{ wordSpacing: "0.1em" }}>Our&nbsp;Systematic&nbsp;Investment&nbsp;Approach</span>
@@ -710,9 +714,9 @@ export default function Home() {
                 your financial goals.
               </p>
               <div className="mt-10">
-                <AnimatedButton href="/contact" variant="secondary" size="lg">
+                <CalendlyButton variant="secondary" size="lg" showArrow>
                   Book a call
-                </AnimatedButton>
+                </CalendlyButton>
               </div>
             </div>
           </AnimationWrapper>
