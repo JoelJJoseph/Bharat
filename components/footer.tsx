@@ -3,9 +3,6 @@
 import { useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
@@ -88,17 +85,26 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/pms/do-you-need-pms" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                <Link
+                  href="/pms/do-you-need-pms"
+                  className="text-sm text-gray-600 hover:text-primary transition-colors"
+                >
                   Do you need PMS?
                 </Link>
               </li>
               <li>
-                <Link href="/pms/who-should-invest" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                <Link
+                  href="/pms/who-should-invest"
+                  className="text-sm text-gray-600 hover:text-primary transition-colors"
+                >
                   Who Should Invest?
                 </Link>
               </li>
               <li>
-                <Link href="/pms/top-pms-in-india" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                <Link
+                  href="/pms/top-pms-in-india"
+                  className="text-sm text-gray-600 hover:text-primary transition-colors"
+                >
                   Top PMSs in India
                 </Link>
               </li>
@@ -115,12 +121,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/aif/do-you-need-aif" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                <Link
+                  href="/aif/do-you-need-aif"
+                  className="text-sm text-gray-600 hover:text-primary transition-colors"
+                >
                   Do you need AIF?
                 </Link>
               </li>
               <li>
-                <Link href="/aif/who-should-invest" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                <Link
+                  href="/aif/who-should-invest"
+                  className="text-sm text-gray-600 hover:text-primary transition-colors"
+                >
                   Who Should Invest?
                 </Link>
               </li>

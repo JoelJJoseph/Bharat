@@ -21,7 +21,7 @@ export function MobileMenu() {
           <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">
             About
           </Link>
-          
+
           {/* PMS Dropdown */}
           <div className="flex flex-col gap-2">
             <div className="flex items-center justify-between">

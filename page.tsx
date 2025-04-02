@@ -660,8 +660,8 @@ export default function Home() {
 
       {/* Logo Slider Section - Added above FAQ */}
       <LogoSlider
-        title="Elite Portfolio Management Partners"
-        subtitle="Partnering with India's premier SEBI-registered portfolio managers and alternative investment funds to deliver exceptional investment opportunities and wealth creation strategies."
+        title="Our Trusted Partners"
+        subtitle="We collaborate with leading financial institutions and investment firms to bring you the best opportunities"
       />
 
       {/* FAQ Section */}
