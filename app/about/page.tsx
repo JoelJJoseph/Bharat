@@ -1182,9 +1182,7 @@ export default function AboutPage() {
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
           font-family: 'Roboto', sans-serif;
           transition: all 0.3s ease;
-          background-color: rgba(37, 99, 235, 0.2);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
+          background-color: transparent;
           border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
@@ -1223,9 +1221,9 @@ export default function AboutPage() {
           height: 100%;
           top: 0;
           left: 0;
-          opacity: 0.7;
+          opacity: 1;
           transition: all .3s ease-out;
-          filter: blur(0px);
+          filter: blur(1px);
         }
 
         .core-value-card-overlay {
@@ -1236,10 +1234,13 @@ export default function AboutPage() {
           height: 100%;
           background: linear-gradient(to bottom, 
                      rgba(30, 64, 175, 0.3), 
-                     rgba(30, 64, 175, 0.7));
+                     rgba(30, 64, 175, 0.6));
           z-index: 1;
-          backdrop-filter: blur(4px);
-          -webkit-backdrop-filter: blur(4px);
+        }
+
+        .core-value-card:hover .core-value-card-img {
+          opacity: 1;
+          transform: scale(1.05);
         }
 
         .core-value-card-content {
@@ -1250,9 +1251,7 @@ export default function AboutPage() {
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
-          background: rgba(37, 99, 235, 0.05);
-          backdrop-filter: blur(4px);
-          -webkit-backdrop-filter: blur(4px);
+          background: transparent;
           border-radius: 10px;
         }
 
@@ -1266,7 +1265,7 @@ export default function AboutPage() {
           margin-bottom: 1rem;
           opacity: 1;
           color: white;
-          text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .core-value-card:hover h2 {
@@ -1274,23 +1273,21 @@ export default function AboutPage() {
         }
 
         .core-value-card p {
-          opacity: 0.9;
+          opacity: 1;
           max-width: 100%;
           transition: opacity .3s ease-out;
           margin-bottom: 1.5rem;
           color: rgba(255, 255, 255, 0.95);
           line-height: 1.6;
           font-weight: 400;
-          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+          background-color: rgba(0, 0, 0, 0.4);
+          padding: 10px;
+          border-radius: 5px;
         }
 
         .core-value-card:hover p {
           opacity: 1;
-        }
-
-        .core-value-card:hover .core-value-card-img {
-          opacity: 0.9;
-          transform: scale(1.05);
         }
 
         /* Remove the old core-values-section styles */
@@ -1367,8 +1364,8 @@ export default function AboutPage() {
           position: absolute;
           border-radius: 50%;
           background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(5px);
-          -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: none;
+          -webkit-backdrop-filter: none;
           border: 1px solid rgba(255, 255, 255, 0.08);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
           z-index: 1;
