@@ -8,9 +8,10 @@ export const metadata: Metadata = {
   description: "Create a new blog post for Bharat Alternates",
 }
 
-export default function NewBlogPage() {
+export default async function NewBlogPage() {
   // Check if user is admin
-  if (!isAdmin()) {
+  const admin = await isAdmin()
+  if (!admin) {
     redirect("/auth/login")
   }
 

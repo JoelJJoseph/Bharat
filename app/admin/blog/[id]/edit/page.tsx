@@ -34,7 +34,8 @@ async function getBlog(id: string) {
 
 export default async function EditBlogPage({ params }: { params: { id: string } }) {
   // Check if user is admin
-  if (!isAdmin()) {
+  const admin = await isAdmin()
+  if (!admin) {
     redirect("/auth/login")
   }
 
