@@ -1,4 +1,5 @@
 import HeroSection from "@/components/hero-section"
+import { Analytics } from "@vercel/analytics/react"
 import { InteractiveTable } from "@/components/interactive-table"
 import { CalendlyButton } from "@/components/calendly-button"
 import {
