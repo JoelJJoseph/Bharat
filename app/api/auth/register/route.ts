@@ -9,10 +9,7 @@ export async function POST(request: Request) {
 
     // Validate the request body
     if (!body.email || !body.password || !body.name) {
-      return NextResponse.json(
-        { error: "Email, password, and name are required" },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: "Email, password, and name are required" }, { status: 400 })
     }
 
     const client = await clientPromise
@@ -21,10 +18,7 @@ export async function POST(request: Request) {
     // Check if user already exists
     const existingUser = await db.collection("users").findOne({ email: body.email })
     if (existingUser) {
-      return NextResponse.json(
-        { error: "User with this email already exists" },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: "User with this email already exists" }, { status: 400 })
     }
 
     // Hash the password
@@ -45,9 +39,6 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     console.error("Error registering user:", error)
-    return NextResponse.json(
-      { error: "Failed to register user" },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: "Failed to register user" }, { status: 500 })
   }
-} 
+}

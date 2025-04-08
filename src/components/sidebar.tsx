@@ -138,7 +138,10 @@ export function MainSidebar() {
         <div className="flex items-center justify-center px-4">
           <Link href="/" className="flex items-center space-x-2">
             {state === "expanded" ? (
-              <span className="text-xl font-bold text-primary">Bharat Alternates</span>
+              <span className="text-xl sm:text-2xl font-bold">
+              <span className="text-primary">Bharat </span>
+              <span style={{ color: '#020b1c' }}> Alternates</span>
+            </span>
             ) : (
               <span className="text-2xl font-bold text-primary">BA</span>
             )}

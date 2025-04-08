@@ -44,12 +44,6 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <div className="relative flex items-center">
-              <div className="mr-2 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600">
-                <span className="text-xl font-bold text-white">BA</span>
-              </div>
-              <div className={`text-xl font-bold ${isScrolled ? "text-blue-900" : "text-white"}`}>
-                Bharat Alternates
-              </div>
             </div>
           </Link>
 

@@ -72,14 +72,10 @@ export default function RootLayout({
             <div className="container mx-auto px-4 py-4 flex items-center justify-between">
               <div className="flex items-center">
                 <Link href="/" className="flex items-center">
-                  <Image
-                    src="/Bharat.png"
-                    alt="Bharat Alternates Logo"
-                    width={100}
-                    height={100}
-                    className="h-8 w-8 sm:h-12 sm:w-12"
-                  />
-                  <span className="text-xl sm:text-2xl font-bold text-primary ml-2 sm:ml-3">Bharat Alternates</span>
+                  <span className="text-xl sm:text-2xl font-bold">
+                    <span className="text-primary">Bharat </span>
+                    <span style={{ color: '#020b1c' }}> Alternates</span>
+                  </span>
                 </Link>
               </div>
 

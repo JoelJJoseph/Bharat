@@ -10,10 +10,7 @@ export async function POST(request: Request) {
 
     // Validate the request body
     if (!body.email || !body.password) {
-      return NextResponse.json(
-        { error: "Email and password are required" },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: "Email and password are required" }, { status: 400 })
     }
 
     const client = await clientPromise
@@ -22,26 +19,20 @@ export async function POST(request: Request) {
     // Find the user
     const user = await db.collection("users").findOne({ email: body.email })
     if (!user) {
-      return NextResponse.json(
-        { error: "Invalid email or password" },
-        { status: 401 }
-      )
+      return NextResponse.json({ error: "Invalid email or password" }, { status: 401 })
     }
 
     // Verify password
     const isValidPassword = await bcrypt.compare(body.password, user.password)
     if (!isValidPassword) {
-      return NextResponse.json(
-        { error: "Invalid email or password" },
-        { status: 401 }
-      )
+      return NextResponse.json({ error: "Invalid email or password" }, { status: 401 })
     }
 
     // Create JWT token
     const secret = new TextEncoder().encode(process.env.JWT_SECRET || "your-secret-key")
-    const token = await new SignJWT({ 
+    const token = await new SignJWT({
       userId: user._id,
-      role: user.role 
+      role: user.role,
     })
       .setProtectedHeader({ alg: "HS256" })
       .setExpirationTime("24h")
@@ -60,9 +51,6 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     console.error("Error logging in:", error)
-    return NextResponse.json(
-      { error: "Failed to log in" },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: "Failed to log in" }, { status: 500 })
   }
-} 
+}

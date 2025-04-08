@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -178,9 +180,7 @@ export default function AdminBlogPage() {
           <Card key={post._id?.toString()}>
             <CardHeader>
               <CardTitle>{post.title}</CardTitle>
-              <CardDescription>
-                {post.excerpt}
-              </CardDescription>
+              <CardDescription>{post.excerpt}</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-gray-500">
@@ -188,10 +188,7 @@ export default function AdminBlogPage() {
               </p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full"
-                  >
+                  <span key={tag} className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full">
                     {tag}
                   </span>
                 ))}
@@ -210,4 +207,4 @@ export default function AdminBlogPage() {
       </div>
     </div>
   )
-} 
+}

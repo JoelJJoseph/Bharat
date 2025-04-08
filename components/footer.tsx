@@ -37,19 +37,15 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="space-y-4">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/Bharat.png"
-                alt="Bharat Alternates Logo"
-                width={100}
-                height={100}
-                className="h-8 w-8 sm:h-12 sm:w-12"
-              />
-              <span className="text-xl sm:text-2xl font-bold text-primary ml-2 sm:ml-3">Bharat Alternates</span>
+          <div className="footer-column">
+            <Link href="/" className="flex items-center mb-6">
+              <span className="text-xl sm:text-2xl font-bold">
+                <span className="text-primary">Bharat</span>
+                <span style={{ color: '#020b1c' }}>Alternates</span>
+              </span>
             </Link>
-            <p className="text-sm text-gray-600">
-              Empowering investors with data-driven insights and expert analysis for optimal wealth creation.
+            <p className="text-gray-600 max-w-xs">
+              Your trusted partner in Portfolio Management Services and Alternative Investment Funds.
             </p>
           </div>
 
@@ -137,6 +133,19 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Risk Disclaimer */}
+        <div className="mt-8 pt-8 border-t">
+          <div className="text-sm text-gray-600 mb-8">
+            <h4 className="font-semibold mb-2">RISK DISCLAIMER:</h4>
+            <p className="leading-relaxed">
+              Investments in Bharat Alternates are subject to market-related risks. The content provided on this platform is for general informational purposes only and should not be construed as a recommendation or investment advice. Investors must perform their own analysis and make decisions based on their risk appetite. Only those investors with a suitable aptitude and attitude towards risk should consider investment options in Alternates (PMS & AIFs).
+            </p>
+            <p className="leading-relaxed mt-2">
+              Past performance may or may not be indicative of future results and should not be used for comparison with other investments. We strongly recommend reading the disclosure documents thoroughly before making any investment decisions. PMS & AIF products are market-linked and do not offer any guaranteed or assured returns. These are higher-risk investments and come with the possibility of losing the principal amount. As such, investors must make informed and prudent decisions.
+            </p>
           </div>
         </div>
 

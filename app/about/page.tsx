@@ -39,9 +39,16 @@ const CounterAnimation = ({
   suffix?: string
 }) => {
   const [count, setCount] = useState(0)
+  const [isClient, setIsClient] = useState(false)
   const nodeRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isClient) return
+
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -78,12 +85,12 @@ const CounterAnimation = ({
         observer.unobserve(nodeRef.current)
       }
     }
-  }, [end, duration])
+  }, [end, duration, isClient])
 
   return (
     <span ref={nodeRef}>
       {prefix}
-      {count.toLocaleString()}
+      {isClient ? count.toLocaleString() : "0"}
       {suffix}
     </span>
   )
@@ -235,7 +242,7 @@ const teamData = [
     name: "Amita Shetty",
     position: "Chief Investment Strategist",
     bio: "Seasoned investment professional with expertise in portfolio construction and risk management across multiple asset classes.",
-    image: "/images/amita.svg",
+    image: "/images/team/amita_shetty.jpg",
     socialLinks: {
       linkedin: "#",
       twitter: "#",
@@ -377,7 +384,7 @@ export default function AboutPage() {
       {/* Hero Section with Parallax Effect */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900 to-blue-800 opacity-90"></div>
+          <div className="absolute inset-0 bg-[rgb(2_11_28)] opacity-90"></div>
           <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/hero-bg.svg')] bg-cover bg-center"></div>
         </div>
 
@@ -495,11 +502,11 @@ export default function AboutPage() {
       {/* Our Core Values Section */}
       <section className="py-24 bg-[#020b1c] text-white core-values-section">
         {/* Floating glass elements */}
-        <div className="glass-element glass-1"></div>
-        <div className="glass-element glass-2"></div>
-        <div className="glass-element glass-3"></div>
-        <div className="glass-element glass-4"></div>
-        
+        <div className="glass-element glass-1" style={{ left: '5%', top: '20%' }}></div>
+        <div className="glass-element glass-2" style={{ left: '10%', top: '50%' }}></div>
+        <div className="glass-element glass-3" style={{ left: '15%', top: '80%' }}></div>
+        <div className="glass-element glass-4" style={{ left: '20%', top: '30%' }}></div>
+
         <div className="container mx-auto px-4 relative z-10">
           <AnimationWrapper animation="fade-in" delay={0.1}>
             <div className="text-center mb-16">
@@ -519,12 +526,7 @@ export default function AboutPage() {
             {coreValuesData.map((value, index) => (
               <AnimationWrapper key={index} animation="scale-in" delay={0.1 + index * 0.1}>
                 <div className="core-value-card">
-                  <img
-                    src={value.image}
-                    alt={value.title}
-                    className="core-value-card-img"
-                    loading="eager"
-                  />
+                  <img src={value.image} alt={value.title} className="core-value-card-img" loading="eager" />
                   <div className="core-value-card-overlay"></div>
                   <div className="core-value-card-content">
                     <h2>{value.title}</h2>
@@ -555,9 +557,9 @@ export default function AboutPage() {
 
                 <div className="space-y-4 text-gray-700">
                   <p>
-                    With over two decades of experience in Indian capital markets, Geetanash Malik has established himself
-                    as a visionary leader in the wealth management industry. Before founding Bharat Alternates, he
-                    served as the Head of Equity at one of India's premier asset management companies.
+                    With over two decades of experience in Indian capital markets, Geetanash Malik has established
+                    himself as a visionary leader in the wealth management industry. Before founding Bharat Alternates,
+                    he served as the Head of Equity at one of India's premier asset management companies.
                   </p>
                   <p>
                     Geetanash's expertise spans portfolio construction, risk management, and identifying emerging market
@@ -565,8 +567,8 @@ export default function AboutPage() {
                     numerous high-net-worth individuals achieve their financial goals.
                   </p>
                   <p>
-                    A graduate from IIM Ahmedabad with a background in finance, Geetanash combines academic excellence with
-                    practical market wisdom. His investment philosophy centers on long-term wealth creation through
+                    A graduate from IIM Ahmedabad with a background in finance, Geetanash combines academic excellence
+                    with practical market wisdom. His investment philosophy centers on long-term wealth creation through
                     disciplined processes and data-driven decision making.
                   </p>
                   <p>
@@ -755,7 +757,9 @@ export default function AboutPage() {
           <AnimationWrapper animation="fade-in" delay={0.1}>
             <div className="mx-auto max-w-4xl text-center text-white">
               <TextReveal as="h2" className="text-3xl font-bold md:text-4xl" stagger={0.05}>
-                <span style={{ wordSpacing: "0.1em" }} className="best-choice-title">Why We Are The Best Choice</span>
+                <span style={{ wordSpacing: "0.1em" }} className="best-choice-title">
+                  Why We Are The Best Choice
+                </span>
               </TextReveal>
               <TextReveal as="span" className="text-3xl font-bold md:text-4xl" stagger={0.05}>
                 <span style={{ wordSpacing: "0.1em" }}>For PMSs and AIFs</span>
@@ -840,6 +844,8 @@ export default function AboutPage() {
           </AnimationWrapper>
         </div>
       </section>
+
+      
 
       {/* Add custom styles for value cards */}
       <style jsx global>{`
@@ -1369,59 +1375,48 @@ export default function AboutPage() {
           border: 1px solid rgba(255, 255, 255, 0.05);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
           z-index: 1;
+          transition: all 0.5s ease;
         }
-        
+
         .glass-1 {
           width: 200px;
           height: 200px;
-          top: 10%;
-          left: 10%;
-          animation: float 10s ease-in-out infinite;
+          animation: float 6s ease-in-out infinite;
         }
-        
+
         .glass-2 {
-          width: 300px;
-          height: 300px;
-          top: 50%;
-          right: 5%;
-          animation: float 15s ease-in-out infinite 2s;
-        }
-        
-        .glass-3 {
           width: 150px;
           height: 150px;
-          bottom: 15%;
-          left: 20%;
-          animation: float 12s ease-in-out infinite 1s;
+          animation: float 8s ease-in-out infinite;
+          animation-delay: 1s;
         }
-        
-        .glass-4 {
+
+        .glass-3 {
           width: 100px;
           height: 100px;
-          top: 30%;
-          right: 25%;
-          animation: float 8s ease-in-out infinite 3s;
+          animation: float 7s ease-in-out infinite;
+          animation-delay: 2s;
         }
-        
+
+        .glass-4 {
+          width: 120px;
+          height: 120px;
+          animation: float 9s ease-in-out infinite;
+          animation-delay: 3s;
+        }
+
         @keyframes float {
           0% {
-            transform: translateY(0) translateX(0) rotate(0);
-          }
-          25% {
-            transform: translateY(-15px) translateX(15px) rotate(5deg);
+            transform: translateY(0px) translateX(0px);
           }
           50% {
-            transform: translateY(0) translateX(0) rotate(0);
-          }
-          75% {
-            transform: translateY(15px) translateX(-15px) rotate(-5deg);
+            transform: translateY(-20px) translateX(10px);
           }
           100% {
-            transform: translateY(0) translateX(0) rotate(0);
+            transform: translateY(0px) translateX(0px);
           }
         }
       `}</style>
     </div>
   )
 }
-

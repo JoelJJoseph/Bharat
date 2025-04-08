@@ -5,9 +5,19 @@ import { jwtVerify } from "jose"
 export async function middleware(request: NextRequest) {
   const token = request.cookies.get("token")?.value
 
-  // Public routes that don't require authentication
+  // Public routes and static files that don't require authentication
   const publicRoutes = ["/", "/about", "/contact", "/resources", "/api/auth/login", "/api/auth/register"]
-  if (publicRoutes.includes(request.nextUrl.pathname)) {
+  const publicPatterns = [
+    /^\/images\/.*/,      // Allow access to images
+    /^\/logo\/.*/,        // Allow access to logos
+    /^\/public\/.*/,      // Allow access to public files
+    /^\/_next\/.*/,       // Allow access to Next.js files
+    /^\/favicon\.ico$/,   // Allow access to favicon
+  ]
+
+  // Check if the path matches any public pattern
+  if (publicRoutes.includes(request.nextUrl.pathname) || 
+      publicPatterns.some(pattern => pattern.test(request.nextUrl.pathname))) {
     return NextResponse.next()
   }
 
@@ -53,7 +63,9 @@ export const config = {
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
+     * - images (public images)
+     * - logo (public logos)
      */
-    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|images|logo).*)",
   ],
 } 
