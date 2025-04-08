@@ -493,7 +493,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Core Values Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-800 text-white core-values-section">
+      <section className="py-24 bg-[#020b1c] text-white core-values-section">
         {/* Floating glass elements */}
         <div className="glass-element glass-1"></div>
         <div className="glass-element glass-2"></div>
@@ -750,33 +750,32 @@ export default function AboutPage() {
       </section>
 
       {/* Why We Are The Best Choice Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#2a2a72]">
         <div className="container mx-auto px-4">
           <AnimationWrapper animation="fade-in" delay={0.1}>
-            <div className="text-center mb-16">
-              <TextReveal as="h2" className="text-4xl font-bold text-blue-800 mb-4" stagger={0.03}>
-                <span style={{ letterSpacing: "0.1em" }} className="best-choice-title">Why We Are The Best Choice For PMSs and AIFs</span>
+            <div className="mx-auto max-w-4xl text-center text-white">
+              <TextReveal as="h2" className="text-3xl font-bold md:text-4xl" stagger={0.05}>
+                <span style={{ wordSpacing: "0.1em" }} className="best-choice-title">Why We Are The Best Choice</span>
               </TextReveal>
-              <p className="text-gray-700 max-w-3xl mx-auto text-lg">
+              <TextReveal as="span" className="text-3xl font-bold md:text-4xl" stagger={0.05}>
+                <span style={{ wordSpacing: "0.1em" }}>For PMSs and AIFs</span>
+              </TextReveal>
+              <p className="mt-4 text-base md:text-lg text-white/90 max-w-3xl mx-auto">
                 Bharat Alternates stands out as the premier platform for Portfolio Management Services and Alternative
                 Investment Funds in India. Here's why investors trust us for their wealth management needs.
               </p>
-              <div className="w-24 h-1 bg-blue-600 mx-auto mt-8 rounded-full"></div>
             </div>
           </AnimationWrapper>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {whyChooseUsData.map((feature, index) => (
               <AnimationWrapper key={index} animation="scale-in" delay={0.1 + index * 0.1}>
-                <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-500 group h-full border border-gray-100">
-                  <div className={`h-2 w-full bg-gradient-to-r ${feature.color}`}></div>
-                  <div className="p-8">
-                    <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <feature.icon className="h-8 w-8" />
-                    </div>
-                    <h3 className="text-xl font-bold text-center text-blue-800 mb-4">{feature.title}</h3>
-                    <p className="text-gray-700 text-center leading-relaxed">{feature.description}</p>
+                <div className="bg-[#343483]/50 rounded-lg p-8 text-white text-center h-full">
+                  <div className="bg-[#4747a1] w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <feature.icon className="h-6 w-6" />
                   </div>
+                  <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                  <p className="text-white/80">{feature.description}</p>
                 </div>
               </AnimationWrapper>
             ))}
@@ -1179,11 +1178,11 @@ export default function AboutPage() {
           cursor: pointer;
           position: relative;
           color: rgb(240, 240, 240);
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
           font-family: 'Roboto', sans-serif;
           transition: all 0.3s ease;
-          background-color: transparent;
-          border: 1px solid rgba(255, 255, 255, 0.18);
+          background-color: rgba(5, 15, 35, 0.5);
+          border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .core-value-card::before {
@@ -1196,7 +1195,7 @@ export default function AboutPage() {
           background: linear-gradient(
             90deg,
             transparent,
-            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.1),
             transparent
           );
           z-index: 3;
@@ -1209,9 +1208,9 @@ export default function AboutPage() {
 
         .core-value-card:hover {
           transform: translateY(-10px);
-          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-          background-color: rgba(37, 99, 235, 0.25);
-          border: 1px solid rgba(255, 255, 255, 0.25);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+          background-color: rgba(10, 20, 40, 0.5);
+          border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .core-value-card-img {
@@ -1233,11 +1232,11 @@ export default function AboutPage() {
           width: 100%;
           height: 100%;
           background: linear-gradient(to bottom, 
-                     rgba(30, 64, 175, 0.3), 
-                     rgba(30, 64, 175, 0.6));
+                     rgba(2, 11, 28, 0.5), 
+                     rgba(5, 15, 40, 0.8));
           z-index: 1;
         }
-
+        
         .core-value-card:hover .core-value-card-img {
           opacity: 1;
           transform: scale(1.05);
@@ -1292,7 +1291,8 @@ export default function AboutPage() {
 
         /* Remove the old core-values-section styles */
         .core-values-section {
-          background-image: linear-gradient(15deg, #1e40af 0%, #3b82f6 150%);
+          background-color: #020b1c !important;
+          background-image: none;
           position: relative;
           overflow: hidden;
         }
@@ -1307,7 +1307,7 @@ export default function AboutPage() {
           background: url('https://img.freepik.com/free-vector/abstract-background-with-squares_23-2148995948.jpg');
           background-size: cover;
           background-position: center;
-          opacity: 0.15;
+          opacity: 0.1;
           z-index: 0;
         }
         
@@ -1318,7 +1318,7 @@ export default function AboutPage() {
           left: 0;
           width: 100%;
           height: 100%;
-          background: radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.5) 0%, rgba(37, 99, 235, 0.8) 70%);
+          background: radial-gradient(circle at 30% 30%, rgba(20, 30, 60, 0.5) 0%, rgba(2, 11, 28, 0.8) 70%);
           z-index: 1;
         }
 
@@ -1363,11 +1363,11 @@ export default function AboutPage() {
         .glass-element {
           position: absolute;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.05);
           backdrop-filter: none;
           -webkit-backdrop-filter: none;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
           z-index: 1;
         }
         
