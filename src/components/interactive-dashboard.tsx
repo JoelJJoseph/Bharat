@@ -5,22 +5,38 @@ import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, R
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowUp, Users, TrendingUp, DollarSign, PieChart } from "lucide-react"
 
-// Sample data
-const performanceData = Array.from({ length: 30 }, (_, i) => ({
-  date: `2024-${String(i + 1).padStart(2, "0")}`,
-  value: 15000 + Math.random() * 10000,
-  benchmark: 14000 + Math.random() * 8000,
-}))
+// Define data structure types
+type PerformanceDataPoint = {
+  date: string;
+  value: number;
+  benchmark: number;
+}
 
-const subscriptionData = Array.from({ length: 30 }, (_, i) => ({
-  date: `2024-${String(i + 1).padStart(2, "0")}`,
-  value: 100 + Math.random() * 50,
-}))
+type SubscriptionDataPoint = {
+  date: string;
+  value: number;
+}
 
 export function InteractiveDashboard() {
   const [isClient, setIsClient] = useState(false)
+  const [performanceData, setPerformanceData] = useState<PerformanceDataPoint[]>([])
+  const [subscriptionData, setSubscriptionData] = useState<SubscriptionDataPoint[]>([])
 
   useEffect(() => {
+    // Generate data on the client side to avoid hydration issues
+    const perfData = Array.from({ length: 30 }, (_, i) => ({
+      date: `2024-${String(i + 1).padStart(2, "0")}`,
+      value: 15000 + Math.random() * 10000,
+      benchmark: 14000 + Math.random() * 8000,
+    }))
+    
+    const subData = Array.from({ length: 30 }, (_, i) => ({
+      date: `2024-${String(i + 1).padStart(2, "0")}`,
+      value: 100 + Math.random() * 50,
+    }))
+    
+    setPerformanceData(perfData)
+    setSubscriptionData(subData)
     setIsClient(true)
   }, [])
 

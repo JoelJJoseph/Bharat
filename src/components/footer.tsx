@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react"
@@ -11,8 +11,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null)
+  const [currentYear, setCurrentYear] = useState<number>(2024)
 
   useEffect(() => {
+    setCurrentYear(new Date().getFullYear())
+    
     if (typeof window !== "undefined") {
       gsap.registerPlugin(ScrollTrigger)
 
@@ -132,7 +135,7 @@ export default function Footer() {
         <div className="mt-8 pt-8 border-t">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-600">
-              © {new Date().getFullYear()} Bharat Alternates. All rights reserved.
+              © {currentYear} Bharat Alternates. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link href="/privacy-policy" className="text-sm text-gray-600 hover:text-primary transition-colors">
