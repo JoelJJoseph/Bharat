@@ -1,76 +1,70 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useEffect, useState, useRef } from "react"
 
 interface AnimatedCounterProps {
   end: number
   duration?: number
-  delay?: number
-  prefix?: string
-  suffix?: string
-  decimals?: number
   className?: string
+  suffix?: string
 }
 
-export function AnimatedCounter({
+export const AnimatedCounter = ({
   end,
-  duration = 2,
-  delay = 0,
-  prefix = "",
-  suffix = "",
-  decimals = 0,
+  duration = 2000,
   className = "",
-}: AnimatedCounterProps) {
-  const counterRef = useRef<HTMLSpanElement>(null)
+  suffix = "+"
+}: AnimatedCounterProps) => {
   const [count, setCount] = useState(0)
+  const countRef = useRef(0)
+  const [isVisible, setIsVisible] = useState(false)
+  const elementRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      gsap.registerPlugin(ScrollTrigger)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
 
-      const counter = counterRef.current
-      if (!counter) return
-
-      let startValue = 0
-      const endValue = end
-
-      const updateCount = () => {
-        const formattedValue = decimals > 0 ? startValue.toFixed(decimals) : Math.floor(startValue).toString()
-        setCount(Number.parseFloat(formattedValue))
-      }
-
-      // Create animation
-      ScrollTrigger.create({
-        trigger: counter,
-        start: "top bottom-=100",
-        onEnter: () => {
-          gsap.to(
-            {},
-            {
-              duration: duration,
-              delay: delay,
-              onUpdate: () => {
-                startValue = gsap.utils.interpolate(0, endValue, gsap.getProperty(counter, "_gsap")?.progress || 0)
-                updateCount()
-              },
-            },
-          )
-        },
-      })
-
-      return () => {
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-      }
+    if (elementRef.current) {
+      observer.observe(elementRef.current)
     }
-  }, [end, duration, delay, decimals])
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!isVisible) return
+
+    countRef.current = 0
+    const startTime = Date.now()
+    
+    const interval = setInterval(() => {
+      const timePassed = Date.now() - startTime
+      const progress = Math.min(timePassed / duration, 1)
+      
+      countRef.current = Math.floor(progress * end)
+      setCount(countRef.current)
+      
+      if (progress === 1) {
+        clearInterval(interval)
+        setCount(end)
+      }
+    }, 16) // ~60fps
+    
+    return () => clearInterval(interval)
+  }, [isVisible, end, duration])
 
   return (
-    <span ref={counterRef} className={className}>
-      {prefix}
-      {count}
-      {suffix}
+    <span ref={elementRef} className={className}>
+      {count}{suffix}
     </span>
   )
 }

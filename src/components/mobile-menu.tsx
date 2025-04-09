@@ -1,4 +1,4 @@
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
 import Link from "next/link"
@@ -14,6 +14,7 @@ export function MobileMenu() {
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+        <SheetTitle className="text-lg font-semibold mb-4">Menu</SheetTitle>
         <nav className="flex flex-col gap-4">
           <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
             Home

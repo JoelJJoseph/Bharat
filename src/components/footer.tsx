@@ -37,16 +37,21 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="footer-column">
-            <Link href="/" className="flex items-center mb-6">
+          <div className="footer-column space-y-4">
+            <Link href="/" className="flex items-center">
               <span className="text-xl sm:text-2xl font-bold">
                 <span className="text-primary">Bharat </span>
                 <span style={{ color: '#020b1c' }}> Alternates</span>
               </span>
             </Link>
-            <p className="text-gray-600 max-w-xs">
-              Your trusted partner in Portfolio Management Services and Alternative Investment Funds.
-            </p>
+            <div className="space-y-3">
+              <p className="text-gray-600 font-medium text-base leading-relaxed">
+                Your trusted partner in Portfolio Management Services and Alternative Investment Funds.
+              </p>
+              <p className="text-sm text-gray-500">
+                Empowering investors with data-driven insights and expert analysis for maximum wealth creation.
+              </p>
+            </div>
           </div>
 
           {/* Quick Links */}

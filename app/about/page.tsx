@@ -239,27 +239,28 @@ const coreValuesData = [
 // Team data with updated information
 const teamData = [
   {
-    name: "Amita Shetty",
-    position: "Chief Investment Strategist",
-    bio: "Seasoned investment professional with expertise in portfolio construction and risk management across multiple asset classes.",
-    image: "/images/team/amita_shetty.jpg",
+    name: "Geetanash Malik",
+    position: "Founder & Chief Executive Officer",
+    bio: "A visionary leader transforming India's investment landscape through innovative strategies and exceptional returns, revolutionizing wealth management for investors nationwide.",
+    image: "/images/team/geetanash_malik.jpg",
     socialLinks: {
-      linkedin: "#",
-      twitter: "#",
-      email: "#",
+      linkedin: "https://www.linkedin.com/in/geetansh-malik-820052175/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      twitter: "https://x.com/geetansh6?t=JQlNL5TrK-l8cnTRKO9RRw&s=08",
+      email: "Geetansh@bharatalternates.com",
     },
   },
   {
-    name: "Priya Mehta",
-    position: "Legal Advisor",
-    bio: "Experienced legal counsel specializing in financial regulations, compliance, and investment fund structures.",
-    image: "/images/priya.svg",
+    name: "Amita Shetty",
+    position: "Chief Investment Strategist",
+    bio: "Seasoned investment professional with expertise in portfolio construction and risk management across multiple asset classes. Pioneering innovative investment strategies and delivering consistent alpha for high-net-worth clients.",
+    image: "/images/team/amita_shetty.jpg",
     socialLinks: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/amita-s-149124237/",
       twitter: "#",
       email: "#",
     },
   },
+ 
 ]
 
 // Why Choose Us data with SEO-optimized content
@@ -539,116 +540,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Founder Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <TextReveal as="h2" className="text-4xl font-bold text-blue-800 mb-4" stagger={0.03}>
-              <span style={{ letterSpacing: "0.1em" }}>Our Founder</span>
-            </TextReveal>
-            <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-6xl mx-auto founder-section">
-            <AnimationWrapper animation="slide-in-right" delay={0.1}>
-              <div className="space-y-6">
-                <h3 className="text-3xl font-bold text-blue-800">Geetanash Malik</h3>
-                <p className="text-blue-600 font-medium text-xl">Founder & Chief Executive Officer</p>
-
-                <div className="space-y-4 text-gray-700">
-                  <p>
-                    With over two decades of experience in Indian capital markets, Geetanash Malik has established
-                    himself as a visionary leader in the wealth management industry. Before founding Bharat Alternates,
-                    he served as the Head of Equity at one of India's premier asset management companies.
-                  </p>
-                  <p>
-                    Geetanash's expertise spans portfolio construction, risk management, and identifying emerging market
-                    opportunities. His deep understanding of market dynamics and investment strategies has helped
-                    numerous high-net-worth individuals achieve their financial goals.
-                  </p>
-                  <p>
-                    A graduate from IIM Ahmedabad with a background in finance, Geetanash combines academic excellence
-                    with practical market wisdom. His investment philosophy centers on long-term wealth creation through
-                    disciplined processes and data-driven decision making.
-                  </p>
-                  <p>
-                    Under his leadership, Bharat Alternates has grown to become a trusted platform for Portfolio
-                    Management Services and Alternative Investment Funds, serving investors across India.
-                  </p>
-                </div>
-
-                <div className="flex space-x-4 pt-4">
-                  <a href="#" className="text-blue-600 hover:text-blue-800 transition-colors">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-linkedin"
-                    >
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                      <rect width="4" height="12" x="2" y="9" />
-                      <circle cx="4" cy="4" r="2" />
-                    </svg>
-                  </a>
-                  <a href="#" className="text-blue-600 hover:text-blue-800 transition-colors">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-twitter"
-                    >
-                      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-                    </svg>
-                  </a>
-                  <a href="#" className="text-blue-600 hover:text-blue-800 transition-colors">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-mail"
-                    >
-                      <rect width="20" height="16" x="2" y="4" rx="2" />
-                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </AnimationWrapper>
-
-            <AnimationWrapper animation="slide-in-left" delay={0.2}>
-              <div className="relative group">
-                <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl blur opacity-30 group-hover:opacity-70 transition duration-1000"></div>
-                <div className="relative overflow-hidden rounded-xl">
-                  <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-04-05%20at%2021.54.41_9208d003.jpg-eCl9uR3SclxVicimvdTdGzoxZ03gRz.jpeg"
-                    alt="Geetanash Malik - Founder & CEO of Bharat Alternates"
-                    className="w-full h-auto object-cover rounded-xl transform group-hover:scale-105 transition duration-700"
-                  />
-                </div>
-              </div>
-            </AnimationWrapper>
-          </div>
-        </div>
-      </section>
-
       {/* Leadership Team Section with Card Animation */}
       <section className="py-24 bg-gray-50 overflow-hidden">
         <div className="container mx-auto px-4">
@@ -844,8 +735,6 @@ export default function AboutPage() {
           </AnimationWrapper>
         </div>
       </section>
-
-      
 
       {/* Add custom styles for value cards */}
       <style jsx global>{`
