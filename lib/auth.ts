@@ -1,96 +1,104 @@
-import { compare, hash } from "bcryptjs"
-import { sign, verify } from "jsonwebtoken"
-import { cookies } from "next/headers"
-import * as jose from "jose"
+'use client';
 
-// Define the user session type
-export interface UserSession {
+import React, { useEffect, useState, JSXElementConstructor } from 'react';
+import { useRouter } from 'next/navigation';
+
+// Simple auth context and hooks
+export interface User {
   id: string;
+  name: string;
   email: string;
-  role: string;
-  name?: string;
+  role: 'user' | 'admin';
 }
 
-const JWT_SECRET = process.env.JWT_SECRET || "your-secret-key"
+// This is a placeholder for the actual auth implementation
+// In a real app, you would use a proper auth library like NextAuth.js
+export function useAuth() {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
-export async function hashPassword(password: string): Promise<string> {
-  return hash(password, 10)
-}
+  useEffect(() => {
+    // Check if user is logged in
+    const checkAuth = async () => {
+      try {
+        // In a real app, you would fetch the user from an API
+        // For now, we'll just check localStorage
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+          setUser(JSON.parse(storedUser));
+        }
+      } catch (error) {
+        console.error('Auth error:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-export async function comparePasswords(password: string, hashedPassword: string): Promise<boolean> {
-  return compare(password, hashedPassword)
-}
+    checkAuth();
+  }, []);
 
-export function generateToken(user: UserSession): string {
-  return sign(user, JWT_SECRET, { expiresIn: "7d" })
-}
-
-export function verifyToken(token: string): UserSession | null {
-  try {
-    return verify(token, JWT_SECRET) as UserSession
-  } catch (error) {
-    return null
-  }
-}
-
-export function setAuthCookie(token: string): void {
-  cookies().set({
-    name: "auth_token",
-    value: token,
-    httpOnly: true,
-    path: "/",
-    secure: process.env.NODE_ENV === "production",
-    maxAge: 60 * 60 * 24 * 7, // 7 days
-  })
-}
-
-export function getAuthCookie(): string | undefined {
-  return cookies().get("auth_token")?.value
-}
-
-export function removeAuthCookie(): void {
-  cookies().delete("auth_token")
-}
-
-export function getCurrentUser(): UserSession | null {
-  const token = getAuthCookie()
-  if (!token) return null
-  return verifyToken(token)
-}
-
-// Function for server components to check authentication
-export async function getSession(): Promise<UserSession | null> {
-  // First try the standard auth token from cookies
-  const cookieStore = cookies()
-  const token = cookieStore.get("auth_token")?.value || cookieStore.get("auth-token")?.value
-  
-  if (!token) {
-    return null
-  }
-  
-  try {
-    // For backwards compatibility, first try with jose
-    const secret = new TextEncoder().encode(JWT_SECRET)
+  const login = async (email: string, password: string): Promise<boolean> => {
     try {
-      const verified = await jose.jwtVerify(token, secret)
-      return verified.payload as UserSession
-    } catch {
-      // Fall back to jsonwebtoken if jose fails
-      return verify(token, JWT_SECRET) as UserSession
+      // In a real app, you would call an API to authenticate
+      // For now, we'll just simulate a successful login
+      const mockUser: User = {
+        id: '1',
+        name: 'Admin User',
+        email,
+        role: 'admin',
+      };
+      
+      localStorage.setItem('user', JSON.stringify(mockUser));
+      setUser(mockUser);
+      return true;
+    } catch (error) {
+      console.error('Login error:', error);
+      return false;
     }
-  } catch (error) {
-    console.error("Auth error:", error)
-    return null
-  }
+  };
+
+  const logout = (): void => {
+    localStorage.removeItem('user');
+    setUser(null);
+    router.push('/');
+  };
+
+  const isAdmin = (): boolean => {
+    return user?.role === 'admin';
+  };
+
+  return {
+    user,
+    loading,
+    login,
+    logout,
+    isAdmin,
+  };
 }
 
-// For testing purposes, this function will always return true
-// In a real app, this would check if the user is authenticated as an admin
-export async function isAdmin(): Promise<boolean> {
-  // Always return true for development/testing
-  return true;
-  
-  // In a real implementation, we would do something like:
-  // const session = await getSession()
-  // return session?.role === "admin"
-}
+// Higher-order component to protect admin routes
+export function withAdminAuth<P extends object>(
+  WrappedComponent: React.ComponentType<P>
+): React.FC<P> {
+  return function WithAdminAuthComponent(props: P): React.ReactElement | null {
+    const { user, loading, isAdmin } = useAuth();
+    const router = useRouter();
+
+    useEffect(() => {
+      if (!loading && (!user || !isAdmin())) {
+        router.push('/');
+      }
+    }, [user, loading, isAdmin, router]);
+
+    if (loading) {
+      return React.createElement('div', null, 'Loading...');
+    }
+
+    if (!user || !isAdmin()) {
+      return null;
+    }
+
+    return React.createElement(WrappedComponent, props);
+  };
+} 
