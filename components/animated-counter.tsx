@@ -9,12 +9,7 @@ interface AnimatedCounterProps {
   suffix?: string
 }
 
-export const AnimatedCounter = ({
-  end,
-  duration = 2000,
-  className = "",
-  suffix = "+"
-}: AnimatedCounterProps) => {
+export const AnimatedCounter = ({ end, duration = 2000, className = "", suffix = "+" }: AnimatedCounterProps) => {
   const [count, setCount] = useState(0)
   const countRef = useRef(0)
   const [isVisible, setIsVisible] = useState(false)
@@ -28,7 +23,7 @@ export const AnimatedCounter = ({
           observer.disconnect()
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     )
 
     if (elementRef.current) {
@@ -45,27 +40,27 @@ export const AnimatedCounter = ({
 
     countRef.current = 0
     const startTime = Date.now()
-    
+
     const interval = setInterval(() => {
       const timePassed = Date.now() - startTime
       const progress = Math.min(timePassed / duration, 1)
-      
+
       countRef.current = Math.floor(progress * end)
       setCount(countRef.current)
-      
+
       if (progress === 1) {
         clearInterval(interval)
         setCount(end)
       }
     }, 16) // ~60fps
-    
+
     return () => clearInterval(interval)
   }, [isVisible, end, duration])
 
   return (
     <span ref={elementRef} className={className}>
-      {count}{suffix}
+      {count}
+      {suffix}
     </span>
   )
 }
-

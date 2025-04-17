@@ -1,483 +1,513 @@
-"use client"
-
-import { useEffect, useRef } from "react"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight, BarChart3, Shield, TrendingUp, Users, Briefcase, LineChart } from "lucide-react"
+import Image from "next/image"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import PieChart3D from "@/components/charts/pie-chart-3d"
-import { PulseButton } from "@/components/pulse-button"
+import { CheckCircle, Briefcase, Shield, Users, ArrowRight, TrendingUp, LineChart } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "What is PMS? | Portfolio Management Services Explained",
+  description:
+    "Learn about Portfolio Management Services (PMS), types of PMS, minimum investment requirements, and how they differ from mutual funds.",
+}
 
 export default function WhatIsPMSPage() {
-  const pageRef = useRef<HTMLDivElement>(null)
-  const featuresRef = useRef<HTMLDivElement>(null)
-  const comparisonRef = useRef<HTMLDivElement>(null)
-  const faqRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
-
-    // Animate the hero section
-    gsap.from(".hero-content", {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      ease: "power3.out",
-      stagger: 0.2,
-    })
-
-    // Animate the features section
-    gsap.from(featuresRef.current?.querySelectorAll(".feature-card"), {
-      opacity: 0,
-      y: 50,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: featuresRef.current,
-        start: "top 80%",
-      },
-    })
-
-    // Animate the comparison table
-    gsap.from(comparisonRef.current, {
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: comparisonRef.current,
-        start: "top 80%",
-      },
-    })
-
-    // Animate the FAQ section
-    gsap.from(faqRef.current?.querySelectorAll(".faq-item"), {
-      opacity: 0,
-      y: 20,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: faqRef.current,
-        start: "top 80%",
-      },
-    })
-  }, [])
-
-  // Sample data for pie chart
-  const pmsAllocationData = [
-    { label: "Large Cap Equity", value: 40, color: "#3b82f6" },
-    { label: "Mid Cap Equity", value: 25, color: "#10b981" },
-    { label: "Small Cap Equity", value: 15, color: "#f59e0b" },
-    { label: "Debt Instruments", value: 10, color: "#8b5cf6" },
-    { label: "Cash & Equivalents", value: 10, color: "#6b7280" },
-  ]
-
-  const features = [
-    {
-      icon: TrendingUp,
-      title: "Personalized Investment Strategy",
-      description: "Customized investment plans based on an individual's risk profile and financial goals.",
-    },
-    {
-      icon: Users,
-      title: "Professional Management",
-      description: "Managed by experienced portfolio managers with in-depth market knowledge.",
-    },
-    {
-      icon: Shield,
-      title: "Higher Transparency",
-      description: "Investors receive detailed reports on portfolio performance and holdings.",
-    },
-    {
-      icon: Briefcase,
-      title: "Diversification",
-      description: "Investment across different asset classes to minimize risks.",
-    },
-    {
-      icon: BarChart3,
-      title: "Customized Risk Management",
-      description: "Tailored risk management strategies based on individual risk tolerance.",
-    },
-    {
-      icon: LineChart,
-      title: "Performance-Based Fee Structure",
-      description: "Aligns the interests of the portfolio manager with the investor's goals.",
-    },
-  ]
-
-  const faqs = [
-    {
-      question: "What is the minimum investment required for PMS?",
-      answer: "The minimum investment required for Portfolio Management Services in India is INR 50 lakhs.",
-    },
-    {
-      question: "How is PMS different from mutual funds?",
-      answer:
-        "Unlike mutual funds, PMS offers customized investment strategies, allowing investors more control over their portfolios. PMS also has a higher minimum investment requirement.",
-    },
-    {
-      question: "Are PMS returns guaranteed?",
-      answer:
-        "No, PMS returns are market-linked and not guaranteed. However, they are managed by experienced professionals aiming for long-term wealth creation.",
-    },
-    {
-      question: "Can NRIs invest in PMS?",
-      answer: "Yes, Non-Resident Indians (NRIs) can invest in PMS through NRE/NRO accounts as per RBI guidelines.",
-    },
-    {
-      question: "How are PMS investments taxed?",
-      answer:
-        "PMS investments are taxed as per capital gains taxation laws in India. Short-term gains are taxed at 15%, while long-term gains (beyond one year) are taxed at 10%.",
-    },
-    {
-      question: "What types of PMS are available in India?",
-      answer:
-        "There are three types of PMS in India: Discretionary PMS (portfolio manager has full control), Non-Discretionary PMS (investor makes final decisions), and Advisory PMS (investor receives recommendations but executes trades independently).",
-    },
-    {
-      question: "How often will I receive reports on my PMS investments?",
-      answer:
-        "Most PMS providers send monthly performance reports and quarterly detailed portfolio reviews. Many also offer real-time portfolio tracking through online dashboards.",
-    },
-    {
-      question: "Can I withdraw my PMS investments anytime?",
-      answer:
-        "Yes, PMS investments can generally be withdrawn anytime, though some providers may have a lock-in period or exit fees. The liquidation process typically takes 3-7 working days.",
-    },
-  ]
-
   return (
-    <div ref={pageRef}>
-      <section className="relative bg-gradient-to-b from-slate-900 to-slate-800 py-20 text-white md:py-28 lg:py-36">
-        <div className="container-custom">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="hero-content text-4xl font-bold md:text-5xl lg:text-6xl">
-              Portfolio Management Services (PMS)
-            </h1>
-            <p className="hero-content mt-6 text-lg text-slate-300 md:text-xl">
-              Professional investment services designed for high-net-worth individuals seeking customized portfolio
-              strategies to achieve their financial goals.
-            </p>
-            <div className="hero-content mt-8 flex flex-wrap justify-center gap-4">
-              <PulseButton href="/contact">Get Started</PulseButton>
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden py-20 md:py-28 lg:py-36">
+        {/* Animated Bubbles - Reduced quantity and slower animation */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="relative w-full h-full">
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={i}
+                className={`absolute rounded-full bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm animate-floating-${(i % 3) + 1}`}
+                style={{
+                  width: `${Math.floor(Math.random() * 80 + 40)}px`,
+                  height: `${Math.floor(Math.random() * 80 + 40)}px`,
+                  top: `${Math.floor(Math.random() * 100)}%`,
+                  left: `${Math.floor(Math.random() * 100)}%`,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Stable Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-blue-900" />
+
+        {/* Content Container with improved stability */}
+        <div className="container relative z-20 mx-auto px-4">
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="relative mb-8">
+              {/* Decorative Lines - Reduced animation speed */}
+              <div className="absolute -left-4 -top-4 h-20 w-20 animate-spin-slow opacity-20">
+                <div className="h-full w-full border-l-2 border-t-2 border-white"></div>
+              </div>
+              <div className="absolute -bottom-4 -right-4 h-20 w-20 animate-spin-slow opacity-20">
+                <div className="h-full w-full border-b-2 border-r-2 border-white"></div>
+              </div>
+
+              <h1 className="relative text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+                What is Portfolio Management Service?
+              </h1>
+            </div>
+
+            {/* Paragraph with enhanced visibility and stability */}
+            <div className="relative z-20 backdrop-blur-sm bg-navy-900/50 rounded-lg p-6 mb-12 shadow-lg">
+              <p className="text-lg text-white md:text-xl font-normal leading-relaxed">
+                Discover how professional portfolio managers can help you achieve your financial goals with customized
+                investment strategies.
+              </p>
+            </div>
+
+            <div className="relative flex flex-wrap justify-center gap-6">
+              <Button
+                size="lg"
+                className="relative group bg-gradient-to-r from-white to-blue-50 text-navy-900 hover:to-white px-8 py-6 shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300 rounded-xl"
+                asChild
+              >
+                <Link href="/contact" className="relative flex items-center gap-2">
+                  <span className="relative z-10 font-semibold text-lg">Book a Call</span>
+                  <div className="relative z-10 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300">
+                    <ArrowRight className="w-4 h-4 text-white transform group-hover:translate-x-0.5 transition-transform duration-300" />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white to-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                </Link>
+              </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-slate-900"
+                className="relative bg-white border-0 text-navy-900 px-8 py-6 rounded-xl hover:bg-gray-50"
                 asChild
               >
-                <Link href="/pms/faqs">Learn More</Link>
+                <Link href="/pms/who-should-invest" className="relative flex items-center gap-2">
+                  <span className="font-semibold text-lg">Is PMS Right for You?</span>
+                  <div className="w-6 h-6 rounded-full bg-navy-900 flex items-center justify-center">
+                    <ArrowRight className="w-4 h-4 text-white" />
+                  </div>
+                </Link>
               </Button>
             </div>
           </div>
         </div>
-        <div className="absolute inset-0 z-0 opacity-20">
-          <svg
-            className="h-full w-full"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M0 100V0l100 100H0z" fill="url(#paint0_linear)" />
-            <defs>
-              <linearGradient id="paint0_linear" x1="50" y1="0" x2="50" y2="100" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#4F46E5" />
-                <stop offset="1" stopColor="#0F172A" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
+
+        {/* Subtle Floating Elements */}
+        <div className="absolute left-0 top-0 -z-10 h-full w-full opacity-30">
+          <div className="absolute left-1/4 top-1/4 h-40 w-40 rounded-full bg-white/5 blur-3xl"></div>
+          <div className="absolute right-1/4 bottom-1/4 h-40 w-40 rounded-full bg-white/5 blur-3xl"></div>
         </div>
       </section>
 
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="grid gap-12 md:grid-cols-2">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-                What is Portfolio Management Services (PMS)?
-              </h2>
-              <div className="mt-6 space-y-4 text-muted-foreground">
-                <p>
-                  Portfolio Management Services (PMS) is a professional investment service designed for high-net-worth
-                  individuals (HNIs) and institutional investors who seek customized portfolio strategies to achieve
-                  their financial goals.
-                </p>
-                <p>
-                  Unlike mutual funds, PMS offers tailored solutions, allowing investors to have a personalized and
-                  actively managed investment portfolio. The portfolio manager has the expertise to make investment
-                  decisions based on the client's financial objectives and risk tolerance.
-                </p>
-                <p>
-                  With a minimum investment requirement of ₹50 lakhs, PMS is specifically designed for sophisticated
-                  investors looking for personalized wealth management solutions.
-                </p>
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-16">
+        {/* Understanding PMS Section */}
+        <div className="mb-16">
+          <Card className="overflow-hidden bg-white shadow-xl">
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="p-6 md:p-8">
+                <div className="max-w-xl">
+                  <h2 className="text-3xl font-bold text-slate-900 mb-4">Understanding PMS</h2>
+                  <p className="text-slate-600 text-lg mb-8">
+                    Portfolio Management Services (PMS) is a professional investment service where expert portfolio
+                    managers handle your investments. They create and manage a customized portfolio based on your
+                    financial goals and risk appetite.
+                  </p>
+
+                  <div className="space-y-6">
+                    <div className="group bg-white p-4 rounded-lg border border-slate-200 hover:border-blue-500 transition-colors duration-300">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-blue-50 p-2 rounded-lg group-hover:bg-blue-100 transition-colors duration-300">
+                          <Briefcase className="h-6 w-6 text-blue-600" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-slate-900 text-lg mb-1">Professional Management</h4>
+                          <p className="text-slate-600">Expert portfolio managers with deep market knowledge</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="group bg-white p-4 rounded-lg border border-slate-200 hover:border-blue-500 transition-colors duration-300">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-blue-50 p-2 rounded-lg group-hover:bg-blue-100 transition-colors duration-300">
+                          <TrendingUp className="h-6 w-6 text-blue-600" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-slate-900 text-lg mb-1">Customized Strategy</h4>
+                          <p className="text-slate-600">Tailored investment approach for your needs</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="group bg-white p-4 rounded-lg border border-slate-200 hover:border-blue-500 transition-colors duration-300">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-blue-50 p-2 rounded-lg group-hover:bg-blue-100 transition-colors duration-300">
+                          <Shield className="h-6 w-6 text-blue-600" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-slate-900 text-lg mb-1">Risk Management</h4>
+                          <p className="text-slate-600">Advanced techniques to protect and grow wealth</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="mt-8">
-                <h3 className="text-xl font-bold mb-4">Types of PMS in India</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <ArrowRight className="mr-2 h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Discretionary PMS</span> – The portfolio manager has full control
-                      over investment decisions, making trades on behalf of the client.
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <ArrowRight className="mr-2 h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Non-Discretionary PMS</span> – The portfolio manager provides
-                      investment advice, but the final decision rests with the investor.
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <ArrowRight className="mr-2 h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-medium">Advisory PMS</span> – Investors receive investment recommendations
-                      but execute trades on their own.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="flex flex-col justify-center">
-              <div className="rounded-lg overflow-hidden mb-8">
-                <img
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              <div className="relative min-h-[300px] bg-gradient-to-br from-navy-900/50 to-blue-900/50 rounded-xl overflow-hidden">
+                <Image
+                  src="/images/investment-management.png"
                   alt="Portfolio Management"
-                  className="w-full h-auto rounded-lg shadow-lg"
+                  width={600}
+                  height={400}
+                  className="object-contain w-full h-full p-4"
+                  priority
                 />
               </div>
-              <div>
-                <h3 className="text-xl font-bold mb-4">Sample PMS Allocation</h3>
-                <PieChart3D data={pmsAllocationData} height={300} />
-              </div>
             </div>
-          </div>
+          </Card>
         </div>
-      </section>
 
-      <section ref={featuresRef} className="section-padding bg-slate-50">
-        <div className="container-custom">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Benefits of PMS</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Why high-net-worth individuals choose Portfolio Management Services
+        {/* Types of PMS Section */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-3">Types of Portfolio Management Services</h2>
+            <p className="text-slate-300 text-lg max-w-3xl mx-auto">
+              Understanding the different types of PMS to choose the management style that best suits your investment
+              preferences and involvement level
             </p>
           </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="feature-card overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-1"
-              >
-                <CardHeader>
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                    <feature.icon className="h-6 w-6 text-primary" />
+          <div className="grid gap-8 lg:grid-cols-3">
+            {/* Discretionary PMS */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl transform transition-transform group-hover:scale-[1.02] group-hover:rotate-1"></div>
+              <Card className="relative bg-white h-full transform transition-all duration-300 hover:-translate-y-2">
+                <CardHeader className="text-center pb-4">
+                  <div className="mx-auto w-16 h-16 mb-4 relative">
+                    <div className="absolute inset-0 bg-blue-100 rounded-full transform transition-transform group-hover:scale-110"></div>
+                    <Briefcase className="w-8 h-8 text-blue-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
                   </div>
-                  <CardTitle>{feature.title}</CardTitle>
+                  <CardTitle className="text-2xl font-bold text-slate-900">Discretionary PMS</CardTitle>
+                  <div className="mt-2 inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-600 text-sm font-medium">
+                    Full Authority
+                  </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <div className="space-y-4">
+                    <p className="text-slate-600 text-center">
+                      Portfolio manager has complete authority to make investment decisions on behalf of the client,
+                      based on their investment objectives.
+                    </p>
+                    <div className="pt-4 border-t border-slate-200">
+                      <h4 className="font-semibold text-slate-900 mb-3">Key Features:</h4>
+                      <ul className="space-y-3">
+                        <li className="flex items-center text-slate-700">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                          <span>Expert decision making</span>
+                        </li>
+                        <li className="flex items-center text-slate-700">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                          <span>Quick execution of trades</span>
+                        </li>
+                        <li className="flex items-center text-slate-700">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                          <span>Hands-off approach for investors</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="pt-4 border-t border-slate-200">
+                      <h4 className="font-semibold text-slate-900 mb-3">Best For:</h4>
+                      <ul className="space-y-2 text-slate-700">
+                        <li>• Investors who prefer minimal involvement</li>
+                        <li>• Those who trust expert judgment</li>
+                        <li>• Busy professionals lacking time for active management</li>
+                      </ul>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
-            ))}
+            </div>
+
+            {/* Non-Discretionary PMS */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-2xl transform transition-transform group-hover:scale-[1.02] group-hover:rotate-1"></div>
+              <Card className="relative bg-white h-full transform transition-all duration-300 hover:-translate-y-2">
+                <CardHeader className="text-center pb-4">
+                  <div className="mx-auto w-16 h-16 mb-4 relative">
+                    <div className="absolute inset-0 bg-indigo-100 rounded-full transform transition-transform group-hover:scale-110"></div>
+                    <Users className="w-8 h-8 text-indigo-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+                  </div>
+                  <CardTitle className="text-2xl font-bold text-slate-900">Non-Discretionary PMS</CardTitle>
+                  <div className="mt-2 inline-flex items-center px-3 py-1 rounded-full bg-indigo-100 text-indigo-600 text-sm font-medium">
+                    Shared Control
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <p className="text-slate-600 text-center">
+                      Portfolio manager provides recommendations, but the final investment decisions rest with the
+                      client, offering a balanced approach to portfolio management.
+                    </p>
+                    <div className="pt-4 border-t border-slate-200">
+                      <h4 className="font-semibold text-slate-900 mb-3">Key Features:</h4>
+                      <ul className="space-y-3">
+                        <li className="flex items-center text-slate-700">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                          <span>Expert guidance and recommendations</span>
+                        </li>
+                        <li className="flex items-center text-slate-700">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                          <span>Client retains decision control</span>
+                        </li>
+                        <li className="flex items-center text-slate-700">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                          <span>Collaborative investment approach</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="pt-4 border-t border-slate-200">
+                      <h4 className="font-semibold text-slate-900 mb-3">Best For:</h4>
+                      <ul className="space-y-2 text-slate-700">
+                        <li>• Investors who want active involvement</li>
+                        <li>• Those seeking expert validation</li>
+                        <li>• Experienced investors wanting guidance</li>
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Advisory PMS */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-800 rounded-2xl transform transition-transform group-hover:scale-[1.02] group-hover:rotate-1"></div>
+              <Card className="relative bg-white h-full transform transition-all duration-300 hover:-translate-y-2">
+                <CardHeader className="text-center pb-4">
+                  <div className="mx-auto w-16 h-16 mb-4 relative">
+                    <div className="absolute inset-0 bg-purple-100 rounded-full transform transition-transform group-hover:scale-110"></div>
+                    <LineChart className="w-8 h-8 text-purple-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+                  </div>
+                  <CardTitle className="text-2xl font-bold text-slate-900">Advisory PMS</CardTitle>
+                  <div className="mt-2 inline-flex items-center px-3 py-1 rounded-full bg-purple-100 text-purple-600 text-sm font-medium">
+                    Guidance Only
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <p className="text-slate-600 text-center">
+                      Portfolio manager acts purely as an advisor, providing investment advice and recommendations while
+                      leaving all execution decisions to the client.
+                    </p>
+                    <div className="pt-4 border-t border-slate-200">
+                      <h4 className="font-semibold text-slate-900 mb-3">Key Features:</h4>
+                      <ul className="space-y-3">
+                        <li className="flex items-center text-slate-700">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                          <span>Professional market insights</span>
+                        </li>
+                        <li className="flex items-center text-slate-700">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                          <span>Complete client control</span>
+                        </li>
+                        <li className="flex items-center text-slate-700">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                          <span>Flexible consultation model</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="pt-4 border-t border-slate-200">
+                      <h4 className="font-semibold text-slate-900 mb-3">Best For:</h4>
+                      <ul className="space-y-2 text-slate-700">
+                        <li>• Self-directed investors</li>
+                        <li>• Those seeking market expertise</li>
+                        <li>• Experienced traders wanting insights</li>
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
-      </section>
 
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Top PMS Providers in India</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              India has a thriving PMS ecosystem, with several reputed firms offering high-quality portfolio management
-              services
+        {/* FAQ Section */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-3">Frequently Asked Questions</h2>
+            <p className="text-slate-300 text-lg max-w-3xl mx-auto">
+              Get answers to common questions about Portfolio Management Services
             </p>
           </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                name: "Motilal Oswal PMS",
-                description:
-                  "Known for their 'Buy Right, Sit Tight' investment philosophy focusing on quality businesses.",
-                image:
-                  "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80",
-              },
-              {
-                name: "ASK PMS",
-                description:
-                  "Focuses on long-term wealth creation through high-quality businesses with strong growth potential.",
-                image:
-                  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80",
-              },
-              {
-                name: "Marcellus PMS",
-                description:
-                  "Specializes in identifying companies with strong competitive advantages and consistent growth.",
-                image:
-                  "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-              },
-              {
-                name: "Alchemy PMS",
-                description:
-                  "Employs a research-driven approach to identify undervalued companies with strong fundamentals.",
-                image:
-                  "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2013&q=80",
-              },
-              {
-                name: "Abakkus PMS",
-                description:
-                  "Founded by Sunil Singhania, focuses on identifying emerging opportunities across market caps.",
-                image:
-                  "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-              },
-              {
-                name: "Sundaram PMS",
-                description:
-                  "Leverages the Sundaram Group's extensive research capabilities to deliver consistent returns.",
-                image:
-                  "https://images.unsplash.com/photo-1642543348745-775d77351ac2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-              },
-            ].map((provider, index) => (
-              <Card key={index} className="overflow-hidden hover-lift">
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={provider.image || "/placeholder.svg"}
-                    alt={provider.name}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  />
-                </div>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {/* Basic Questions */}
+            <div className="lg:col-span-2">
+              <Card className="bg-white h-full">
                 <CardHeader>
-                  <CardTitle>{provider.name}</CardTitle>
+                  <CardTitle className="text-2xl font-bold text-slate-900">Basic Understanding</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="text-lg font-semibold text-slate-900 mb-2">What is PMS?</h4>
+                      <p className="text-slate-700">
+                        Portfolio Management Service (PMS) is a professional investment service where expert managers
+                        handle your investment portfolio. They create and manage a customized portfolio based on your
+                        financial goals and risk appetite.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-slate-900 mb-2">What is equity PMS?</h4>
+                      <p className="text-slate-700">
+                        Equity PMS focuses on investing in stocks and equity-related instruments. Portfolio managers
+                        select stocks based on thorough research and market analysis to generate higher returns over the
+                        long term.
+                      </p>
+                      <ul className="mt-2 space-y-1 text-slate-600">
+                        <li className="flex items-center">
+                          <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                          <span>Active stock selection and monitoring</span>
+                        </li>
+                        <li className="flex items-center">
+                          <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                          <span>Higher return potential with managed risk</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-slate-900 mb-2">What is debt PMS?</h4>
+                      <p className="text-slate-700">
+                        Debt PMS invests in fixed-income securities like bonds, government securities, and other debt
+                        instruments. It aims to provide steady returns with lower risk compared to equity investments.
+                      </p>
+                      <ul className="mt-2 space-y-1 text-slate-600">
+                        <li className="flex items-center">
+                          <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                          <span>Regular income generation</span>
+                        </li>
+                        <li className="flex items-center">
+                          <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                          <span>Lower volatility than equity</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Investment Requirements */}
+            <div>
+              <Card className="bg-white h-full">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold text-slate-900">Investment Details</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div>
+                    <h4 className="text-lg font-semibold text-slate-900 mb-2">What is the minimum investment?</h4>
+                    <div className="bg-blue-50 rounded-lg p-4 mb-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-700 font-medium">Starting from</span>
+                        <span className="text-blue-600 font-bold">₹50 Lakhs</span>
+                      </div>
+                      <div className="w-full bg-blue-200 rounded-full h-2">
+                        <div className="bg-blue-600 h-2 rounded-full w-1/2"></div>
+                      </div>
+                    </div>
+                    <p className="text-slate-700">
+                      The minimum investment amount typically ranges from ₹50 lakh to ₹1 crore, depending on the
+                      portfolio manager and strategy.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-slate-900 mb-2">Who can invest in PMS?</h4>
+                    <ul className="space-y-2 text-slate-700">
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
+                        <span>High Net Worth Individuals (HNIs)</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
+                        <span>Corporate entities and institutions</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
+                        <span>NRIs (subject to FEMA regulations)</span>
+                      </li>
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Additional Questions */}
+            <div className="lg:col-span-3">
+              <Card className="bg-white">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold text-slate-900">Additional Information</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{provider.description}</p>
+                  <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <div>
+                      <h4 className="text-lg font-semibold text-slate-900 mb-2">What are the tax implications?</h4>
+                      <ul className="space-y-2 text-slate-700">
+                        <li>• Long-term capital gains: 10% above ₹1 lakh</li>
+                        <li>• Short-term capital gains: 15%</li>
+                        <li>• Dividends taxed at applicable slab rates</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-slate-900 mb-2">What are the risks involved?</h4>
+                      <ul className="space-y-2 text-slate-700">
+                        <li>• Market volatility risk</li>
+                        <li>• Concentration risk</li>
+                        <li>• Manager-specific risk</li>
+                        <li>• Liquidity risk</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-slate-900 mb-2">
+                        How is PMS different from mutual funds?
+                      </h4>
+                      <ul className="space-y-2 text-slate-700">
+                        <li>• Customized portfolio</li>
+                        <li>• Direct ownership of securities</li>
+                        <li>• Higher minimum investment</li>
+                        <li>• More personalized service</li>
+                      </ul>
+                    </div>
+                  </div>
                 </CardContent>
-                <CardFooter>
-                  <Button variant="outline" asChild className="w-full">
-                    <Link href="#">Learn More</Link>
-                  </Button>
-                </CardFooter>
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section ref={comparisonRef} className="section-padding bg-slate-50">
-        <div className="container-custom">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">PMS vs. Mutual Funds</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Understanding the key differences between PMS and mutual funds
-            </p>
-          </div>
-          <div className="mt-12 overflow-hidden rounded-lg border bg-white shadow-sm">
-            <div className="grid grid-cols-3 border-b">
-              <div className="border-r p-4 font-medium">Feature</div>
-              <div className="border-r p-4 font-medium">PMS</div>
-              <div className="p-4 font-medium">Mutual Funds</div>
-            </div>
-            {[
-              {
-                feature: "Minimum Investment",
-                pms: "₹50 lakhs",
-                mf: "As low as ₹500",
-              },
-              {
-                feature: "Customization",
-                pms: "High",
-                mf: "Low",
-              },
-              {
-                feature: "Investment Control",
-                pms: "Investor & Manager",
-                mf: "Fund Manager",
-              },
-              {
-                feature: "Transparency",
-                pms: "High (direct ownership)",
-                mf: "Medium (pooled ownership)",
-              },
-              {
-                feature: "Fees Structure",
-                pms: "Fixed & Performance-Based",
-                mf: "Expense Ratio-Based",
-              },
-              {
-                feature: "Tax Implications",
-                pms: "Individual transaction level",
-                mf: "At redemption",
-              },
-              {
-                feature: "Reporting",
-                pms: "Detailed & Frequent",
-                mf: "Standardized",
-              },
-              {
-                feature: "Suitability",
-                pms: "HNIs & Sophisticated Investors",
-                mf: "All Investor Types",
-              },
-            ].map((row, index) => (
-              <div key={index} className={`grid grid-cols-3 ${index !== 7 ? "border-b" : ""}`}>
-                <div className="border-r p-4">{row.feature}</div>
-                <div className="border-r p-4">{row.pms}</div>
-                <div className="p-4">{row.mf}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section ref={faqRef} className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Frequently Asked Questions (FAQs)</h2>
-            <p className="mt-4 text-lg text-muted-foreground">Common questions about Portfolio Management Services</p>
-          </div>
-          <div className="mt-12 mx-auto max-w-3xl">
-            <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="faq-item">
-                  <AccordionTrigger className="text-left font-medium">{faq.question}</AccordionTrigger>
-                  <AccordionContent>
-                    <p className="text-muted-foreground">{faq.answer}</p>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 gradient-bg text-white">
-        <div className="container-custom">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Ready to Start Your PMS Investment Journey?
-            </h2>
-            <p className="mt-4 text-lg opacity-90">
-              Schedule a consultation with our investment experts to discuss how our PMS solutions can help you achieve
-              your financial goals.
-            </p>
-            <div className="mt-8">
-              <PulseButton href="/contact" variant="white">
-                Contact Us Today
-              </PulseButton>
             </div>
           </div>
         </div>
-      </section>
+
+        {/* CTA Section */}
+        <section className="rounded-lg bg-gradient-to-r from-blue-600 to-blue-800 p-8 text-white">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-4 text-3xl font-bold">Ready to Start Your PMS Journey?</h2>
+            <p className="mb-6 text-lg">
+              Let our expert portfolio managers help you create a customized investment strategy aligned with your
+              financial goals.
+            </p>
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
+              <Button size="lg" variant="secondary" className="button-glow" asChild>
+                <Link href="/contact">Schedule a Consultation</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="bg-transparent text-white hover:bg-white/10" asChild>
+                <Link href="/pms/who-should-invest">Learn Who Should Invest</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   )
 }
-

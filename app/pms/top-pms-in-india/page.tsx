@@ -1,456 +1,903 @@
-"use client"
-
-import { useEffect, useRef } from "react"
+import type { Metadata } from "next"
 import Link from "next/link"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { ArrowRight, Star, TrendingUp, BarChart3, Shield, Award } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Star, TrendingUp, Shield, DollarSign, Award, ExternalLink, CheckCircle } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Top PMS in India | Best Portfolio Management Services",
+  description:
+    "Explore the best performing Portfolio Management Services (PMS) in India, their strategies, performance, and minimum investment requirements.",
+}
 
 export default function TopPMSInIndiaPage() {
-  const pageRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
-
-    // Animate the page content
-    gsap.from(pageRef.current?.querySelectorAll(".animate-card"), {
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: pageRef.current,
-        start: "top 80%",
-      },
-    })
-  }, [])
-
   return (
-    <div ref={pageRef}>
-      <section className="relative bg-gradient-to-b from-slate-900 to-slate-800 py-20 text-white md:py-28 lg:py-36">
-        <div className="container-custom">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">Top PMS Providers in India</h1>
-            <p className="mt-6 text-lg text-slate-300 md:text-xl">
-              Discover India's leading Portfolio Management Services with exceptional track records and investment
-              strategies
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button size="lg" asChild>
-                <Link href="/contact">Get Expert Advice</Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-slate-900"
-                asChild
-              >
-                <Link href="/pms/what-is-pms">Learn About PMS</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-        <div className="absolute inset-0 z-0 opacity-20">
-          <svg
-            className="h-full w-full"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M0 100V0l100 100H0z" fill="url(#paint0_linear)" />
-            <defs>
-              <linearGradient id="paint0_linear" x1="50" y1="0" x2="50" y2="100" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#4F46E5" />
-                <stop offset="1" stopColor="#0F172A" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
+    <div className="container mx-auto py-10">
+      {/* Hero Section */}
+      <section className="mb-16 text-center">
+        <h1 className="mb-4 text-4xl font-extrabold tracking-tight lg:text-5xl">
+          Top Portfolio Management Services in India
+        </h1>
+        <p className="mx-auto mb-8 max-w-3xl text-xl text-muted-foreground">
+          Discover the best performing PMS providers in India, their investment strategies, performance, and minimum
+          investment requirements.
+        </p>
+        <div className="flex justify-center gap-4">
+          <Button asChild size="lg">
+            <Link href="/contact">Schedule a Consultation</Link>
+          </Button>
+          <Button variant="outline" size="lg" asChild>
+            <Link href="/pms/what-is-pms">Learn About PMS</Link>
+          </Button>
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="container-custom">
-          <div className="mx-auto max-w-3xl text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-navy-900 md:text-4xl">
-              Leading PMS Providers in India
-            </h2>
-            <p className="mt-4 text-lg text-navy-900">
-              India has a thriving PMS ecosystem with several reputed firms offering high-quality portfolio management
-              services
-            </p>
-          </div>
-
-          <Tabs defaultValue="equity" className="animate-card">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="equity">Equity PMS</TabsTrigger>
-              <TabsTrigger value="multi-asset">Multi-Asset PMS</TabsTrigger>
-              <TabsTrigger value="thematic">Thematic PMS</TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="equity">
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {[
-                  {
-                    name: "Motilal Oswal PMS",
-                    strategy: "Value Strategy",
-                    description:
-                      "Focuses on 'Buy Right, Sit Tight' philosophy with investments in quality businesses at reasonable valuations.",
-                    returns: "18.5% CAGR (5Y)",
-                    minInvestment: "₹50 Lakhs",
-                    rating: 5,
-                    image: "/placeholder.svg?height=200&width=300",
-                  },
-                  {
-                    name: "ASK Investment Managers",
-                    strategy: "Growth Strategy",
-                    description:
-                      "Invests in high-quality businesses with strong growth potential and sustainable competitive advantages.",
-                    returns: "17.2% CAGR (5Y)",
-                    minInvestment: "₹50 Lakhs",
-                    rating: 5,
-                    image: "/placeholder.svg?height=200&width=300",
-                  },
-                  {
-                    name: "Marcellus Investment Managers",
-                    strategy: "Consistent Compounders",
-                    description:
-                      "Focuses on companies with strong competitive advantages and consistent growth in difficult times.",
-                    returns: "19.8% CAGR (5Y)",
-                    minInvestment: "₹50 Lakhs",
-                    rating: 5,
-                    image: "/placeholder.svg?height=200&width=300",
-                  },
-                  {
-                    name: "Alchemy Capital Management",
-                    strategy: "Alchemy High Growth",
-                    description: "Research-driven approach to identify undervalued companies with strong fundamentals.",
-                    returns: "16.9% CAGR (5Y)",
-                    minInvestment: "₹50 Lakhs",
-                    rating: 4,
-                    image: "/placeholder.svg?height=200&width=300",
-                  },
-                  {
-                    name: "Abakkus Asset Manager",
-                    strategy: "Abakkus Growth Portfolio",
-                    description:
-                      "Founded by Sunil Singhania, focuses on identifying emerging opportunities across market caps.",
-                    returns: "18.1% CAGR (5Y)",
-                    minInvestment: "₹50 Lakhs",
-                    rating: 4,
-                    image: "/placeholder.svg?height=200&width=300",
-                  },
-                  {
-                    name: "Sundaram Alternates",
-                    strategy: "Sundaram India Premier",
-                    description:
-                      "Leverages the Sundaram Group's extensive research capabilities to deliver consistent returns.",
-                    returns: "15.8% CAGR (5Y)",
-                    minInvestment: "₹50 Lakhs",
-                    rating: 4,
-                    image: "/placeholder.svg?height=200&width=300",
-                  },
-                ].map((provider, index) => (
-                  <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div className="h-48 overflow-hidden">
-                      <img
-                        src={provider.image || "/placeholder.svg"}
-                        alt={provider.name}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                      />
-                    </div>
-                    <CardHeader>
-                      <CardTitle className="text-xl text-navy-900">{provider.name}</CardTitle>
-                      <p className="text-sm font-medium text-primary">{provider.strategy}</p>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-navy-900 mb-4">{provider.description}</p>
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <p className="text-sm font-medium text-navy-900">Returns</p>
-                          <p className="text-lg font-bold text-navy-900">{provider.returns}</p>
-                        </div>
-                        <div>
-                          <p className="text-sm font-medium text-navy-900">Min Investment</p>
-                          <p className="text-lg font-bold text-navy-900">{provider.minInvestment}</p>
-                        </div>
-                      </div>
-                      <div className="mt-4 flex">
-                        {Array(5)
-                          .fill(0)
-                          .map((_, i) => (
-                            <Star
-                              key={i}
-                              className={`h-5 w-5 ${i < provider.rating ? "text-yellow-500 fill-yellow-500" : "text-gray-300"}`}
-                            />
-                          ))}
-                      </div>
-                    </CardContent>
-                    <CardFooter>
-                      <Button variant="outline" asChild className="w-full">
-                        <Link href="/contact">
-                          Get Details <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                ))}
-              </div>
-            </TabsContent>
-
-            <TabsContent value="multi-asset">
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {[
-                  {
-                    name: "ICICI Prudential PMS",
-                    strategy: "Multi-Asset Portfolio",
-                    description:
-                      "Diversified strategy across equity, debt, and alternative investments for balanced returns.",
-                    returns: "14.2% CAGR (5Y)",
-                    minInvestment: "₹50 Lakhs",
-                    rating: 4,
-                    image: "/placeholder.svg?height=200&width=300",
-                  },
-                  {
-                    name: "Kotak PMS",
-                    strategy: "Special Situations Value Strategy",
-                    description:
-                      "Invests across asset classes with focus on special situations and value opportunities.",
-                    returns: "15.1% CAGR (5Y)",
-                    minInvestment: "₹50 Lakhs",
-                    rating: 4,
-                    image: "/placeholder.svg?height=200&width=300",
-                  },
-                  {
-                    name: "Aditya Birla Capital",
-                    strategy: "Core & Satellite",
-                    description:
-                      "Combines core long-term holdings with tactical allocations across multiple asset classes.",
-                    returns: "13.8% CAGR (5Y)",
-                    minInvestment: "₹50 Lakhs",
-                    rating: 4,
-                    image: "/placeholder.svg?height=200&width=300",
-                  },
-                ].map((provider, index) => (
-                  <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div className="h-48 overflow-hidden">
-                      <img
-                        src={provider.image || "/placeholder.svg"}
-                        alt={provider.name}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                      />
-                    </div>
-                    <CardHeader>
-                      <CardTitle className="text-xl text-navy-900">{provider.name}</CardTitle>
-                      <p className="text-sm font-medium text-primary">{provider.strategy}</p>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-navy-900 mb-4">{provider.description}</p>
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <p className="text-sm font-medium text-navy-900">Returns</p>
-                          <p className="text-lg font-bold text-navy-900">{provider.returns}</p>
-                        </div>
-                        <div>
-                          <p className="text-sm font-medium text-navy-900">Min Investment</p>
-                          <p className="text-lg font-bold text-navy-900">{provider.minInvestment}</p>
-                        </div>
-                      </div>
-                      <div className="mt-4 flex">
-                        {Array(5)
-                          .fill(0)
-                          .map((_, i) => (
-                            <Star
-                              key={i}
-                              className={`h-5 w-5 ${i < provider.rating ? "text-yellow-500 fill-yellow-500" : "text-gray-300"}`}
-                            />
-                          ))}
-                      </div>
-                    </CardContent>
-                    <CardFooter>
-                      <Button variant="outline" asChild className="w-full">
-                        <Link href="/contact">
-                          Get Details <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                ))}
-              </div>
-            </TabsContent>
-
-            <TabsContent value="thematic">
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {[
-                  {
-                    name: "SageOne Investment",
-                    strategy: "Small & Mid Cap Portfolio",
-                    description:
-                      "Focuses on small and mid-cap companies with high growth potential and strong fundamentals.",
-                    returns: "21.3% CAGR (5Y)",
-                    minInvestment: "₹50 Lakhs",
-                    rating: 5,
-                    image: "/placeholder.svg?height=200&width=300",
-                  },
-                  {
-                    name: "Quantum Advisors",
-                    strategy: "India Responsible Returns",
-                    description:
-                      "ESG-focused strategy investing in companies with strong environmental and governance practices.",
-                    returns: "16.2% CAGR (5Y)",
-                    minInvestment: "₹50 Lakhs",
-                    rating: 4,
-                    image: "/placeholder.svg?height=200&width=300",
-                  },
-                  {
-                    name: "White Oak Capital",
-                    strategy: "India Pioneers",
-                    description:
-                      "Invests in innovative companies leading technological and sectoral transformations in India.",
-                    returns: "19.5% CAGR (5Y)",
-                    minInvestment: "₹50 Lakhs",
-                    rating: 5,
-                    image: "/placeholder.svg?height=200&width=300",
-                  },
-                ].map((provider, index) => (
-                  <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300">
-                    <div className="h-48 overflow-hidden">
-                      <img
-                        src={provider.image || "/placeholder.svg"}
-                        alt={provider.name}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                      />
-                    </div>
-                    <CardHeader>
-                      <CardTitle className="text-xl text-navy-900">{provider.name}</CardTitle>
-                      <p className="text-sm font-medium text-primary">{provider.strategy}</p>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-navy-900 mb-4">{provider.description}</p>
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <p className="text-sm font-medium text-navy-900">Returns</p>
-                          <p className="text-lg font-bold text-navy-900">{provider.returns}</p>
-                        </div>
-                        <div>
-                          <p className="text-sm font-medium text-navy-900">Min Investment</p>
-                          <p className="text-lg font-bold text-navy-900">{provider.minInvestment}</p>
-                        </div>
-                      </div>
-                      <div className="mt-4 flex">
-                        {Array(5)
-                          .fill(0)
-                          .map((_, i) => (
-                            <Star
-                              key={i}
-                              className={`h-5 w-5 ${i < provider.rating ? "text-yellow-500 fill-yellow-500" : "text-gray-300"}`}
-                            />
-                          ))}
-                      </div>
-                    </CardContent>
-                    <CardFooter>
-                      <Button variant="outline" asChild className="w-full">
-                        <Link href="/contact">
-                          Get Details <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                ))}
-              </div>
-            </TabsContent>
-          </Tabs>
-        </div>
-      </section>
-
-      <section className="py-16 bg-slate-50">
-        <div className="container-custom">
-          <div className="mx-auto max-w-3xl text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-navy-900 md:text-4xl">
-              How to Select the Right PMS Provider
-            </h2>
-            <p className="mt-4 text-lg text-navy-900">
-              Key factors to consider when choosing a Portfolio Management Service
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                icon: TrendingUp,
-                title: "Track Record",
-                description:
-                  "Evaluate historical performance across different market cycles, not just during bull markets.",
-              },
-              {
-                icon: BarChart3,
-                title: "Investment Philosophy",
-                description:
-                  "Ensure the PMS provider's investment approach aligns with your financial goals and risk tolerance.",
-              },
-              {
-                icon: Shield,
-                title: "Risk Management",
-                description:
-                  "Assess how the PMS handles downside protection and manages risk during market volatility.",
-              },
-              {
-                icon: Award,
-                title: "Team Expertise",
-                description: "Research the experience and expertise of the fund management team and their stability.",
-              },
-              {
-                icon: Star,
-                title: "Transparency",
-                description: "Look for clear communication, detailed reporting, and transparency in fee structures.",
-              },
-              {
-                icon: ArrowRight,
-                title: "Customization",
-                description: "Consider the level of personalization offered to meet your specific investment needs.",
-              },
-            ].map((factor, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300">
+      {/* Main Content */}
+      <section className="mb-16">
+        <h2 className="mb-8 text-3xl font-bold">Leading PMS Providers in India</h2>
+        <Tabs defaultValue="equity" className="w-full">
+          <TabsList className="grid w-full grid-cols-3">
+            <TabsTrigger value="equity">Equity PMS</TabsTrigger>
+            <TabsTrigger value="debt">Debt PMS</TabsTrigger>
+            <TabsTrigger value="multi">Multi-Asset PMS</TabsTrigger>
+          </TabsList>
+          <TabsContent value="equity" className="mt-6">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {/* HDFC Securities PMS */}
+              <Card className="flex flex-col">
                 <CardHeader>
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                    <factor.icon className="h-6 w-6 text-primary" />
+                  <div className="flex items-center justify-between">
+                    <CardTitle>HDFC Securities PMS</CardTitle>
+                    <Badge variant="outline" className="bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300">
+                      Top Rated
+                    </Badge>
                   </div>
-                  <CardTitle className="text-xl text-navy-900">{factor.title}</CardTitle>
+                  <CardDescription>Value Investing Strategy</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-navy-900">{factor.description}</p>
+                <CardContent className="flex-grow">
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">3-Year Returns</span>
+                      <span className="font-semibold text-green-600">18.5%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">5-Year Returns</span>
+                      <span className="font-semibold text-green-600">15.2%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">Min. Investment</span>
+                      <span className="font-semibold">₹50 Lakhs</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start">
+                      <TrendingUp className="mr-2 h-5 w-5 text-blue-600" />
+                      <span className="text-sm">Focus on undervalued companies with strong fundamentals</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Shield className="mr-2 h-5 w-5 text-blue-600" />
+                      <span className="text-sm">Conservative approach with emphasis on capital protection</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Award className="mr-2 h-5 w-5 text-blue-600" />
+                      <span className="text-sm">Experienced team with over 20 years of market expertise</span>
+                    </div>
+                  </div>
                 </CardContent>
+                <CardFooter>
+                  <Button className="w-full" asChild>
+                    <Link
+                      href="https://www.hdfcsec.com/portfolio-management-services-pms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Visit Website
+                    </Link>
+                  </Button>
+                </CardFooter>
               </Card>
-            ))}
+
+              {/* Motilal Oswal PMS */}
+              <Card className="flex flex-col">
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle>Motilal Oswal PMS</CardTitle>
+                    <Badge
+                      variant="outline"
+                      className="bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-300"
+                    >
+                      High Returns
+                    </Badge>
+                  </div>
+                  <CardDescription>Value & Growth Strategy</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">3-Year Returns</span>
+                      <span className="font-semibold text-green-600">21.3%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">5-Year Returns</span>
+                      <span className="font-semibold text-green-600">16.8%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">Min. Investment</span>
+                      <span className="font-semibold">₹50 Lakhs</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start">
+                      <TrendingUp className="mr-2 h-5 w-5 text-amber-600" />
+                      <span className="text-sm">QGLP strategy (Quality, Growth, Longevity, Price)</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Shield className="mr-2 h-5 w-5 text-amber-600" />
+                      <span className="text-sm">Focus on businesses with sustainable competitive advantages</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Award className="mr-2 h-5 w-5 text-amber-600" />
+                      <span className="text-sm">Multiple award-winning research team</span>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full" asChild>
+                    <Link
+                      href="https://www.motilaloswal.com/portfolio-management-services"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Visit Website
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+
+              {/* Geojit PMS */}
+              <Card className="flex flex-col">
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle>Geojit PMS</CardTitle>
+                    <Badge
+                      variant="outline"
+                      className="bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300"
+                    >
+                      Consistent
+                    </Badge>
+                  </div>
+                  <CardDescription>Multi-Cap Growth Strategy</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">3-Year Returns</span>
+                      <span className="font-semibold text-green-600">17.2%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">5-Year Returns</span>
+                      <span className="font-semibold text-green-600">14.5%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">Min. Investment</span>
+                      <span className="font-semibold">₹50 Lakhs</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start">
+                      <TrendingUp className="mr-2 h-5 w-5 text-green-600" />
+                      <span className="text-sm">Diversified portfolio across market capitalizations</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Shield className="mr-2 h-5 w-5 text-green-600" />
+                      <span className="text-sm">Focus on companies with strong growth potential</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Award className="mr-2 h-5 w-5 text-green-600" />
+                      <span className="text-sm">Consistent performance across market cycles</span>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full" asChild>
+                    <Link
+                      href="https://www.geojit.com/portfolio-management-services"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Visit Website
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+
+              {/* ASK Investment Managers */}
+              <Card className="flex flex-col">
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle>ASK Investment Managers</CardTitle>
+                    <Badge
+                      variant="outline"
+                      className="bg-purple-50 text-purple-700 dark:bg-purple-950 dark:text-purple-300"
+                    >
+                      Premium
+                    </Badge>
+                  </div>
+                  <CardDescription>Indian Entrepreneurship Strategy</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">3-Year Returns</span>
+                      <span className="font-semibold text-green-600">19.8%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">5-Year Returns</span>
+                      <span className="font-semibold text-green-600">16.2%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">Min. Investment</span>
+                      <span className="font-semibold">₹50 Lakhs</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start">
+                      <TrendingUp className="mr-2 h-5 w-5 text-purple-600" />
+                      <span className="text-sm">Focus on entrepreneur-driven businesses with high growth</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Shield className="mr-2 h-5 w-5 text-purple-600" />
+                      <span className="text-sm">Rigorous risk management framework</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Award className="mr-2 h-5 w-5 text-purple-600" />
+                      <span className="text-sm">One of India's largest PMS providers by AUM</span>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full" asChild>
+                    <Link href="https://www.askinvestmentmanagers.com/" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Visit Website
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+
+              {/* Marcellus Investment Managers */}
+              <Card className="flex flex-col">
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle>Marcellus Investment</CardTitle>
+                    <Badge variant="outline" className="bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300">
+                      Innovative
+                    </Badge>
+                  </div>
+                  <CardDescription>Consistent Compounders Strategy</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">3-Year Returns</span>
+                      <span className="font-semibold text-green-600">22.5%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">5-Year Returns</span>
+                      <span className="font-semibold text-green-600">18.3%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">Min. Investment</span>
+                      <span className="font-semibold">₹50 Lakhs</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start">
+                      <TrendingUp className="mr-2 h-5 w-5 text-red-600" />
+                      <span className="text-sm">Focus on companies with clean accounting and strong cash flows</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Shield className="mr-2 h-5 w-5 text-red-600" />
+                      <span className="text-sm">Concentrated portfolio of 10-15 high-quality companies</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Award className="mr-2 h-5 w-5 text-red-600" />
+                      <span className="text-sm">Led by renowned investment author Saurabh Mukherjea</span>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full" asChild>
+                    <Link href="https://marcellus.in/" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Visit Website
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+
+              {/* Sundaram Alternates */}
+              <Card className="flex flex-col">
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle>Sundaram Alternates</CardTitle>
+                    <Badge variant="outline" className="bg-teal-50 text-teal-700 dark:bg-teal-950 dark:text-teal-300">
+                      Balanced
+                    </Badge>
+                  </div>
+                  <CardDescription>Mid & Small Cap Strategy</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">3-Year Returns</span>
+                      <span className="font-semibold text-green-600">20.1%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">5-Year Returns</span>
+                      <span className="font-semibold text-green-600">15.7%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">Min. Investment</span>
+                      <span className="font-semibold">₹50 Lakhs</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start">
+                      <TrendingUp className="mr-2 h-5 w-5 text-teal-600" />
+                      <span className="text-sm">Focus on emerging mid and small-cap companies</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Shield className="mr-2 h-5 w-5 text-teal-600" />
+                      <span className="text-sm">Research-driven approach to identify future leaders</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Award className="mr-2 h-5 w-5 text-teal-600" />
+                      <span className="text-sm">Strong track record in discovering multi-baggers</span>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full" asChild>
+                    <Link href="https://sundaramalternates.com/" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Visit Website
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </div>
+          </TabsContent>
+          <TabsContent value="debt" className="mt-6">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {/* ICICI Prudential PMS */}
+              <Card className="flex flex-col">
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle>ICICI Prudential PMS</CardTitle>
+                    <Badge variant="outline" className="bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300">
+                      Top Rated
+                    </Badge>
+                  </div>
+                  <CardDescription>Fixed Income Strategy</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">3-Year Returns</span>
+                      <span className="font-semibold text-green-600">8.2%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">5-Year Returns</span>
+                      <span className="font-semibold text-green-600">7.5%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">Min. Investment</span>
+                      <span className="font-semibold">₹50 Lakhs</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start">
+                      <TrendingUp className="mr-2 h-5 w-5 text-blue-600" />
+                      <span className="text-sm">Focus on high-quality debt instruments</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Shield className="mr-2 h-5 w-5 text-blue-600" />
+                      <span className="text-sm">Conservative approach with emphasis on capital protection</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Award className="mr-2 h-5 w-5 text-blue-600" />
+                      <span className="text-sm">Strong credit research team</span>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full" asChild>
+                    <Link
+                      href="https://www.icicipruamc.com/portfolio-management-services"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Visit Website
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+
+              {/* Kotak Mahindra PMS */}
+              <Card className="flex flex-col">
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle>Kotak Mahindra PMS</CardTitle>
+                    <Badge
+                      variant="outline"
+                      className="bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-300"
+                    >
+                      Stable
+                    </Badge>
+                  </div>
+                  <CardDescription>Corporate Bond Strategy</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">3-Year Returns</span>
+                      <span className="font-semibold text-green-600">7.8%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">5-Year Returns</span>
+                      <span className="font-semibold text-green-600">7.2%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">Min. Investment</span>
+                      <span className="font-semibold">₹50 Lakhs</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start">
+                      <TrendingUp className="mr-2 h-5 w-5 text-amber-600" />
+                      <span className="text-sm">Focus on high-grade corporate bonds</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Shield className="mr-2 h-5 w-5 text-amber-600" />
+                      <span className="text-sm">Active duration management based on interest rate outlook</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Award className="mr-2 h-5 w-5 text-amber-600" />
+                      <span className="text-sm">Consistent performance across interest rate cycles</span>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full" asChild>
+                    <Link href="https://www.kotaksecurities.com/pms/" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Visit Website
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+
+              {/* Aditya Birla Sun Life PMS */}
+              <Card className="flex flex-col">
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle>Aditya Birla Sun Life</CardTitle>
+                    <Badge
+                      variant="outline"
+                      className="bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300"
+                    >
+                      Reliable
+                    </Badge>
+                  </div>
+                  <CardDescription>Structured Debt Strategy</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">3-Year Returns</span>
+                      <span className="font-semibold text-green-600">8.5%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">5-Year Returns</span>
+                      <span className="font-semibold text-green-600">7.8%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">Min. Investment</span>
+                      <span className="font-semibold">₹50 Lakhs</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start">
+                      <TrendingUp className="mr-2 h-5 w-5 text-green-600" />
+                      <span className="text-sm">Diversified portfolio of structured debt instruments</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Shield className="mr-2 h-5 w-5 text-green-600" />
+                      <span className="text-sm">Focus on secured debt with strong collateral</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Award className="mr-2 h-5 w-5 text-green-600" />
+                      <span className="text-sm">Experienced team with strong credit assessment capabilities</span>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full" asChild>
+                    <Link
+                      href="https://mutualfund.adityabirlacapital.com/portfolio-management-services"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Visit Website
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </div>
+          </TabsContent>
+          <TabsContent value="multi" className="mt-6">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {/* Edelweiss PMS */}
+              <Card className="flex flex-col">
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle>Edelweiss PMS</CardTitle>
+                    <Badge variant="outline" className="bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300">
+                      Top Rated
+                    </Badge>
+                  </div>
+                  <CardDescription>Multi-Asset Allocation Strategy</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">3-Year Returns</span>
+                      <span className="font-semibold text-green-600">14.2%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">5-Year Returns</span>
+                      <span className="font-semibold text-green-600">12.5%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">Min. Investment</span>
+                      <span className="font-semibold">₹50 Lakhs</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start">
+                      <TrendingUp className="mr-2 h-5 w-5 text-blue-600" />
+                      <span className="text-sm">Dynamic allocation across equity, debt, and alternatives</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Shield className="mr-2 h-5 w-5 text-blue-600" />
+                      <span className="text-sm">Risk-adjusted approach to asset allocation</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Award className="mr-2 h-5 w-5 text-blue-600" />
+                      <span className="text-sm">Strong track record of downside protection</span>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full" asChild>
+                    <Link
+                      href="https://www.edelweissmf.com/portfolio-management-services"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Visit Website
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+
+              {/* IIFL Wealth PMS */}
+              <Card className="flex flex-col">
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle>IIFL Wealth PMS</CardTitle>
+                    <Badge
+                      variant="outline"
+                      className="bg-purple-50 text-purple-700 dark:bg-purple-950 dark:text-purple-300"
+                    >
+                      Premium
+                    </Badge>
+                  </div>
+                  <CardDescription>Multi-Asset Opportunities Strategy</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">3-Year Returns</span>
+                      <span className="font-semibold text-green-600">15.8%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">5-Year Returns</span>
+                      <span className="font-semibold text-green-600">13.2%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">Min. Investment</span>
+                      <span className="font-semibold">₹1 Crore</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start">
+                      <TrendingUp className="mr-2 h-5 w-5 text-purple-600" />
+                      <span className="text-sm">Tactical allocation across multiple asset classes</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Shield className="mr-2 h-5 w-5 text-purple-600" />
+                      <span className="text-sm">Opportunistic approach to capture market inefficiencies</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Award className="mr-2 h-5 w-5 text-purple-600" />
+                      <span className="text-sm">Access to exclusive investment opportunities</span>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full" asChild>
+                    <Link href="https://www.iiflwealthmanagement.com/" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Visit Website
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+
+              {/* Axis PMS */}
+              <Card className="flex flex-col">
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <CardTitle>Axis PMS</CardTitle>
+                    <Badge variant="outline" className="bg-teal-50 text-teal-700 dark:bg-teal-950 dark:text-teal-300">
+                      Balanced
+                    </Badge>
+                  </div>
+                  <CardDescription>Balanced Advantage Strategy</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="mb-4 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">3-Year Returns</span>
+                      <span className="font-semibold text-green-600">13.5%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">5-Year Returns</span>
+                      <span className="font-semibold text-green-600">11.8%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">Min. Investment</span>
+                      <span className="font-semibold">₹50 Lakhs</span>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-start">
+                      <TrendingUp className="mr-2 h-5 w-5 text-teal-600" />
+                      <span className="text-sm">Dynamic allocation between equity and debt</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Shield className="mr-2 h-5 w-5 text-teal-600" />
+                      <span className="text-sm">Model-based approach to asset allocation</span>
+                    </div>
+                    <div className="flex items-start">
+                      <Award className="mr-2 h-5 w-5 text-teal-600" />
+                      <span className="text-sm">Focus on risk-adjusted returns</span>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full" asChild>
+                    <Link
+                      href="https://www.axismf.com/portfolio-management-services"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Visit Website
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </div>
+          </TabsContent>
+        </Tabs>
+      </section>
+
+      {/* How to Choose a PMS */}
+      <section className="mb-16">
+        <h2 className="mb-8 text-3xl font-bold">How to Choose the Right PMS Provider</h2>
+        <div className="rounded-lg border p-6">
+          <div className="grid gap-6 md:grid-cols-2">
+            <div>
+              <h3 className="mb-4 text-xl font-semibold">Key Factors to Consider</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <DollarSign className="mr-2 h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-medium">Performance Track Record</p>
+                    <p className="text-sm text-muted-foreground">
+                      Evaluate the historical performance of the PMS across different market cycles, not just during
+                      bull markets.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Star className="mr-2 h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-medium">Investment Philosophy</p>
+                    <p className="text-sm text-muted-foreground">
+                      Ensure the PMS provider's investment philosophy aligns with your financial goals and risk
+                      tolerance.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Shield className="mr-2 h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-medium">Risk Management Approach</p>
+                    <p className="text-sm text-muted-foreground">
+                      Understand how the PMS manages risk and protects capital during market downturns.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Award className="mr-2 h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-medium">Team Experience</p>
+                    <p className="text-sm text-muted-foreground">
+                      Assess the experience and expertise of the portfolio management team and their stability.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="mb-4 text-xl font-semibold">Additional Considerations</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <DollarSign className="mr-2 h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-medium">Fee Structure</p>
+                    <p className="text-sm text-muted-foreground">
+                      Compare the fixed and performance-based fees across different PMS providers and understand their
+                      impact on returns.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Star className="mr-2 h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-medium">Transparency & Reporting</p>
+                    <p className="text-sm text-muted-foreground">
+                      Evaluate the quality and frequency of portfolio reports and the transparency in communication.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Shield className="mr-2 h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-medium">Exit Options</p>
+                    <p className="text-sm text-muted-foreground">
+                      Understand the lock-in period, exit load, and the process for withdrawing your investment.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Award className="mr-2 h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-medium">Customization Options</p>
+                    <p className="text-sm text-muted-foreground">
+                      Check if the PMS offers customization based on your specific requirements and constraints.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 gradient-bg text-white">
-        <div className="container-custom">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Need Help Selecting the Right PMS Provider?
-            </h2>
-            <p className="mt-4 text-lg opacity-90">
-              Our experts can help you navigate the PMS landscape and find the right portfolio management service that
-              aligns with your financial goals.
-            </p>
-            <div className="mt-8">
-              <Button size="lg" variant="secondary" asChild>
-                <Link href="/contact">
-                  Schedule a Consultation <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+      {/* NRI Section */}
+      <section className="mb-16">
+        <h2 className="mb-8 text-3xl font-bold">PMS for NRI Investors</h2>
+        <div className="rounded-lg bg-gradient-to-r from-indigo-50 to-blue-50 p-8 dark:from-indigo-950 dark:to-blue-950">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <h3 className="mb-4 text-xl font-semibold">PMS Investment for NRIs</h3>
+              <p className="mb-4">
+                Non-Resident Indians (NRIs) can invest in Portfolio Management Services in India, subject to compliance
+                with FEMA regulations and KYC requirements. PMS offers NRIs an excellent opportunity to participate in
+                India's growth story while benefiting from professional management.
+              </p>
+              <h4 className="mb-2 font-medium">Key Requirements for NRI Investors:</h4>
+              <ul className="mb-4 space-y-2">
+                <li className="flex items-start">
+                  <CheckCircle className="mr-2 h-5 w-5 text-green-600" />
+                  <span>NRO/NRE/FCNR bank account in India</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="mr-2 h-5 w-5 text-green-600" />
+                  <span>PIS (Portfolio Investment Scheme) permission from the bank</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="mr-2 h-5 w-5 text-green-600" />
+                  <span>KYC documents including passport, visa, and overseas address proof</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="mr-2 h-5 w-5 text-green-600" />
+                  <span>Tax identification details (PAN card)</span>
+                </li>
+              </ul>
             </div>
+            <div>
+              <h3 className="mb-4 text-xl font-semibold">Benefits for NRI Investors</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <TrendingUp className="mr-2 h-5 w-5 text-indigo-600" />
+                  <div>
+                    <p className="font-medium">Exposure to India's Growth Story</p>
+                    <p className="text-sm">
+                      Access to one of the world's fastest-growing economies with professional management
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Shield className="mr-2 h-5 w-5 text-indigo-600" />
+                  <div>
+                    <p className="font-medium">Hassle-Free Investment Management</p>
+                    <p className="text-sm">Professional management without requiring day-to-day involvement</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <DollarSign className="mr-2 h-5 w-5 text-indigo-600" />
+                  <div>
+                    <p className="font-medium">Potential for Higher Returns</p>
+                    <p className="text-sm">
+                      Opportunity to earn higher returns compared to traditional NRI investments
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <Award className="mr-2 h-5 w-5 text-indigo-600" />
+                  <div>
+                    <p className="font-medium">Portfolio Diversification</p>
+                    <p className="text-sm">Diversify global investments with exposure to Indian markets</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="rounded-lg bg-gradient-to-r from-blue-600 to-indigo-700 p-8 text-white">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="mb-4 text-3xl font-bold">Ready to Invest in a Top-Performing PMS?</h2>
+          <p className="mb-6 text-lg">
+            Our team of expert advisors can help you select the right PMS provider based on your financial goals, risk
+            appetite, and investment horizon.
+          </p>
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <Button size="lg" variant="secondary" asChild>
+              <Link href="/contact">Schedule a Consultation</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="bg-transparent text-white hover:bg-white/10" asChild>
+              <Link href="/pms/pms-faq">Explore PMS FAQs</Link>
+            </Button>
           </div>
         </div>
       </section>
     </div>
   )
 }
-

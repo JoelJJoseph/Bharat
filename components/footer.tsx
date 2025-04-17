@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
@@ -41,16 +40,14 @@ export default function Footer() {
             <Link href="/" className="flex items-center">
               <span className="text-xl sm:text-2xl font-bold">
                 <span className="text-primary">Bharat </span>
-                <span style={{ color: '#020b1c' }}> Alternates</span>
+                <span style={{ color: "#020b1c" }}> Alternates</span>
               </span>
             </Link>
             <div className="space-y-3">
               <p className="text-gray-600 font-medium text-base leading-relaxed">
                 Your trusted partner in Portfolio Management Services and Alternative Investment Funds.
               </p>
-              <p className="text-sm text-gray-500">
-                Empowering investors with data-driven insights.
-              </p>
+              <p className="text-sm text-gray-500">Empowering investors with data-driven insights.</p>
             </div>
           </div>
 
@@ -146,10 +143,18 @@ export default function Footer() {
           <div className="text-sm text-gray-600 mb-8">
             <h4 className="font-semibold mb-2">RISK DISCLAIMER:</h4>
             <p className="leading-relaxed">
-              Investments in Bharat Alternates are subject to market-related risks. The content provided on this platform is for general informational purposes only and should not be construed as a recommendation or investment advice. Investors must perform their own analysis and make decisions based on their risk appetite. Only those investors with a suitable aptitude and attitude towards risk should consider investment options in Alternates (PMS & AIFs).
+              Investments in Bharat Alternates are subject to market-related risks. The content provided on this
+              platform is for general informational purposes only and should not be construed as a recommendation or
+              investment advice. Investors must perform their own analysis and make decisions based on their risk
+              appetite. Only those investors with a suitable aptitude and attitude towards risk should consider
+              investment options in Alternates (PMS & AIFs).
             </p>
             <p className="leading-relaxed mt-2">
-              Past performance may or may not be indicative of future results and should not be used for comparison with other investments. We strongly recommend reading the disclosure documents thoroughly before making any investment decisions. PMS & AIF products are market-linked and do not offer any guaranteed or assured returns. These are higher-risk investments and come with the possibility of losing the principal amount. As such, investors must make informed and prudent decisions.
+              Past performance may or may not be indicative of future results and should not be used for comparison with
+              other investments. We strongly recommend reading the disclosure documents thoroughly before making any
+              investment decisions. PMS & AIF products are market-linked and do not offer any guaranteed or assured
+              returns. These are higher-risk investments and come with the possibility of losing the principal amount.
+              As such, investors must make informed and prudent decisions.
             </p>
           </div>
         </div>
@@ -174,4 +179,3 @@ export default function Footer() {
     </footer>
   )
 }
-

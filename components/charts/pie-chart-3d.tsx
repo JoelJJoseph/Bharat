@@ -192,4 +192,3 @@ export default function PieChart3D({ data, height = 300, title, interactive = tr
     </div>
   )
 }
-

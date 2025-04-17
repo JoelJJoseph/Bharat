@@ -1,6 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import type React from "react"
+
+import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -8,16 +10,18 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Loader2 } from "lucide-react"
+import { getSupabaseBrowserClient } from "@/lib/supabase"
+import { useToast } from "@/components/ui/use-toast"
 
 export interface Blog {
-  _id?: string
+  id?: string
   title: string
   slug: string
   content: string
   summary: string
-  coverImage?: string
-  author: string
-  publishedAt: Date
+  cover_image?: string
+  author_name: string
+  published_at?: string
 }
 
 interface BlogFormProps {
@@ -34,15 +38,34 @@ export function BlogForm({ blogId, defaultValues }: BlogFormProps) {
       slug: "",
       content: "",
       summary: "",
-      coverImage: "",
-      author: "",
-      publishedAt: new Date(),
-    }
+      cover_image: "",
+      author_name: "",
+    },
   )
+  const { toast } = useToast()
+  const supabase = getSupabaseBrowserClient()
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  useEffect(() => {
+    const getUserInfo = async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession()
+      if (session) {
+        const { data: profile } = await supabase.from("profiles").select("full_name").eq("id", session.user.id).single()
+
+        if (profile && !formData.author_name) {
+          setFormData((prev) => ({
+            ...prev,
+            author_name: profile.full_name || session.user.email,
+          }))
+        }
+      }
+    }
+
+    getUserInfo()
+  }, [supabase])
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
@@ -52,29 +75,59 @@ export function BlogForm({ blogId, defaultValues }: BlogFormProps) {
     setIsLoading(true)
 
     try {
-      const endpoint = blogId 
-        ? `/api/blogs/${blogId}` 
-        : "/api/blogs"
-      
-      const method = blogId ? "PUT" : "POST"
+      const {
+        data: { session },
+      } = await supabase.auth.getSession()
 
-      const response = await fetch(endpoint, {
-        method,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      })
+      if (!session) {
+        throw new Error("You must be logged in to create or edit blog posts")
+      }
 
-      if (!response.ok) {
-        throw new Error("Failed to save blog post")
+      const now = new Date().toISOString()
+
+      if (blogId) {
+        // Update existing blog
+        const { error } = await supabase
+          .from("blogs")
+          .update({
+            ...formData,
+            updated_at: now,
+          })
+          .eq("id", blogId)
+
+        if (error) throw error
+
+        toast({
+          title: "Blog post updated",
+          description: "Your blog post has been updated successfully",
+        })
+      } else {
+        // Create new blog
+        const { error } = await supabase.from("blogs").insert({
+          ...formData,
+          author_id: session.user.id,
+          published_at: now,
+          created_at: now,
+          updated_at: now,
+        })
+
+        if (error) throw error
+
+        toast({
+          title: "Blog post created",
+          description: "Your blog post has been created successfully",
+        })
       }
 
       router.push("/admin/blog")
       router.refresh()
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error saving blog post:", error)
-      alert("Failed to save blog post. Please try again.")
+      toast({
+        title: "Error",
+        description: error.message || "Failed to save blog post. Please try again.",
+        variant: "destructive",
+      })
     } finally {
       setIsLoading(false)
     }
@@ -108,19 +161,8 @@ export function BlogForm({ blogId, defaultValues }: BlogFormProps) {
         <div className="space-y-2">
           <Label htmlFor="slug">Slug</Label>
           <div className="flex gap-2">
-            <Input
-              id="slug"
-              name="slug"
-              value={formData.slug || ""}
-              onChange={handleChange}
-              required
-            />
-            <Button 
-              type="button" 
-              variant="outline"
-              onClick={generateSlug}
-              className="whitespace-nowrap"
-            >
+            <Input id="slug" name="slug" value={formData.slug || ""} onChange={handleChange} required />
+            <Button type="button" variant="outline" onClick={generateSlug} className="whitespace-nowrap">
               Generate Slug
             </Button>
           </div>
@@ -151,33 +193,29 @@ export function BlogForm({ blogId, defaultValues }: BlogFormProps) {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="coverImage">Cover Image URL</Label>
+          <Label htmlFor="cover_image">Cover Image URL</Label>
           <Input
-            id="coverImage"
-            name="coverImage"
-            value={formData.coverImage || ""}
+            id="cover_image"
+            name="cover_image"
+            value={formData.cover_image || ""}
             onChange={handleChange}
             placeholder="https://example.com/image.jpg"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="author">Author</Label>
+          <Label htmlFor="author_name">Author</Label>
           <Input
-            id="author"
-            name="author"
-            value={formData.author || ""}
+            id="author_name"
+            name="author_name"
+            value={formData.author_name || ""}
             onChange={handleChange}
             required
           />
         </div>
 
         <div className="flex justify-end gap-4">
-          <Button
-            type="button"
-            variant="outline"
-            onClick={() => router.push("/admin/blog")}
-          >
+          <Button type="button" variant="outline" onClick={() => router.push("/admin/blog")}>
             Cancel
           </Button>
           <Button type="submit" disabled={isLoading}>

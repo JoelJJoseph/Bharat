@@ -6,11 +6,11 @@ import Footer from "@/components/footer"
 import { Toaster } from "@/components/ui/toaster"
 import Script from "next/script"
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ChevronDown } from "lucide-react"
+import { ImprovedDropdown } from "@/components/improved-dropdown"
 import { MobileMenu } from "@/components/mobile-menu"
 import { ContactFloat } from "@/components/contact-float"
+import { PageLoader } from "@/components/page-loader"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -68,6 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
+        <PageLoader />
         <div className="flex flex-col min-h-screen w-full">
           <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md shadow-sm">
             <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -75,7 +76,7 @@ export default function RootLayout({
                 <Link href="/" className="flex items-center">
                   <span className="text-xl sm:text-2xl font-bold">
                     <span className="text-primary">Bharat </span>
-                    <span style={{ color: '#020b1c' }}> Alternates</span>
+                    <span style={{ color: "#020b1c" }}> Alternates</span>
                   </span>
                 </Link>
               </div>
@@ -87,60 +88,36 @@ export default function RootLayout({
                 <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">
                   About
                 </Link>
-                <div className="relative group">
-                  <button className="text-sm font-medium hover:text-primary transition-colors flex items-center">
-                    PMS <ChevronDown className="h-4 w-4 ml-1" />
-                  </button>
-                  <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 hidden group-hover:block">
-                    <Link href="/pms/what-is-pms" className="block px-4 py-2 text-sm hover:bg-blue-50">
-                      What is PMS?
-                    </Link>
-                    <Link href="/pms/do-you-need-pms" className="block px-4 py-2 text-sm hover:bg-blue-50">
-                      Do you need PMS?
-                    </Link>
-                    <Link href="/pms/who-should-invest" className="block px-4 py-2 text-sm hover:bg-blue-50">
-                      Who Should Invest in PMS?
-                    </Link>
-                    <Link href="/pms/top-pms-in-india" className="block px-4 py-2 text-sm hover:bg-blue-50">
-                      Top PMSs in India
-                    </Link>
-                  </div>
-                </div>
-                <div className="relative group">
-                  <button className="text-sm font-medium hover:text-primary transition-colors flex items-center">
-                    AIF <ChevronDown className="h-4 w-4 ml-1" />
-                  </button>
-                  <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 hidden group-hover:block">
-                    <Link href="/aif/what-is-aif" className="block px-4 py-2 text-sm hover:bg-blue-50">
-                      What is AIF?
-                    </Link>
-                    <Link href="/aif/do-you-need-aif" className="block px-4 py-2 text-sm hover:bg-blue-50">
-                      Do you need AIF?
-                    </Link>
-                    <Link href="/aif/who-should-invest" className="block px-4 py-2 text-sm hover:bg-blue-50">
-                      Who Should Invest in AIF?
-                    </Link>
-                  </div>
-                </div>
-                <div className="relative group">
-                  <button className="text-sm font-medium hover:text-primary transition-colors flex items-center">
-                    Resources <ChevronDown className="h-4 w-4 ml-1" />
-                  </button>
-                  <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 hidden group-hover:block">
-                    <Link href="/resources/pms-newsletter" className="block px-4 py-2 text-sm hover:bg-blue-50">
-                      PMS Newsletter
-                    </Link>
-                    <Link href="/resources/aif-newsletter" className="block px-4 py-2 text-sm hover:bg-blue-50">
-                      AIF Newsletter
-                    </Link>
-                    <Link href="/resources/blog" className="block px-4 py-2 text-sm hover:bg-blue-50">
-                      Blog
-                    </Link>
-                    <Link href="/resources/nifty-pe-ratio" className="block px-4 py-2 text-sm hover:bg-blue-50">
-                      Nifty PE Ratio Chart
-                    </Link>
-                  </div>
-                </div>
+
+                <ImprovedDropdown
+                  title="PMS"
+                  items={[
+                    { name: "What is PMS?", href: "/pms/what-is-pms" },
+                    { name: "Who Should Invest in PMS?", href: "/pms/who-should-invest" },
+                    { name: "Top PMSs in India", href: "/pms/top-pms-in-india" },
+                    { name: "PMS FAQ", href: "/pms/pms-faq" },
+                  ]}
+                />
+
+                <ImprovedDropdown
+                  title="AIF"
+                  items={[
+                    { name: "What is AIF?", href: "/aif/what-is-aif" },
+                    { name: "Do you need AIF?", href: "/aif/do-you-need-aif" },
+                    { name: "Who Should Invest in AIF?", href: "/aif/who-should-invest" },
+                  ]}
+                />
+
+                <ImprovedDropdown
+                  title="Resources"
+                  items={[
+                    { name: "PMS Newsletter", href: "/resources/pms-newsletter" },
+                    { name: "AIF Newsletter", href: "/resources/aif-newsletter" },
+                    { name: "Blog", href: "/resources/blog" },
+                    { name: "Nifty PE Ratio Chart", href: "/resources/nifty-pe-ratio" },
+                  ]}
+                />
+
                 <Link href="/our-clients" className="text-sm font-medium hover:text-primary transition-colors">
                   Our Clients
                 </Link>
@@ -178,3 +155,5 @@ export default function RootLayout({
   )
 }
 
+
+import './globals.css'
