@@ -72,4 +72,3 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
     </div>
   )
 }
-

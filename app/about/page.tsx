@@ -244,7 +244,8 @@ const teamData = [
     bio: "A visionary leader transforming India's investment landscape through innovative strategies and exceptional returns, revolutionizing wealth management for investors nationwide.",
     image: "/images/team/geetanash_malik.jpg",
     socialLinks: {
-      linkedin: "https://www.linkedin.com/in/geetansh-malik-820052175/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin:
+        "https://www.linkedin.com/in/geetansh-malik-820052175/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       twitter: "https://x.com/geetansh6?t=JQlNL5TrK-l8cnTRKO9RRw&s=08",
       email: "Geetansh@bharatalternates.com",
     },
@@ -260,7 +261,6 @@ const teamData = [
       email: "#",
     },
   },
- 
 ]
 
 // Why Choose Us data with SEO-optimized content
@@ -503,10 +503,10 @@ export default function AboutPage() {
       {/* Our Core Values Section */}
       <section className="py-24 bg-[#020b1c] text-white core-values-section">
         {/* Floating glass elements */}
-        <div className="glass-element glass-1" style={{ left: '5%', top: '20%' }}></div>
-        <div className="glass-element glass-2" style={{ left: '10%', top: '50%' }}></div>
-        <div className="glass-element glass-3" style={{ left: '15%', top: '80%' }}></div>
-        <div className="glass-element glass-4" style={{ left: '20%', top: '30%' }}></div>
+        <div className="glass-element glass-1" style={{ left: "5%", top: "20%" }}></div>
+        <div className="glass-element glass-2" style={{ left: "10%", top: "50%" }}></div>
+        <div className="glass-element glass-3" style={{ left: "15%", top: "80%" }}></div>
+        <div className="glass-element glass-4" style={{ left: "20%", top: "30%" }}></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <AnimationWrapper animation="fade-in" delay={0.1}>

@@ -234,4 +234,3 @@ export function InvestmentPerformanceChart({ strategies }: InvestmentPerformance
     </div>
   )
 }
-

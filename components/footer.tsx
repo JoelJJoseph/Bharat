@@ -1,35 +1,10 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import Link from "next/link"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      gsap.registerPlugin(ScrollTrigger)
-
-      const footer = footerRef.current
-      if (!footer) return
-
-      // Animate footer elements when they come into view
-      gsap.from(footer.querySelectorAll(".footer-column"), {
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: footer,
-          start: "top bottom-=100",
-          toggleActions: "play none none none",
-        },
-      })
-    }
-  }, [])
 
   return (
     <footer ref={footerRef} className="bg-gray-50 border-t">
@@ -44,7 +19,7 @@ export default function Footer() {
               </span>
             </Link>
             <div className="space-y-3">
-              <p className="text-gray-600 font-medium text-base leading-relaxed">
+              <p className="text-gray-800 font-bold text-base leading-relaxed border-l-4 border-primary pl-3 py-1">
                 Your trusted partner in Portfolio Management Services and Alternative Investment Funds.
               </p>
               <p className="text-sm text-gray-500">Empowering investors with data-driven insights.</p>

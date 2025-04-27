@@ -6,7 +6,6 @@ import Footer from "@/components/footer"
 import { Toaster } from "@/components/ui/toaster"
 import Script from "next/script"
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
 import { MobileMenu } from "@/components/mobile-menu"
@@ -75,7 +74,7 @@ export default function RootLayout({
                 <Link href="/" className="flex items-center">
                   <span className="text-xl sm:text-2xl font-bold">
                     <span className="text-primary">Bharat </span>
-                    <span style={{ color: '#020b1c' }}> Alternates</span>
+                    <span style={{ color: "#020b1c" }}> Alternates</span>
                   </span>
                 </Link>
               </div>
@@ -177,4 +176,3 @@ export default function RootLayout({
     </html>
   )
 }
-

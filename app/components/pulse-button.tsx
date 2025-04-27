@@ -67,4 +67,3 @@ export function PulseButton({ children, href, variant = "primary" }: PulseButton
     </Link>
   )
 }
-

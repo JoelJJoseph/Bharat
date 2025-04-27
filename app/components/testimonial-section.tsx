@@ -115,4 +115,3 @@ export default function TestimonialSection({ title, subtitle, testimonials }: Te
     </section>
   )
 }
-

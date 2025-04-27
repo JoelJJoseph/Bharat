@@ -31,4 +31,3 @@ export function AnimatedButton({ href, children, className }: AnimatedButtonProp
     </div>
   )
 }
-

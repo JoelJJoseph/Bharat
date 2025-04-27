@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -37,12 +39,10 @@ export function BlogForm({ blogId, defaultValues }: BlogFormProps) {
       coverImage: "",
       author: "",
       publishedAt: new Date(),
-    }
+    },
   )
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
@@ -52,10 +52,8 @@ export function BlogForm({ blogId, defaultValues }: BlogFormProps) {
     setIsLoading(true)
 
     try {
-      const endpoint = blogId 
-        ? `/api/blogs/${blogId}` 
-        : "/api/blogs"
-      
+      const endpoint = blogId ? `/api/blogs/${blogId}` : "/api/blogs"
+
       const method = blogId ? "PUT" : "POST"
 
       const response = await fetch(endpoint, {
@@ -108,19 +106,8 @@ export function BlogForm({ blogId, defaultValues }: BlogFormProps) {
         <div className="space-y-2">
           <Label htmlFor="slug">Slug</Label>
           <div className="flex gap-2">
-            <Input
-              id="slug"
-              name="slug"
-              value={formData.slug || ""}
-              onChange={handleChange}
-              required
-            />
-            <Button 
-              type="button" 
-              variant="outline"
-              onClick={generateSlug}
-              className="whitespace-nowrap"
-            >
+            <Input id="slug" name="slug" value={formData.slug || ""} onChange={handleChange} required />
+            <Button type="button" variant="outline" onClick={generateSlug} className="whitespace-nowrap">
               Generate Slug
             </Button>
           </div>
@@ -163,21 +150,11 @@ export function BlogForm({ blogId, defaultValues }: BlogFormProps) {
 
         <div className="space-y-2">
           <Label htmlFor="author">Author</Label>
-          <Input
-            id="author"
-            name="author"
-            value={formData.author || ""}
-            onChange={handleChange}
-            required
-          />
+          <Input id="author" name="author" value={formData.author || ""} onChange={handleChange} required />
         </div>
 
         <div className="flex justify-end gap-4">
-          <Button
-            type="button"
-            variant="outline"
-            onClick={() => router.push("/admin/blog")}
-          >
+          <Button type="button" variant="outline" onClick={() => router.push("/admin/blog")}>
             Cancel
           </Button>
           <Button type="submit" disabled={isLoading}>

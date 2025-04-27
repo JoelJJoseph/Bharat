@@ -1,6 +1,5 @@
-'use client';
+"use client"
 import HeroSection from "@/components/hero-section"
-import { Analytics } from "@vercel/analytics/react"
 import { InteractiveTable } from "@/components/interactive-table"
 import { CalendlyButton } from "@/components/calendly-button"
 import { ContactFloat } from "@/components/contact-float"
@@ -25,7 +24,7 @@ import TextReveal from "@/components/text-reveal"
 import { StrategyTimeline } from "@/components/strategy-timeline"
 // Import the LogoSlider component at the top of the file
 import LogoSlider from "@/components/logo-slider"
-import { useCounter } from './hooks/useCounter';
+import { useCounter } from "./hooks/useCounter"
 
 export default function Home() {
   // Sample data for table
@@ -62,22 +61,26 @@ export default function Home() {
   ]
 
   const StatCard = ({ stat, index }: { stat: any; index: number }) => {
-    const count = useCounter(stat.number, 2500); // 2.5 seconds duration
+    const count = useCounter(stat.number, 2500) // 2.5 seconds duration
 
     return (
       <AnimationWrapper animation="scale-in" delay={0.1 + index * 0.1}>
         <div className="relative group">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl blur-xl transition-all duration-300 group-hover:blur-2xl"></div>
-          <div className={`relative h-[280px] p-8 rounded-2xl border border-white/10 backdrop-blur-sm bg-gradient-to-b ${stat.gradient} 
-            hover:border-white/20 transition-all duration-300 flex flex-col items-center justify-center overflow-hidden group`}>
+          <div
+            className={`relative h-[280px] p-8 rounded-2xl border border-white/10 backdrop-blur-sm bg-gradient-to-b ${stat.gradient} 
+            hover:border-white/20 transition-all duration-300 flex flex-col items-center justify-center overflow-hidden group`}
+          >
             {/* Shimmer effect */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             </div>
-            
+
             <div className="relative z-10">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-white/10 to-white/5 flex items-center justify-center mb-6 
-                backdrop-blur-sm border border-white/10 group-hover:scale-110 transition-transform duration-300">
+              <div
+                className="w-16 h-16 rounded-full bg-gradient-to-r from-white/10 to-white/5 flex items-center justify-center mb-6 
+                backdrop-blur-sm border border-white/10 group-hover:scale-110 transition-transform duration-300"
+              >
                 <stat.icon className="h-8 w-8 text-white/90" />
               </div>
               <div className="text-5xl font-bold mb-3 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
@@ -88,8 +91,8 @@ export default function Home() {
           </div>
         </div>
       </AnimationWrapper>
-    );
-  };
+    )
+  }
 
   return (
     <>
@@ -747,7 +750,7 @@ export default function Home() {
         {/* Background gradient and blur effects */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#020b1c] to-[#041633] opacity-90"></div>
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20"></div>
-        
+
         {/* Floating orbs/glass elements */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute top-40 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -755,11 +758,15 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="inline-block text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200 mb-6" style={{ backdropFilter: 'blur(4px)' }}>
+            <h2
+              className="inline-block text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200 mb-6"
+              style={{ backdropFilter: "blur(4px)" }}
+            >
               How Bharat Alternates Is Transforming India's Wealth Management Landscape?
             </h2>
             <p className="text-blue-100/90 max-w-3xl mx-auto text-lg">
-              Our platform brings together India's most comprehensive network of portfolio managers, investment schemes, and asset management companies.
+              Our platform brings together India's most comprehensive network of portfolio managers, investment schemes,
+              and asset management companies.
             </p>
             <div className="w-32 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mt-8 rounded-full opacity-70"></div>
           </div>
@@ -770,32 +777,32 @@ export default function Home() {
                 number: 800,
                 label: "Portfolio manager's in India",
                 icon: Users,
-                gradient: "from-blue-400/20 to-blue-600/20"
+                gradient: "from-blue-400/20 to-blue-600/20",
               },
               {
                 number: 500,
                 label: "Portfolio management schemes in India",
                 icon: Briefcase,
-                gradient: "from-indigo-400/20 to-indigo-600/20"
+                gradient: "from-indigo-400/20 to-indigo-600/20",
               },
               {
                 number: 300,
                 label: "Alternative Investment funds in India",
                 icon: BarChart2,
-                gradient: "from-purple-400/20 to-purple-600/20"
+                gradient: "from-purple-400/20 to-purple-600/20",
               },
               {
                 number: 2500,
                 label: "Mutual fund schemes in India",
                 icon: LineChart,
-                gradient: "from-pink-400/20 to-pink-600/20"
+                gradient: "from-pink-400/20 to-pink-600/20",
               },
               {
                 number: 40,
                 label: "Asset management companies in India",
                 icon: Building2,
-                gradient: "from-cyan-400/20 to-cyan-600/20"
-              }
+                gradient: "from-cyan-400/20 to-cyan-600/20",
+              },
             ].map((stat, index) => (
               <StatCard key={index} stat={stat} index={index} />
             ))}
@@ -827,4 +834,3 @@ export default function Home() {
     </>
   )
 }
-

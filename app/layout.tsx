@@ -11,6 +11,7 @@ import { ImprovedDropdown } from "@/components/improved-dropdown"
 import { MobileMenu } from "@/components/mobile-menu"
 import { ContactFloat } from "@/components/contact-float"
 import { PageLoader } from "@/components/page-loader"
+import { CalendlyButton } from "@/components/calendly-button"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -108,6 +109,10 @@ export default function RootLayout({
                   ]}
                 />
 
+                <Link href="/nri" className="text-sm font-medium hover:text-primary transition-colors">
+                  NRI
+                </Link>
+
                 <ImprovedDropdown
                   title="Resources"
                   items={[
@@ -127,9 +132,9 @@ export default function RootLayout({
               </nav>
 
               <div className="flex items-center gap-4">
-                <Button asChild className="hidden md:inline-flex">
-                  <Link href="/contact">Book a Call</Link>
-                </Button>
+                <CalendlyButton variant="default" className="hidden md:inline-flex">
+                  Book a Call
+                </CalendlyButton>
                 <MobileMenu />
               </div>
             </div>
@@ -155,5 +160,4 @@ export default function RootLayout({
   )
 }
 
-
-import './globals.css'
+import "./globals.css"

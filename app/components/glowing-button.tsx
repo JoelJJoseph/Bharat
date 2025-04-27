@@ -57,4 +57,3 @@ export function GlowingButton({ children, href }: GlowingButtonProps) {
     </Link>
   )
 }
-

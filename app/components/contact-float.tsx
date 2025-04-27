@@ -1,12 +1,10 @@
 "use client"
-
-import React from 'react';
-import { Phone } from 'lucide-react';
+import { Phone } from "lucide-react"
 
 export function ContactFloat() {
   // Format: country code + number without + or spaces
   const phoneNumber = "+919895833338"
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber.replace('+', '')}`
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber.replace("+", "")}`
 
   return (
     <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
@@ -45,7 +43,7 @@ export function ContactFloat() {
         </span>
       </a>
     </div>
-  );
+  )
 }
 
-export default ContactFloat; 
+export default ContactFloat

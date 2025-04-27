@@ -51,6 +51,11 @@ export function MobileMenu() {
       ],
     },
     {
+      href: "/nri",
+      label: "NRI",
+      active: pathname === "/nri",
+    },
+    {
       href: "/resources/blog",
       label: "Blog",
       active: pathname === "/resources/blog",

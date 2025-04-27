@@ -3,7 +3,7 @@
 export function WhatsAppFloat() {
   // Format: country code + number without + or spaces
   const phoneNumber = "+918527512552"
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber.replace('+', '')}`
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber.replace("+", "")}`
 
   return (
     <a
@@ -28,4 +28,4 @@ export function WhatsAppFloat() {
       </span>
     </a>
   )
-} 
+}

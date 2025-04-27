@@ -178,4 +178,3 @@ export function InteractiveTable({ data, columns }: InteractiveTableProps) {
     </div>
   )
 }
-

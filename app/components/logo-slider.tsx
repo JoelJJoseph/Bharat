@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 const logos = [
@@ -21,14 +20,14 @@ const logos = [
   { name: "Marcellus", logo: "/logo/marcellus.jpg" },
 ]
 
-export default function LogoSlider({ 
-  className, 
+export default function LogoSlider({
+  className,
   title = "Elite Portfolio Management Partners",
-  subtitle = "Partnering with India's premier SEBI-registered portfolio managers and alternative investment funds to deliver exceptional investment opportunities and wealth creation strategies."
-}: { 
-  className?: string,
-  title?: string,
-  subtitle?: string 
+  subtitle = "Partnering with India's premier SEBI-registered portfolio managers and alternative investment funds to deliver exceptional investment opportunities and wealth creation strategies.",
+}: {
+  className?: string
+  title?: string
+  subtitle?: string
 }) {
   const sliderRef = useRef<HTMLDivElement>(null)
 
@@ -71,9 +70,7 @@ export default function LogoSlider({
     <div className={cn("w-full overflow-hidden bg-white py-8", className)}>
       <div className="w-full px-4 md:px-8 lg:px-16">
         <h3 className="text-center text-2xl font-bold mb-8">{title}</h3>
-        <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
-          {subtitle}
-        </p>
+        <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">{subtitle}</p>
       </div>
 
       {/* Mobile view - static grid */}

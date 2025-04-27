@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { AnimatedButton } from "@/components/ui/animated-button"
+import { CalendlyButton } from "@/components/calendly-button"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -43,8 +44,7 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative flex items-center">
-            </div>
+            <div className="relative flex items-center"></div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -122,9 +122,9 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <AnimatedButton href="/contact" variant={isScrolled ? "primary" : "secondary"} size="default">
+            <CalendlyButton variant="primary" size="default">
               Book a Call
-            </AnimatedButton>
+            </CalendlyButton>
           </div>
 
           {/* Mobile Menu Button */}
@@ -238,9 +238,9 @@ export default function Header() {
               <MobileNavLink href="/contact" label="Contact Us" onClick={() => setIsMenuOpen(false)} />
 
               <div className="pt-4">
-                <AnimatedButton href="/contact" variant="primary" size="lg" className="w-full">
+                <CalendlyButton variant="primary" size="lg" className="w-full">
                   Book a Call
-                </AnimatedButton>
+                </CalendlyButton>
               </div>
             </nav>
           </div>
@@ -290,4 +290,3 @@ function MobileDropdownLink({ href, label, onClick }: { href: string; label: str
     </Link>
   )
 }
-

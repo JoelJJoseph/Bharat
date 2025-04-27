@@ -128,4 +128,3 @@ export default function FeatureSection({ title, subtitle, description, features,
     </section>
   )
 }
-

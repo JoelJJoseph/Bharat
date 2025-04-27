@@ -13,7 +13,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { MobileMenu } from "./mobile-menu"
-import { AuthButton } from "./auth/auth-button"
+
 
 export function MainNavbar() {
   const pathname = usePathname()
@@ -121,13 +121,18 @@ export function MainNavbar() {
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>Contact</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/nri" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>NRI</NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
         <MobileMenu />
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
-            <AuthButton />
+            
           </nav>
         </div>
       </div>

@@ -39,12 +39,7 @@ export function ImprovedDropdown({ title, items }: DropdownProps) {
   }, [])
 
   return (
-    <div 
-      className="relative" 
-      ref={dropdownRef}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="relative" ref={dropdownRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <button
         className={`text-sm font-medium transition-colors flex items-center ${
           isOpen ? "text-primary" : "hover:text-primary"
@@ -53,19 +48,13 @@ export function ImprovedDropdown({ title, items }: DropdownProps) {
         {title} <ChevronDown className={`h-4 w-4 ml-1 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
-      <div 
+      <div
         className={`absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg py-2 z-10 transition-all duration-200 ${
-          isOpen 
-            ? "opacity-100 translate-y-0 visible" 
-            : "opacity-0 -translate-y-2 invisible"
+          isOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
         }`}
       >
         {items.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="block px-5 py-3 text-sm hover:bg-blue-50 transition-colors"
-          >
+          <Link key={item.href} href={item.href} className="block px-5 py-3 text-sm hover:bg-blue-50 transition-colors">
             {item.name}
           </Link>
         ))}
