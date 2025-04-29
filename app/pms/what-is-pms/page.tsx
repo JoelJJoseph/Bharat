@@ -729,8 +729,7 @@ export default function WhatIsPMSPage() {
               <div className="flex items-start">
                 <div className="text-yellow-300 mr-3 mt-1">💡</div>
                 <p className="text-slate-300">
-                  <span className="font-semibold">Tip:</span> Hover over each category to see more details. Consider
-                  your investment style, time availability, and desire for control when choosing a PMS type.
+                  <span className="font-semibold">Tip:</span>Consider your investment style, time availability, and desire for control when choosing a PMS type. Most of the PMS are Discretionary PMS.
                 </p>
               </div>
             </div>
@@ -933,15 +932,7 @@ export default function WhatIsPMSPage() {
               <div className="bg-teal-100 rounded-full w-12 h-12 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Crown className="w-6 h-6 text-teal-600" />
               </div>
-              <h3 className="text-xl font-bold text-navy-900 mb-3">Exclusivity and Prestige</h3>
-              <p className="text-gray-600 mb-4">
-                PMS is available to investors with a minimum capital of ₹50 lakhs, making it a premium, exclusive
-                offering. It's ideal for those who value personalized service, strategic insights, and high-touch
-                financial management.
-              </p>
-              <blockquote className="italic text-teal-600 border-l-4 border-teal-500 pl-4 mt-4">
-                "I've worked hard to build my wealth. I want it managed with the same level of dedication."
-              </blockquote>
+              
             </div>
           </div>
         </div>
