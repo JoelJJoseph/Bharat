@@ -741,56 +741,7 @@ export default function WhatIsPMSPage() {
             className="mt-10 bg-gradient-to-br from-slate-800/70 to-slate-900/70 rounded-xl p-6 shadow-lg animate-fade-in"
             style={{ animationDelay: "1.6s" }}
           >
-            <h3 className="text-xl font-bold text-white mb-4">Find Your Ideal PMS Type</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-blue-900/30 p-5 rounded-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-blue-900/40">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                    <Briefcase className="w-5 h-5 text-white" />
-                  </div>
-                  <div className="bg-blue-600/40 text-blue-200 text-xs font-medium px-2 py-1 rounded-full">
-                    Hands-off
-                  </div>
-                </div>
-                <h4 className="text-blue-300 font-semibold mb-2">Discretionary PMS</h4>
-                <p className="text-slate-300 text-sm mb-3">
-                  Perfect if you prefer professional management with minimal involvement
-                </p>
-               
-              </div>
-
-              <div className="bg-purple-900/30 p-5 rounded-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-purple-900/40">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
-                    <Users className="w-5 h-5 text-white" />
-                  </div>
-                  <div className="bg-purple-600/40 text-purple-200 text-xs font-medium px-2 py-1 rounded-full">
-                    Balanced
-                  </div>
-                </div>
-                <h4 className="text-purple-300 font-semibold mb-2">Non-Discretionary PMS</h4>
-                <p className="text-slate-300 text-sm mb-3">
-                  Ideal if you want guidance while maintaining control over final decisions
-                </p>
-                
-              </div>
-
-              <div className="bg-green-900/30 p-5 rounded-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-green-900/40">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
-                    <LineChart className="w-5 h-5 text-white" />
-                  </div>
-                  <div className="bg-green-600/40 text-green-200 text-xs font-medium px-2 py-1 rounded-full">
-                    Hands-on
-                  </div>
-                </div>
-                <h4 className="text-green-300 font-semibold mb-2">Advisory PMS</h4>
-                <p className="text-slate-300 text-sm mb-3">
-                  Best for market-savvy investors who want expert insights with full control
-                </p>
-               
-              </div>
-            </div>
+            
           </div>
         </div>
 
