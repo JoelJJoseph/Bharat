@@ -150,6 +150,7 @@ export default function WhatIsPMSPage() {
 
               <h1 className="relative text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
                 What Is Portfolio Management Service?
+>>>>>>> cce881b7e79a0fb6e5f3ef737131984d6f1a91f2
               </h1>
             </div>
 
