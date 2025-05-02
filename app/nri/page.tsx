@@ -1365,7 +1365,7 @@ export default function NRIPage() {
                     </div>
                     <div className="hidden md:block md:w-1/2 md:pl-12"></div>
                   </motion.div>
-                </div>
+                    </div>
 
                 {/* Step 2 */}
                 <div className="mb-16">
@@ -1528,8 +1528,8 @@ export default function NRIPage() {
                   <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                     <CalendlyButton variant="secondary" size="lg" className="bg-white text-navy-800 hover:bg-navy-50">
                       <div className="flex items-center">
-                        <PhoneCall className="h-5 w-5 mr-2" />
-                        Schedule a Consultation
+                      <PhoneCall className="h-5 w-5 mr-2" />
+                      Schedule a Consultation
                       </div>
                     </CalendlyButton>
                   </div>
@@ -1778,8 +1778,8 @@ export default function NRIPage() {
               <p className="text-navy-600 mb-4">Still have questions?</p>
               <CalendlyButton variant="default" size="lg" className="bg-[#0f172a] hover:bg-[#0f172a]/80">
                 <div className="flex items-center">
-                  <PhoneCall className="h-5 w-5 mr-2" />
-                  Schedule a Consultation
+                <PhoneCall className="h-5 w-5 mr-2" />
+                Schedule a Consultation
                 </div>
               </CalendlyButton>
             </div>
@@ -1804,7 +1804,7 @@ export default function NRIPage() {
             </div>
             <TextReveal as="h2" className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8" stagger={0.05}>
               <span className="whitespace-pre">What Our NRI Investors Say</span>
-            </TextReveal>
+              </TextReveal>
             <p className="text-lg md:text-xl text-white font-normal leading-relaxed tracking-wide">
               Hear from our global community of NRI investors who have trusted Bharat Alternates to manage their wealth
               and build their connection to India's growth story.
@@ -1939,8 +1939,8 @@ export default function NRIPage() {
                 <div className="flex-shrink-0">
                   <CalendlyButton variant="secondary" size="lg" className="bg-white text-navy-800 hover:bg-slate-100">
                     <div className="flex items-center">
-                      <CalendarPlus className="h-5 w-5 mr-2" />
-                      Schedule a Consultation
+                    <CalendarPlus className="h-5 w-5 mr-2" />
+                    Schedule a Consultation
                     </div>
                   </CalendlyButton>
                 </div>
@@ -2038,8 +2038,8 @@ export default function NRIPage() {
             <div className="flex justify-center">
               <CalendlyButton variant="default" size="lg" className="bg-[#0f172a] hover:bg-[#0f172a]/80">
                 <div className="flex items-center">
-                  <PhoneCall className="h-5 w-5 mr-2" />
-                  Schedule a Consultation
+                <PhoneCall className="h-5 w-5 mr-2" />
+                Schedule a Consultation
                 </div>
               </CalendlyButton>
               </div>

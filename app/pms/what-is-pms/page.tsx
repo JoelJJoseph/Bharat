@@ -149,7 +149,7 @@ export default function WhatIsPMSPage() {
               </div>
 
               <h1 className="relative text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-                What Are Portfolio Management Services?
+                What Is Portfolio Management Service?
               </h1>
             </div>
 
@@ -162,17 +162,6 @@ export default function WhatIsPMSPage() {
             </div>
 
             <div className="relative flex flex-wrap justify-center gap-6">
-              <CalendlyButton
-                size="lg"
-                variant="default"
-                className="relative group bg-gradient-to-r from-white to-blue-50 text-navy-900 hover:to-white px-8 py-6 shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300 rounded-xl"
-              >
-                <span className="relative z-10 font-semibold text-lg">Book a Call</span>
-                <div className="relative z-10 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300">
-                  <ArrowRight className="w-4 h-4 text-white transform group-hover:translate-x-0.5 transition-transform duration-300" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-white to-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-              </CalendlyButton>
               <Button
                 size="lg"
                 variant="outline"
@@ -180,7 +169,7 @@ export default function WhatIsPMSPage() {
                 asChild
               >
                 <Link href="/pms/who-should-invest" className="relative flex items-center gap-2">
-                  <span className="font-semibold text-lg">Is PMS Right for You?</span>
+                  <span className="font-semibold text-lg">Understanding your PMS journey</span>
                   <div className="w-6 h-6 rounded-full bg-navy-900 flex items-center justify-center">
                     <ArrowRight className="w-4 h-4 text-white" />
                   </div>
@@ -729,69 +718,14 @@ export default function WhatIsPMSPage() {
               <div className="flex items-start">
                 <div className="text-yellow-300 mr-3 mt-1">💡</div>
                 <p className="text-slate-300">
-                  <span className="font-semibold">Tip:</span> Hover over each category to see more details. Consider
-                  your investment style, time availability, and desire for control when choosing a PMS type.
+                  <span className="font-semibold">Tip:</span> Consider your investment style, time availability, and desire for control when choosing a PMS type. Most of the PMS are Discretionary PMS.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Quick Interactive Decision Helper */}
-          <div
-            className="mt-10 bg-gradient-to-br from-slate-800/70 to-slate-900/70 rounded-xl p-6 shadow-lg animate-fade-in"
-            style={{ animationDelay: "1.6s" }}
-          >
-            <h3 className="text-xl font-bold text-white mb-4">Find Your Ideal PMS Type</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-blue-900/30 p-5 rounded-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-blue-900/40">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                    <Briefcase className="w-5 h-5 text-white" />
-                  </div>
-                  <div className="bg-blue-600/40 text-blue-200 text-xs font-medium px-2 py-1 rounded-full">
-                    Hands-off
-                  </div>
-                </div>
-                <h4 className="text-blue-300 font-semibold mb-2">Discretionary PMS</h4>
-                <p className="text-slate-300 text-sm mb-3">
-                  Perfect if you prefer professional management with minimal involvement
-                </p>
-               
-              </div>
-
-              <div className="bg-purple-900/30 p-5 rounded-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-purple-900/40">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
-                    <Users className="w-5 h-5 text-white" />
-                  </div>
-                  <div className="bg-purple-600/40 text-purple-200 text-xs font-medium px-2 py-1 rounded-full">
-                    Balanced
-                  </div>
-                </div>
-                <h4 className="text-purple-300 font-semibold mb-2">Non-Discretionary PMS</h4>
-                <p className="text-slate-300 text-sm mb-3">
-                  Ideal if you want guidance while maintaining control over final decisions
-                </p>
-                
-              </div>
-
-              <div className="bg-green-900/30 p-5 rounded-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-green-900/40">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
-                    <LineChart className="w-5 h-5 text-white" />
-                  </div>
-                  <div className="bg-green-600/40 text-green-200 text-xs font-medium px-2 py-1 rounded-full">
-                    Hands-on
-                  </div>
-                </div>
-                <h4 className="text-green-300 font-semibold mb-2">Advisory PMS</h4>
-                <p className="text-slate-300 text-sm mb-3">
-                  Best for market-savvy investors who want expert insights with full control
-                </p>
-               
-              </div>
-            </div>
-          </div>
+          
+         
         </div>
 
         {/* Advantages of PMS Section */}
@@ -974,24 +908,7 @@ export default function WhatIsPMSPage() {
               </blockquote>
             </div>
 
-            {/* Advantage 7 */}
-            <div
-              className="group bg-white rounded-xl shadow-xl p-6 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl animate-slide-up col-span-full md:col-span-2 lg:col-span-3"
-              style={{ "--delay": "1s" } as React.CSSProperties}
-            >
-              <div className="bg-teal-100 rounded-full w-12 h-12 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Crown className="w-6 h-6 text-teal-600" />
-              </div>
-              <h3 className="text-xl font-bold text-navy-900 mb-3">Exclusivity and Prestige</h3>
-              <p className="text-gray-600 mb-4">
-                PMS is available to investors with a minimum capital of ₹50 lakhs, making it a premium, exclusive
-                offering. It's ideal for those who value personalized service, strategic insights, and high-touch
-                financial management.
-              </p>
-              <blockquote className="italic text-teal-600 border-l-4 border-teal-500 pl-4 mt-4">
-                "I've worked hard to build my wealth. I want it managed with the same level of dedication."
-              </blockquote>
-            </div>
+           
           </div>
         </div>
 
@@ -1155,19 +1072,6 @@ export default function WhatIsPMSPage() {
                     <span className="mr-2"></span> Start investing with intent.
                   </div>
                 </div>
-
-                <div className="mt-8 text-center animate-slide-up" style={{ "--delay": "1s" } as React.CSSProperties}>
-                  <Button
-                    size="lg"
-                    className="bg-white hover:bg-blue-50 text-navy-900 font-semibold px-8 py-6 rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300 group"
-                    asChild
-                  >
-                    <Link href="/contact" className="flex items-center gap-2">
-                      Book your strategy call now
-                      <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" />
-                    </Link>
-                  </Button>
-                </div>
               </div>
             </div>
           </Card>
@@ -1176,9 +1080,9 @@ export default function WhatIsPMSPage() {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-3 animate-fade-in relative inline-block">
-              <span className="absolute -top-5 -left-8 text-yellow-500 text-4xl animate-pulse">🔥</span>
+              
               Trending Now: Why PMS is Gaining Unstoppable Momentum in India (2024–25)
-              <span className="absolute -top-5 -right-8 text-yellow-500 text-4xl animate-pulse">🔥</span>
+              
             </h2>
             <p className="text-slate-300 text-lg max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
               The Indian equity market is thriving, and Portfolio Management Services (PMS) are at the forefront of this
@@ -1533,16 +1437,9 @@ export default function WhatIsPMSPage() {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-3 animate-fade-in relative inline-block">
-              <span className="absolute -top-5 -left-8 text-blue-400 text-4xl filter blur-[1px] animate-float-slow">
-                ✨
-              </span>
+              
               Why PMS Is The Preferred Investment Choice in 2024-25?
-              <span
-                className="absolute -top-5 -right-8 text-blue-400 text-4xl filter blur-[1px] animate-float-slow"
-                style={{ animationDelay: "1s" }}
-              >
-                ✨
-              </span>
+              
             </h2>
           </div>
 
@@ -1728,52 +1625,8 @@ export default function WhatIsPMSPage() {
                 </div>
               </div>
 
-              {/* Join PMS Movement */}
-              <div
-                className="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl overflow-hidden shadow-2xl animate-slide-up"
-                style={{ "--delay": "0.8s" } as React.CSSProperties}
-              >
-                <div className="p-8 md:p-10 relative">
-                  {/* Background Decoration */}
-                  <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-white/5 blur-2xl"></div>
-                  <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full bg-white/5 blur-2xl"></div>
-
-                  <div className="relative">
-                    <div className="flex items-center mb-6">
-                      <span className="text-blue-300 text-3xl mr-3">🌍</span>
-                      <h3 className="text-2xl font-bold text-white">
-                        Join the PMS Movement – Invest Smart, Invest with Bharat Alternates
-                      </h3>
-                    </div>
-
-                    <div className="space-y-4 mb-8">
-                      <p className="text-blue-100 leading-relaxed">
-                        As India's economy grows and diversifies, PMS is no longer just a niche product—it's becoming
-                        the go-to strategy for wealth creation. Whether you're aiming for superior returns, capital
-                        preservation, or long-term wealth generation, PMS offers the flexibility, expertise, and
-                        personalized service needed to build a robust portfolio.
-                      </p>
-                      <p className="text-blue-100 leading-relaxed">
-                        For discerning investors who demand the best PMS in India, Bharat Alternates offers a
-                        world-class investment experience, driving you toward your financial goals.
-                      </p>
-                    </div>
-
-                    <div className="flex justify-center md:justify-end">
-                      <Button
-                        size="lg"
-                        className="bg-white hover:bg-blue-50 text-indigo-900 font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
-                        asChild
-                      >
-                        <Link href="/contact" className="flex items-center gap-2">
-                          Start Your PMS Journey
-                          <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+             
+              
             </div>
           </div>
         </div>
@@ -1805,15 +1658,13 @@ export default function WhatIsPMSPage() {
               {/* Timeline Component */}
               <div className="relative max-w-5xl mx-auto">
                 {/* Timeline track */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-2 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full z-10"></div>
+                <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-2 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full z-10 md:transform md:-translate-x-1/2"></div>
 
                 {/* Step 1 - Left side */}
-                <div className="flex flex-col md:flex-row items-center mb-20">
-                  <div className="md:w-1/2 md:pr-12 relative">
-                    <div
-                      className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-left"
-                      style={{ animationDelay: "0.3s" }}
-                    >
+                <div className="flex flex-col md:flex-row items-start mb-20 relative">
+                  <div className="md:w-1/2 md:pr-12 pl-12 md:pl-0">
+                    <div className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-left"
+                      style={{ animationDelay: "0.3s" }}>
                       <h4 className="text-xl font-bold text-white flex gap-3 items-center mb-3">
                         <span className="text-3xl animate-bounce-subtle">🔍</span>
                         Eligibility Check
@@ -1834,41 +1685,29 @@ export default function WhatIsPMSPage() {
                   </div>
 
                   {/* Center dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 z-20 hidden md:block">
-                    <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900">
-                      <span className="font-bold text-white text-lg">1</span>
+                  <div className="absolute left-4 md:left-1/2 top-6 z-20">
+                    <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900">
+                      <span className="font-bold text-white text-base md:text-lg">1</span>
                     </div>
-                  </div>
-
-                  {/* Mobile dot - visible only on small screens */}
-                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900 z-20 md:hidden mb-6">
-                    <span className="font-bold text-white text-lg">1</span>
                   </div>
 
                   <div className="md:w-1/2 md:pl-12 hidden md:block"></div>
                 </div>
 
                 {/* Step 2 - Right side */}
-                <div className="flex flex-col md:flex-row items-center mb-20">
+                <div className="flex flex-col md:flex-row items-start mb-20 relative">
                   <div className="md:w-1/2 md:pr-12 hidden md:block"></div>
 
                   {/* Center dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 z-20 hidden md:block">
-                    <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900">
-                      <span className="font-bold text-white text-lg">2</span>
+                  <div className="absolute left-4 md:left-1/2 top-6 z-20">
+                    <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900">
+                      <span className="font-bold text-white text-base md:text-lg">2</span>
                     </div>
                   </div>
 
-                  {/* Mobile dot - visible only on small screens */}
-                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900 z-20 md:hidden mb-6">
-                    <span className="font-bold text-white text-lg">2</span>
-                  </div>
-
-                  <div className="md:w-1/2 md:pl-12 relative">
-                    <div
-                      className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-right"
-                      style={{ animationDelay: "0.4s" }}
-                    >
+                  <div className="md:w-1/2 md:pl-12 pl-12">
+                    <div className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-right"
+                      style={{ animationDelay: "0.4s" }}>
                       <h4 className="text-xl font-bold text-white flex gap-3 items-center mb-3">
                         <span className="text-3xl animate-bounce-subtle">🎯</span>
                         Choose the Right PMS
@@ -1888,12 +1727,10 @@ export default function WhatIsPMSPage() {
                 </div>
 
                 {/* Step 3 - Left side */}
-                <div className="flex flex-col md:flex-row items-center mb-20">
-                  <div className="md:w-1/2 md:pr-12 relative">
-                    <div
-                      className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-left"
-                      style={{ animationDelay: "0.5s" }}
-                    >
+                <div className="flex flex-col md:flex-row items-start mb-20 relative">
+                  <div className="md:w-1/2 md:pr-12 pl-12 md:pl-0">
+                    <div className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-left"
+                      style={{ animationDelay: "0.5s" }}>
                       <h4 className="text-xl font-bold text-white flex gap-3 items-center mb-3">
                         <span className="text-3xl animate-bounce-subtle">📋</span>
                         Documentation
@@ -1925,41 +1762,29 @@ export default function WhatIsPMSPage() {
                   </div>
 
                   {/* Center dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 z-20 hidden md:block">
-                    <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900">
-                      <span className="font-bold text-white text-lg">3</span>
+                  <div className="absolute left-4 md:left-1/2 top-6 z-20">
+                    <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900">
+                      <span className="font-bold text-white text-base md:text-lg">3</span>
                     </div>
-                  </div>
-
-                  {/* Mobile dot - visible only on small screens */}
-                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900 z-20 md:hidden mb-6">
-                    <span className="font-bold text-white text-lg">3</span>
                   </div>
 
                   <div className="md:w-1/2 md:pl-12 hidden md:block"></div>
                 </div>
 
                 {/* Step 4 - Right side */}
-                <div className="flex flex-col md:flex-row items-center mb-20">
+                <div className="flex flex-col md:flex-row items-start mb-20 relative">
                   <div className="md:w-1/2 md:pr-12 hidden md:block"></div>
 
                   {/* Center dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 z-20 hidden md:block">
-                    <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900">
-                      <span className="font-bold text-white text-lg">4</span>
+                  <div className="absolute left-4 md:left-1/2 top-6 z-20">
+                    <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900">
+                      <span className="font-bold text-white text-base md:text-lg">4</span>
                     </div>
                   </div>
 
-                  {/* Mobile dot - visible only on small screens */}
-                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900 z-20 md:hidden mb-6">
-                    <span className="font-bold text-white text-lg">4</span>
-                  </div>
-
-                  <div className="md:w-1/2 md:pl-12 relative">
-                    <div
-                      className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-right"
-                      style={{ animationDelay: "0.6s" }}
-                    >
+                  <div className="md:w-1/2 md:pl-12 pl-12">
+                    <div className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-right"
+                      style={{ animationDelay: "0.6s" }}>
                       <h4 className="text-xl font-bold text-white flex gap-3 items-center mb-3">
                         <span className="text-3xl animate-bounce-subtle">📝</span>
                         Account Opening & Agreement
@@ -1983,12 +1808,10 @@ export default function WhatIsPMSPage() {
                 </div>
 
                 {/* Step 5 - Left side */}
-                <div className="flex flex-col md:flex-row items-center mb-20">
-                  <div className="md:w-1/2 md:pr-12 relative">
-                    <div
-                      className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-left"
-                      style={{ animationDelay: "0.7s" }}
-                    >
+                <div className="flex flex-col md:flex-row items-start mb-20 relative">
+                  <div className="md:w-1/2 md:pr-12 pl-12 md:pl-0">
+                    <div className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-left"
+                      style={{ animationDelay: "0.7s" }}>
                       <h4 className="text-xl font-bold text-white flex gap-3 items-center mb-3">
                         <span className="text-3xl animate-bounce-subtle">💰</span>
                         Fund Transfer
@@ -2007,41 +1830,29 @@ export default function WhatIsPMSPage() {
                   </div>
 
                   {/* Center dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 z-20 hidden md:block">
-                    <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900">
-                      <span className="font-bold text-white text-lg">5</span>
+                  <div className="absolute left-4 md:left-1/2 top-6 z-20">
+                    <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900">
+                      <span className="font-bold text-white text-base md:text-lg">5</span>
                     </div>
-                  </div>
-
-                  {/* Mobile dot - visible only on small screens */}
-                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900 z-20 md:hidden mb-6">
-                    <span className="font-bold text-white text-lg">5</span>
                   </div>
 
                   <div className="md:w-1/2 md:pl-12 hidden md:block"></div>
                 </div>
 
                 {/* Step 6 - Right side */}
-                <div className="flex flex-col md:flex-row items-center mb-20">
+                <div className="flex flex-col md:flex-row items-start mb-20 relative">
                   <div className="md:w-1/2 md:pr-12 hidden md:block"></div>
 
                   {/* Center dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 z-20 hidden md:block">
-                    <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900">
-                      <span className="font-bold text-white text-lg">6</span>
+                  <div className="absolute left-4 md:left-1/2 top-6 z-20">
+                    <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900">
+                      <span className="font-bold text-white text-base md:text-lg">6</span>
                     </div>
                   </div>
 
-                  {/* Mobile dot - visible only on small screens */}
-                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900 z-20 md:hidden mb-6">
-                    <span className="font-bold text-white text-lg">6</span>
-                  </div>
-
-                  <div className="md:w-1/2 md:pl-12 relative">
-                    <div
-                      className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-right"
-                      style={{ animationDelay: "0.8s" }}
-                    >
+                  <div className="md:w-1/2 md:pl-12 pl-12">
+                    <div className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-right"
+                      style={{ animationDelay: "0.8s" }}>
                       <h4 className="text-xl font-bold text-white flex gap-3 items-center mb-3">
                         <span className="text-3xl animate-bounce-subtle">📊</span>
                         Go Live & Track Performance
@@ -2067,26 +1878,19 @@ export default function WhatIsPMSPage() {
                 </div>
 
                 {/* Step 7 - Right Side */}
-                <div className="flex flex-col md:flex-row items-center mb-16">
+                <div className="flex flex-col md:flex-row items-start mb-16 relative">
                   <div className="md:w-1/2 md:pr-12 hidden md:block"></div>
 
-                  {/* Center dot - visible only on medium and larger screens */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 z-20 hidden md:block">
-                    <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900">
-                      <span className="font-bold text-white text-lg">7</span>
+                  {/* Center dot */}
+                  <div className="absolute left-4 md:left-1/2 top-6 z-20">
+                    <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900">
+                      <span className="font-bold text-white text-base md:text-lg">7</span>
                     </div>
                   </div>
 
-                  {/* Mobile dot - visible only on small screens */}
-                  <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] ring-4 ring-navy-900 z-20 md:hidden mb-6">
-                    <span className="font-bold text-white text-lg">7</span>
-                  </div>
-
-                  <div className="md:w-1/2 md:pl-12 relative">
-                    <div
-                      className="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-xl p-6 shadow-lg border border-blue-700 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:-translate-y-1 animate-slide-in-right"
-                      style={{ animationDelay: "0.9s" }}
-                    >
+                  <div className="md:w-1/2 md:pl-12 pl-12">
+                    <div className="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-xl p-6 shadow-lg border border-blue-700 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:-translate-y-1 animate-slide-in-right"
+                      style={{ animationDelay: "0.9s" }}>
                       <h4 className="text-xl font-bold text-white flex gap-3 items-center mb-3">
                         <span className="text-3xl animate-bounce-subtle">🔄</span>
                         Stay Engaged
@@ -2106,37 +1910,8 @@ export default function WhatIsPMSPage() {
                 </div>
               </div>
 
-              {/* CTA Section */}
-              <div className="mt-20 relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-xl blur-xl"></div>
-                <div className="relative bg-gradient-to-r from-blue-900/80 to-indigo-900/80 rounded-xl p-8 backdrop-blur-sm shadow-lg border border-blue-700/50 overflow-hidden">
-                  {/* Decorative elements */}
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
-                  <div className="absolute bottom-0 left-0 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl"></div>
-
-                  <div className="text-center">
-                    <p className="text-xl text-blue-100 mb-4 animate-fade-in">
-                      Want to explore the Top PMS in India and start your journey?
-                    </p>
-                    <h3 className="text-2xl font-bold text-white mb-8 animate-fade-in flex items-center justify-center gap-3">
-                      <span className="animate-spin-slow text-2xl">🌍</span> Let Bharat Alternates help you make the
-                      smart move
-                    </h3>
-
-                    <Button
-                      size="lg"
-                      className="bg-white hover:bg-blue-50 text-navy-900 font-semibold px-8 py-6 rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-all duration-300 group animate-fade-in"
-                      asChild
-                    >
-                      <Link href="/contact" className="flex items-center gap-2">
-                        <span className="text-xl mr-1">🚀</span>
-                        Start your PMS journey today
-                        <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
+            
+              
             </div>
           </Card>
         </div>
@@ -2842,3 +2617,6 @@ export default function WhatIsPMSPage() {
     </div>
   )
 }
+
+
+
