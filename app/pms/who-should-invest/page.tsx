@@ -19,4 +19,4 @@ export const metadata: Metadata = {
 export default function WhoShouldInvestPage() {
   return <WhoShouldInvestClient />
 }
-.
+
