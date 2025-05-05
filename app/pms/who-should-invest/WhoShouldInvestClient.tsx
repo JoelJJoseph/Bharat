@@ -99,15 +99,6 @@ export default function WhoShouldInvestClient() {
               <Button
                 asChild
                 size="lg"
-                className="relative group z-10 bg-white text-navy-900 hover:bg-blue-50 shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
-              >
-                <Link href="/contact" className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 group-hover:animate-pulse" /> Book a Call
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
                 variant="outline"
                 className="relative group z-10 border-2 border-white text-white bg-blue-900/50 hover:bg-blue-900/70"
               >
@@ -423,10 +414,6 @@ export default function WhoShouldInvestClient() {
                       <li className="flex items-start gap-2 bg-white p-3 rounded-lg shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
                         <span className="text-slate-600">Consistent income streams</span>
-                      </li>
-                      <li className="flex items-start gap-2 bg-white p-3 rounded-lg shadow-sm">
-                        <CheckCircle2 className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                        <span className="text-slate-600">Capital preservation</span>
                       </li>
                       <li className="flex items-start gap-2 bg-white p-3 rounded-lg shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
