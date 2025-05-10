@@ -183,33 +183,7 @@ export default function Footer() {
 
         {/* Resources Section */}
         <div className="mt-8 pt-8 border-t">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Resources</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/resources/blog" className="text-sm text-gray-600 hover:text-primary transition-colors">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/resources/newsletters"
-                    className="text-sm text-gray-600 hover:text-primary transition-colors"
-                  >
-                    Newsletters
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/resources/nifty-pe-ratio"
-                    className="text-sm text-gray-600 hover:text-primary transition-colors"
-                  >
-                    Nifty PE Ratio Chart
-                  </Link>
-                </li>
-              </ul>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h3 className="font-semibold text-lg mb-4">For NRIs</h3>
               <ul className="space-y-2">

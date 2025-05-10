@@ -9,7 +9,6 @@ import { CalendlyButton } from "@/components/calendly-button"
 interface OpenSections {
   pms: boolean
   aif: boolean
-  resources: boolean
 }
 
 export function MobileMenu() {
@@ -17,7 +16,6 @@ export function MobileMenu() {
   const [openSections, setOpenSections] = useState<OpenSections>({
     pms: false,
     aif: false,
-    resources: false,
   })
 
   const toggleSection = (section: keyof OpenSections) => {
@@ -150,40 +148,6 @@ export function MobileMenu() {
                       Top CAT 3 AIFs in India
                     </Link>
                     
-                  </div>
-                )}
-              </div>
-
-              {/* Resources Section */}
-              <div className="space-y-2">
-                <button
-                  onClick={() => toggleSection("resources")}
-                  className="flex w-full items-center justify-between text-lg font-medium"
-                >
-                  Resources
-                  <ChevronDown
-                    className={`h-5 w-5 transform transition-transform ${openSections.resources ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {openSections.resources && (
-                  <div className="ml-4 space-y-2">
-                    <Link href="/resources/blog" className="block text-gray-600" onClick={() => setIsOpen(false)}>
-                      Blog
-                    </Link>
-                    <Link
-                      href="/resources/newsletters"
-                      className="block text-gray-600"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Newsletters
-                    </Link>
-                    <Link
-                      href="/resources/nifty-pe-ratio"
-                      className="block text-gray-600"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Nifty PE Ratio
-                    </Link>
                   </div>
                 )}
               </div>

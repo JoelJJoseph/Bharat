@@ -69,16 +69,6 @@ const navItems = [
     ],
   },
   {
-    name: "Resources",
-    icon: FileText,
-    dropdown: [
-      { name: "PMS Newsletter", href: "/resources/pms-newsletter" },
-      { name: "AIF Newsletter", href: "/resources/aif-newsletter" },
-      { name: "Blog", href: "/resources/blog" },
-      { name: "Nifty PE Ratio Chart", href: "/resources/nifty-pe-ratio" },
-    ],
-  },
-  {
     name: "Our Clients",
     href: "/our-clients",
     icon: Users,
