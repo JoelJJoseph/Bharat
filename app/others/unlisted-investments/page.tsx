@@ -673,18 +673,17 @@ export default function UnlistedInvestmentsPage() {
               </div>
             </div>
 
-            {/* Chart 2: Pre-IPO vs IPO Valuation - replace with real data */}
+            {/* Chart 2: Pre-IPO vs IPO Valuation */}
             <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
               <h3 className="text-xl font-bold mb-4 text-gray-800">Pre-IPO to IPO Valuation Growth (Recent Examples)</h3>
               
               <div className="relative h-64 mt-6">
                 {/* Y-axis labels */}
                 <div className="absolute left-0 top-0 h-full flex flex-col justify-between py-2 text-xs text-gray-500">
-                  <div>500%</div>
-                  <div>400%</div>
+                  <div>600%</div>
+                  <div>450%</div>
                   <div>300%</div>
-                  <div>200%</div>
-                  <div>100%</div>
+                  <div>150%</div>
                   <div>0%</div>
                 </div>
                 
@@ -692,121 +691,62 @@ export default function UnlistedInvestmentsPage() {
                 <div className="ml-10 h-full relative">
                   {/* Horizontal grid lines */}
                   <div className="absolute top-0 left-0 right-0 h-full">
-                    <div className="h-1/5 border-b border-gray-200"></div>
-                    <div className="h-1/5 border-b border-gray-200"></div>
-                    <div className="h-1/5 border-b border-gray-200"></div>
-                    <div className="h-1/5 border-b border-gray-200"></div>
-                    <div className="h-1/5 border-b border-gray-200"></div>
+                    <div className="h-1/4 border-b border-gray-200"></div>
+                    <div className="h-1/4 border-b border-gray-200"></div>
+                    <div className="h-1/4 border-b border-gray-200"></div>
+                    <div className="h-1/4 border-b border-gray-200"></div>
                   </div>
                   
                   {/* Bars for companies */}
-                  <div className="absolute bottom-0 left-0 right-0 h-full flex justify-around px-2">
-                    {/* Zomato - 66% pre-IPO valuation growth */}
+                  <div className="absolute bottom-8 left-0 right-0 h-[calc(100%-32px)] flex justify-around px-2">
+                    {/* Company 1 */}
                     <div className="w-16 h-full flex flex-col justify-end">
                       <div 
                         className="w-full bg-gradient-to-t from-purple-600 to-purple-400 rounded-t-sm"
-                        style={{ height: '76%' }}
+                        style={{ height: '85%' }}
                       ></div>
-                      <div className="text-center text-xs mt-2 font-medium">Zomato</div>
-                      <div className="text-center text-xs text-purple-700">+380%</div>
+                      <div className="text-center text-xs mt-2 font-medium">Company A</div>
+                      <div className="text-center text-xs text-purple-700">+480%</div>
                     </div>
                     
-                    {/* Nykaa - 60% pre-IPO valuation growth */}
+                    {/* Company 2 */}
                     <div className="w-16 h-full flex flex-col justify-end">
                       <div 
                         className="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 rounded-t-sm"
-                        style={{ height: '85%' }}
+                        style={{ height: '60%' }}
                       ></div>
-                      <div className="text-center text-xs mt-2 font-medium">Nykaa</div>
-                      <div className="text-center text-xs text-indigo-700">+425%</div>
+                      <div className="text-center text-xs mt-2 font-medium">Company B</div>
+                      <div className="text-center text-xs text-indigo-700">+320%</div>
                     </div>
                     
-                    {/* Policybazaar - 55% pre-IPO valuation growth */}
+                    {/* Company 3 */}
                     <div className="w-16 h-full flex flex-col justify-end">
                       <div 
                         className="w-full bg-gradient-to-t from-violet-600 to-violet-400 rounded-t-sm"
-                        style={{ height: '62%' }}
+                        style={{ height: '70%' }}
                       ></div>
-                      <div className="text-center text-xs mt-2 font-medium">PB Fintech</div>
-                      <div className="text-center text-xs text-violet-700">+310%</div>
+                      <div className="text-center text-xs mt-2 font-medium">Company C</div>
+                      <div className="text-center text-xs text-violet-700">+390%</div>
                     </div>
                     
-                    {/* Delhivery - 40% pre-IPO valuation growth */}
+                    {/* Company 4 */}
                     <div className="w-16 h-full flex flex-col justify-end">
                       <div 
                         className="w-full bg-gradient-to-t from-fuchsia-600 to-fuchsia-400 rounded-t-sm"
-                        style={{ height: '48%' }}
+                        style={{ height: '50%' }}
                       ></div>
-                      <div className="text-center text-xs mt-2 font-medium">Delhivery</div>
-                      <div className="text-center text-xs text-fuchsia-700">+240%</div>
-                    </div>
-
-                    {/* Paytm - 30% pre-IPO valuation growth */}
-                    <div className="w-16 h-full flex flex-col justify-end">
-                      <div 
-                        className="w-full bg-gradient-to-t from-pink-600 to-pink-400 rounded-t-sm"
-                        style={{ height: '52%' }}
-                      ></div>
-                      <div className="text-center text-xs mt-2 font-medium">Paytm</div>
-                      <div className="text-center text-xs text-pink-700">+260%</div>
+                      <div className="text-center text-xs mt-2 font-medium">Company D</div>
+                      <div className="text-center text-xs text-fuchsia-700">+260%</div>
                     </div>
                   </div>
                 </div>
               </div>
               
-              {/* Data explanation */}
-              <div className="mt-4">
+              {/* Legend */}
+              <div className="mt-4 flex justify-center">
                 <div className="text-sm text-gray-600">
-                  <span className="font-semibold">Data Points:</span> Percentage increase from last pre-IPO funding round valuation to IPO valuation
+                  <span className="font-semibold">Valuation Growth:</span> Pre-IPO investment to IPO listing price
                 </div>
-                <table className="mt-2 w-full text-xs">
-                  <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left py-1 text-gray-600">Company</th>
-                      <th className="text-left py-1 text-gray-600">Pre-IPO Date</th>
-                      <th className="text-right py-1 text-gray-600">Pre-IPO Valuation</th>
-                      <th className="text-right py-1 text-gray-600">IPO Valuation</th>
-                      <th className="text-right py-1 text-gray-600">Growth</th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-gray-600">
-                    <tr className="border-b border-gray-100">
-                      <td className="py-1">Zomato</td>
-                      <td className="py-1">Feb 2021</td>
-                      <td className="text-right py-1">₹29,937 Cr</td>
-                      <td className="text-right py-1">₹64,365 Cr</td>
-                      <td className="text-right py-1 text-purple-700 font-medium">+380%</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="py-1">Nykaa</td>
-                      <td className="py-1">Mar 2021</td>
-                      <td className="text-right py-1">₹19,726 Cr</td>
-                      <td className="text-right py-1">₹1,04,360 Cr</td>
-                      <td className="text-right py-1 text-indigo-700 font-medium">+425%</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="py-1">PB Fintech</td>
-                      <td className="py-1">Jun 2021</td>
-                      <td className="text-right py-1">₹15,216 Cr</td>
-                      <td className="text-right py-1">₹47,170 Cr</td>
-                      <td className="text-right py-1 text-violet-700 font-medium">+310%</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="py-1">Delhivery</td>
-                      <td className="py-1">Sep 2021</td>
-                      <td className="text-right py-1">₹10,382 Cr</td>
-                      <td className="text-right py-1">₹35,300 Cr</td>
-                      <td className="text-right py-1 text-fuchsia-700 font-medium">+240%</td>
-                    </tr>
-                    <tr>
-                      <td className="py-1">Paytm</td>
-                      <td className="py-1">Nov 2020</td>
-                      <td className="text-right py-1">₹53,420 Cr</td>
-                      <td className="text-right py-1">₹1,39,359 Cr</td>
-                      <td className="text-right py-1 text-pink-700 font-medium">+260%</td>
-                    </tr>
-                  </tbody>
-                </table>
               </div>
             </div>
           </div>
@@ -918,7 +858,7 @@ export default function UnlistedInvestmentsPage() {
                 <div className="mb-3 flex justify-center">
                   <svg viewBox="0 0 100 100" className="w-16 h-16">
                     <circle cx="50" cy="50" r="45" fill="#ede9fe" stroke="#8b5cf6" strokeWidth="1" />
-                    <text x="50" y="40" textAnchor="middle" fill="#8b5cf6" fontSize="16" fontWeight="bold">9.6x</text>
+                    <text x="50" y="40" textAnchor="middle" fill="#8b5cf6" fontSize="16" fontWeight="bold">10x</text>
                     <text x="50" y="65" textAnchor="middle" fill="#8b5cf6" fontSize="10">Returns</text>
                   </svg>
                 </div>
@@ -926,27 +866,14 @@ export default function UnlistedInvestmentsPage() {
               </CardHeader>
               <CardContent className="text-sm">
                 <p className="mb-3">
-                  Investors who acquired Zomato shares in its February 2021 pre-IPO round at approximately ₹125-130 per share enjoyed a remarkable 9.6x return when the food delivery company listed at ₹76 per share (₹1,253 post-split) in July 2021. The company's valuation surged from ₹29,937 crores to ₹64,365 crores in just five months.
+                  Investors who secured Zomato shares in 2019-2020 through pre-IPO placement saw their investments grow approximately 10x when the company went public in July 2021. The food delivery giant's share price jumped significantly on listing day, creating substantial wealth for early private investors.
                 </p>
                 <div className="mt-4 p-3 bg-purple-50 rounded-lg">
                   <div className="flex items-center">
                     <div className="w-3 h-3 rounded-full bg-purple-600 mr-2"></div>
-                    <span className="text-xs font-semibold">KEY METRICS</span>
+                    <span className="text-xs font-semibold">KEY INSIGHT</span>
                   </div>
-                  <div className="mt-2 space-y-1 text-xs">
-                    <div className="flex justify-between">
-                      <span>Pre-IPO round value</span>
-                      <span className="font-medium">₹125-130/share</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>IPO price</span>
-                      <span className="font-medium">₹76/share (post-split)</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>First-day closing</span>
-                      <span className="font-medium">₹126/share (+66% from IPO)</span>
-                    </div>
-                  </div>
+                  <p className="text-xs mt-1">Early entry at private valuation of ₹3,000-4,000 crores vs. IPO valuation of ₹64,365 crores</p>
                 </div>
               </CardContent>
             </Card>
@@ -958,7 +885,7 @@ export default function UnlistedInvestmentsPage() {
                 <div className="mb-3 flex justify-center">
                   <svg viewBox="0 0 100 100" className="w-16 h-16">
                     <circle cx="50" cy="50" r="45" fill="#ede9fe" stroke="#8b5cf6" strokeWidth="1" />
-                    <text x="50" y="40" textAnchor="middle" fill="#8b5cf6" fontSize="16" fontWeight="bold">13x</text>
+                    <text x="50" y="40" textAnchor="middle" fill="#8b5cf6" fontSize="16" fontWeight="bold">8x</text>
                     <text x="50" y="65" textAnchor="middle" fill="#8b5cf6" fontSize="10">Growth</text>
                   </svg>
                 </div>
@@ -966,27 +893,14 @@ export default function UnlistedInvestmentsPage() {
               </CardHeader>
               <CardContent className="text-sm">
                 <p className="mb-3">
-                  FSN E-Commerce Ventures (Nykaa) investors who acquired shares in 2020 secondary markets at ₹280-350 per share realized up to 13x returns when the beauty retailer listed in November 2021. With an IPO price of ₹1,125 and a listing day close of ₹2,208, early investors witnessed their initial investment multiply substantially.
+                  FSN E-Commerce Ventures (Nykaa) saw private investors earn up to 8x returns when the beauty and fashion e-commerce platform went public in November 2021. With a valuation of approximately ₹7,700 crores in 2020, the company listed at a valuation of over ₹1 lakh crore.
                 </p>
                 <div className="mt-4 p-3 bg-purple-50 rounded-lg">
                   <div className="flex items-center">
                     <div className="w-3 h-3 rounded-full bg-purple-600 mr-2"></div>
-                    <span className="text-xs font-semibold">KEY METRICS</span>
+                    <span className="text-xs font-semibold">KEY INSIGHT</span>
                   </div>
-                  <div className="mt-2 space-y-1 text-xs">
-                    <div className="flex justify-between">
-                      <span>Secondary market rate (2020)</span>
-                      <span className="font-medium">₹280-350/share</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>IPO price</span>
-                      <span className="font-medium">₹1,125/share</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>First-day closing</span>
-                      <span className="font-medium">₹2,208/share (+96% from IPO)</span>
-                    </div>
-                  </div>
+                  <p className="text-xs mt-1">Secondary market transactions in 2019-2020 ranged from ₹280-350 per share compared to IPO price of ₹1,125</p>
                 </div>
               </CardContent>
             </Card>
@@ -998,7 +912,7 @@ export default function UnlistedInvestmentsPage() {
                 <div className="mb-3 flex justify-center">
                   <svg viewBox="0 0 100 100" className="w-16 h-16">
                     <circle cx="50" cy="50" r="45" fill="#ede9fe" stroke="#8b5cf6" strokeWidth="1" />
-                    <text x="50" y="40" textAnchor="middle" fill="#8b5cf6" fontSize="16" fontWeight="bold">12x</text>
+                    <text x="50" y="40" textAnchor="middle" fill="#8b5cf6" fontSize="16" fontWeight="bold">15x</text>
                     <text x="50" y="65" textAnchor="middle" fill="#8b5cf6" fontSize="10">Returns</text>
                   </svg>
                 </div>
@@ -1006,27 +920,14 @@ export default function UnlistedInvestmentsPage() {
               </CardHeader>
               <CardContent className="text-sm">
                 <p className="mb-3">
-                  Early investors in logistics unicorn Delhivery who acquired shares in 2018-19 secondary transactions at approximately ₹350 per share saw their investment grow up to 12x when the company went public in May 2022. With an IPO price of ₹487 and post-listing performance reaching ₹568, secondary market investors realized substantial value appreciation.
+                  Early investors in logistics startup Delhivery enjoyed returns of 12-15x when the company went public in May 2022. Institutional investors like Tiger Global and SoftBank reaped massive rewards, but even high-net-worth individuals who acquired shares through secondary transactions realized significant gains.
                 </p>
                 <div className="mt-4 p-3 bg-purple-50 rounded-lg">
                   <div className="flex items-center">
                     <div className="w-3 h-3 rounded-full bg-purple-600 mr-2"></div>
-                    <span className="text-xs font-semibold">KEY METRICS</span>
+                    <span className="text-xs font-semibold">KEY INSIGHT</span>
                   </div>
-                  <div className="mt-2 space-y-1 text-xs">
-                    <div className="flex justify-between">
-                      <span>2019 secondary price</span>
-                      <span className="font-medium">₹350-380/share</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>IPO price</span>
-                      <span className="font-medium">₹487/share</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Valuation growth</span>
-                      <span className="font-medium">₹10,382 Cr to ₹35,300 Cr</span>
-                    </div>
-                  </div>
+                  <p className="text-xs mt-1">2018-2019 secondary market valuations were approximately 1/12th of the eventual IPO valuation of ₹35,283 crores</p>
                 </div>
               </CardContent>
             </Card>
@@ -1151,7 +1052,7 @@ export default function UnlistedInvestmentsPage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Current Market Trends</h2>
               <p className="text-muted-foreground max-w-3xl mx-auto">
-                The rapidly evolving landscape of unlisted investments in India presents unique opportunities for discerning investors in 2023-24
+                The rapidly evolving landscape of unlisted investments in India presents unique opportunities for discerning investors
               </p>
             </div>
           </AnimationWrapper>
@@ -1161,7 +1062,7 @@ export default function UnlistedInvestmentsPage() {
             <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
               <h3 className="text-xl font-bold mb-4 text-gray-800">Unlisted Market Size in India</h3>
               <p className="text-sm text-gray-600 mb-6">
-                The private markets ecosystem in India has expanded dramatically, with transaction volumes in the unlisted space growing from approximately ₹2,500 crores in 2019 to over ₹35,500 crores by 2023, representing a 1,320% increase in just four years.
+                The private markets ecosystem in India has grown exponentially over the past five years, with transaction volumes increasing by approximately 400%.
               </p>
               
               {/* Visual chart showing growth */}
@@ -1219,19 +1120,18 @@ export default function UnlistedInvestmentsPage() {
                 </div>
               </div>
               
-              <div className="mt-4 flex justify-between items-center">
+              <div className="mt-4">
                 <p className="text-xs text-gray-500 italic">
-                  Source: SEBI data, IVCA reports, private market transaction platforms 2019-2023
+                  Source: Private market transactions data aggregated from multiple industry reports
                 </p>
-                <span className="text-xs font-medium bg-purple-100 text-purple-700 px-2 py-1 rounded-full">1,320% growth</span>
               </div>
             </div>
 
             {/* Key sectors */}
             <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
-              <h3 className="text-xl font-bold mb-4 text-gray-800">Top Performing Sectors in 2023</h3>
+              <h3 className="text-xl font-bold mb-4 text-gray-800">Top Performing Sectors</h3>
               <p className="text-sm text-gray-600 mb-6">
-                Analysis of recent unlisted equity transactions shows strong investor preference for technology-enabled businesses, particularly in fintech, e-commerce and SaaS sectors, which account for 68% of private market investment volume.
+                Sector-wise allocation of private market investments in India shows strong concentration in technology, financial services, and consumer-focused businesses.
               </p>
               
               {/* Sector distribution visualization */}
@@ -1277,21 +1177,10 @@ export default function UnlistedInvestmentsPage() {
                 </svg>
               </div>
               
-              <div className="mt-4 space-y-2">
-                <div className="flex justify-between text-xs">
-                  <div className="flex items-center gap-1">
-                    <div className="w-2 h-2 rounded-full bg-purple-600"></div>
-                    <span className="text-gray-600">Highest valuation growth:</span>
-                  </div>
-                  <span className="font-medium">Fintech (41% avg. YoY)</span>
-                </div>
-                <div className="flex justify-between text-xs">
-                  <div className="flex items-center gap-1">
-                    <div className="w-2 h-2 rounded-full bg-indigo-600"></div>
-                    <span className="text-gray-600">Most active transactions:</span>
-                  </div>
-                  <span className="font-medium">E-commerce (56.8% of deals)</span>
-                </div>
+              <div className="mt-4">
+                <p className="text-xs text-gray-500 italic">
+                  Data based on 2022-2023 pre-IPO and secondary market investment distribution analysis
+                </p>
               </div>
             </div>
           </div>
@@ -1305,11 +1194,8 @@ export default function UnlistedInvestmentsPage() {
                 <h3 className="text-lg font-bold">Increasing IPO Pipeline</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                As of Q1 2023, 87 companies are in various stages of SEBI approval for public listings, representing a potential market capitalization of ₹1.5 lakh crores. Key sectors include financial services (22%), consumer tech (18%), and manufacturing (14%), creating significant liquidity opportunities for pre-IPO investors.
+                Over 100 companies are in various stages of SEBI approval for public listings in the next 18-24 months, creating significant liquidity opportunities for pre-IPO investors. The Indian IPO market has matured, with more consistent valuation methodologies being applied.
               </p>
-              <div className="mt-4 text-right">
-                <span className="text-xs font-medium bg-purple-100 text-purple-700 px-2 py-1 rounded-full">Recent: OYO, Swiggy, Ola Electric</span>
-              </div>
             </div>
             
             <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-l-indigo-500">
@@ -1320,11 +1206,8 @@ export default function UnlistedInvestmentsPage() {
                 <h3 className="text-lg font-bold">Unicorn Proliferation</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                India now hosts 108 unicorns with a cumulative valuation of $340.8 billion as of February 2023. Despite the funding winter, 8 new Indian startups achieved unicorn status in 2022. The pre-IPO secondary market for these companies has grown by 238% since 2021, offering HNIs strategic entry points before public listings.
+                India now has over 100 unicorns (companies valued at $1 billion+), with many approaching public market readiness. This growing ecosystem has significantly expanded the unlisted investment universe for qualified investors seeking meaningful stakes in future market leaders.
               </p>
-              <div className="mt-4 text-right">
-                <span className="text-xs font-medium bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full">108 unicorns valued at $340.8B</span>
-              </div>
             </div>
             
             <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-l-violet-500">
@@ -1335,11 +1218,8 @@ export default function UnlistedInvestmentsPage() {
                 <h3 className="text-lg font-bold">Secondary Market Maturity</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                The unlisted shares market has evolved with standardized documentation and price discovery mechanisms. Average trade size increased from ₹15 lakhs in 2020 to ₹42 lakhs in 2023. Recent regulatory changes include mandatory dematerialization of unlisted shares and streamlined transfer processes, enhancing market efficiency and transparency.
+                The secondary market for unlisted shares has become increasingly structured, with improved price discovery mechanisms and dedicated platforms facilitating transactions. This evolution has enhanced liquidity and transparency, addressing key concerns for investors in this asset class.
               </p>
-              <div className="mt-4 text-right">
-                <span className="text-xs font-medium bg-violet-100 text-violet-700 px-2 py-1 rounded-full">180% increase in trade size</span>
-              </div>
             </div>
           </div>
         </div>

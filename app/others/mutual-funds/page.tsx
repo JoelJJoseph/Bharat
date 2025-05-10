@@ -94,7 +94,7 @@ export default function MutualFundsPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#052230] via-[#073a45] to-[#052230] z-0">
           {/* Animated gradient overlay */}
           <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-400 via-cyan-500 to-[#052230]"></div>
-        </div>
+          </div>
 
         {/* Decorative Elements */}
         <div className="absolute inset-0 z-0">
@@ -424,8 +424,8 @@ export default function MutualFundsPage() {
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-blue-500 mr-2 mt-0.5" />
                     <span>Higher return potential</span>
-                  </li>
-                  <li className="flex items-start">
+              </li>
+              <li className="flex items-start">
                     <Check className="h-4 w-4 text-blue-500 mr-2 mt-0.5" />
                     <span>Tax efficiency (LTCG)</span>
                   </li>
@@ -471,8 +471,8 @@ export default function MutualFundsPage() {
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />
                     <span>Capital preservation</span>
-                  </li>
-                  <li className="flex items-start">
+              </li>
+              <li className="flex items-start">
                     <Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />
                     <span>Lower volatility than equity</span>
                   </li>
@@ -522,8 +522,8 @@ export default function MutualFundsPage() {
                   <li className="flex items-start">
                     <Check className="h-4 w-4 text-amber-500 mr-2 mt-0.5" />
                     <span>Built-in diversification</span>
-                  </li>
-                </ul>
+              </li>
+            </ul>
               </CardContent>
             </Card>
           </div>
@@ -837,9 +837,9 @@ export default function MutualFundsPage() {
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-teal-100 text-teal-800 font-bold text-xl mb-4">1</div>
                 <h3 className="text-lg font-bold mb-2">Define Your Goals</h3>
                 <p className="text-sm text-muted-foreground">Determine your investment objectives, time horizon, and risk tolerance</p>
-              </div>
-            </div>
-            
+          </div>
+        </div>
+
             <div className="bg-white rounded-xl p-6 shadow-md relative overflow-hidden">
               <div className="absolute top-0 right-0 w-16 h-16 bg-teal-100 rounded-full -translate-y-1/2 translate-x-1/2"></div>
               <div className="relative z-10">
