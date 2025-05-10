@@ -17,7 +17,6 @@ import {
   Eye,
   Calculator,
   BarChart3,
-  Crown,
   X,
   ClipboardCheck,
   Handshake,
@@ -25,7 +24,6 @@ import {
 } from "lucide-react"
 import PerformanceComparisonChart from "@/components/performance-comparison-chart"
 import type React from "react"
-import { CalendlyButton } from "@/components/calendly-button"
 
 export default function WhatIsPMSPage() {
   return (
@@ -718,14 +716,12 @@ export default function WhatIsPMSPage() {
               <div className="flex items-start">
                 <div className="text-yellow-300 mr-3 mt-1">💡</div>
                 <p className="text-slate-300">
-                  <span className="font-semibold">Tip:</span> Consider your investment style, time availability, and desire for control when choosing a PMS type. Most of the PMS are Discretionary PMS.
+                  <span className="font-semibold">Tip:</span> Consider your investment style, time availability, and
+                  desire for control when choosing a PMS type. Most of the PMS are Discretionary PMS.
                 </p>
               </div>
             </div>
           </div>
-
-          
-         
         </div>
 
         {/* Advantages of PMS Section */}
@@ -907,8 +903,6 @@ export default function WhatIsPMSPage() {
                 "I appreciate clear reporting and a relationship-based approach to investing."
               </blockquote>
             </div>
-
-           
           </div>
         </div>
 
@@ -1080,9 +1074,7 @@ export default function WhatIsPMSPage() {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-3 animate-fade-in relative inline-block">
-              
               Trending Now: Why PMS is Gaining Unstoppable Momentum in India (2024–25)
-              
             </h2>
             <p className="text-slate-300 text-lg max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
               The Indian equity market is thriving, and Portfolio Management Services (PMS) are at the forefront of this
@@ -1437,9 +1429,7 @@ export default function WhatIsPMSPage() {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-3 animate-fade-in relative inline-block">
-              
               Why PMS Is The Preferred Investment Choice in 2024-25?
-              
             </h2>
           </div>
 
@@ -1624,9 +1614,6 @@ export default function WhatIsPMSPage() {
                   </div>
                 </div>
               </div>
-
-             
-              
             </div>
           </div>
         </div>
@@ -1663,8 +1650,10 @@ export default function WhatIsPMSPage() {
                 {/* Step 1 - Left side */}
                 <div className="flex flex-col md:flex-row items-start mb-20 relative">
                   <div className="md:w-1/2 md:pr-12 pl-12 md:pl-0">
-                    <div className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-left"
-                      style={{ animationDelay: "0.3s" }}>
+                    <div
+                      className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-left"
+                      style={{ animationDelay: "0.3s" }}
+                    >
                       <h4 className="text-xl font-bold text-white flex gap-3 items-center mb-3">
                         <span className="text-3xl animate-bounce-subtle">🔍</span>
                         Eligibility Check
@@ -1706,8 +1695,10 @@ export default function WhatIsPMSPage() {
                   </div>
 
                   <div className="md:w-1/2 md:pl-12 pl-12">
-                    <div className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-right"
-                      style={{ animationDelay: "0.4s" }}>
+                    <div
+                      className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-right"
+                      style={{ animationDelay: "0.4s" }}
+                    >
                       <h4 className="text-xl font-bold text-white flex gap-3 items-center mb-3">
                         <span className="text-3xl animate-bounce-subtle">🎯</span>
                         Choose the Right PMS
@@ -1729,8 +1720,10 @@ export default function WhatIsPMSPage() {
                 {/* Step 3 - Left side */}
                 <div className="flex flex-col md:flex-row items-start mb-20 relative">
                   <div className="md:w-1/2 md:pr-12 pl-12 md:pl-0">
-                    <div className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-left"
-                      style={{ animationDelay: "0.5s" }}>
+                    <div
+                      className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-left"
+                      style={{ animationDelay: "0.5s" }}
+                    >
                       <h4 className="text-xl font-bold text-white flex gap-3 items-center mb-3">
                         <span className="text-3xl animate-bounce-subtle">📋</span>
                         Documentation
@@ -1783,8 +1776,10 @@ export default function WhatIsPMSPage() {
                   </div>
 
                   <div className="md:w-1/2 md:pl-12 pl-12">
-                    <div className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-right"
-                      style={{ animationDelay: "0.6s" }}>
+                    <div
+                      className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-right"
+                      style={{ animationDelay: "0.6s" }}
+                    >
                       <h4 className="text-xl font-bold text-white flex gap-3 items-center mb-3">
                         <span className="text-3xl animate-bounce-subtle">📝</span>
                         Account Opening & Agreement
@@ -1810,8 +1805,10 @@ export default function WhatIsPMSPage() {
                 {/* Step 5 - Left side */}
                 <div className="flex flex-col md:flex-row items-start mb-20 relative">
                   <div className="md:w-1/2 md:pr-12 pl-12 md:pl-0">
-                    <div className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-left"
-                      style={{ animationDelay: "0.7s" }}>
+                    <div
+                      className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-left"
+                      style={{ animationDelay: "0.7s" }}
+                    >
                       <h4 className="text-xl font-bold text-white flex gap-3 items-center mb-3">
                         <span className="text-3xl animate-bounce-subtle">💰</span>
                         Fund Transfer
@@ -1851,8 +1848,10 @@ export default function WhatIsPMSPage() {
                   </div>
 
                   <div className="md:w-1/2 md:pl-12 pl-12">
-                    <div className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-right"
-                      style={{ animationDelay: "0.8s" }}>
+                    <div
+                      className="bg-navy-800 rounded-xl p-6 shadow-lg border border-slate-700 transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] hover:-translate-y-1 animate-slide-in-right"
+                      style={{ animationDelay: "0.8s" }}
+                    >
                       <h4 className="text-xl font-bold text-white flex gap-3 items-center mb-3">
                         <span className="text-3xl animate-bounce-subtle">📊</span>
                         Go Live & Track Performance
@@ -1889,8 +1888,10 @@ export default function WhatIsPMSPage() {
                   </div>
 
                   <div className="md:w-1/2 md:pl-12 pl-12">
-                    <div className="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-xl p-6 shadow-lg border border-blue-700 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:-translate-y-1 animate-slide-in-right"
-                      style={{ animationDelay: "0.9s" }}>
+                    <div
+                      className="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-xl p-6 shadow-lg border border-blue-700 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:-translate-y-1 animate-slide-in-right"
+                      style={{ animationDelay: "0.9s" }}
+                    >
                       <h4 className="text-xl font-bold text-white flex gap-3 items-center mb-3">
                         <span className="text-3xl animate-bounce-subtle">🔄</span>
                         Stay Engaged
@@ -1909,9 +1910,6 @@ export default function WhatIsPMSPage() {
                   </div>
                 </div>
               </div>
-
-            
-              
             </div>
           </Card>
         </div>
@@ -2617,6 +2615,3 @@ export default function WhatIsPMSPage() {
     </div>
   )
 }
-
-
-

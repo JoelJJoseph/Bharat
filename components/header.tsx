@@ -33,6 +33,14 @@ const navItems: NavItem[] = [
       { title: "Do you need AIF?", href: "/aif/do-you-need-aif" },
     ],
   },
+  {
+    title: "NRI",
+    href: "#",
+    children: [
+      { title: "PMS for NRI", href: "/nri/pms-for-nri" },
+      { title: "Gift City AIF", href: "/nri/gift-city-aif" },
+    ],
+  },
   { title: "Why Choose Us", href: "/why-choose-us" },
   { title: "Our Clients", href: "/our-clients" },
   {
@@ -42,6 +50,14 @@ const navItems: NavItem[] = [
       { title: "Blog", href: "/resources/blog" },
       { title: "Newsletters", href: "/resources/newsletters" },
       { title: "Nifty PE Ratio", href: "/resources/nifty-pe-ratio" },
+    ],
+  },
+  {
+    title: "Others",
+    href: "#",
+    children: [
+      { title: "Mutual Funds", href: "/others/mutual-funds" },
+      { title: "Unlisted Shares", href: "/others/unlisted-shares" },
     ],
   },
   { title: "About", href: "/about" },
@@ -68,7 +84,6 @@ export default function Header() {
   }
 
   const handleDropdownLeave = () => {
-    // Increase the timeout to 800ms to give users more time to navigate to dropdown items
     dropdownTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null)
     }, 800)
@@ -84,7 +99,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
           {navItems.map((item) => (
             <div
               key={item.title}
@@ -96,7 +111,7 @@ export default function Header() {
                 <>
                   <button
                     className={`flex items-center space-x-1 text-sm font-medium transition-colors hover:text-primary ${
-                      pathname.startsWith(item.href) ? "text-primary" : "text-muted-foreground"
+                      pathname.startsWith(item.href.replace("#", "")) ? "text-primary" : "text-muted-foreground"
                     }`}
                     onClick={(e) => {
                       e.preventDefault()
@@ -107,7 +122,7 @@ export default function Header() {
                     <ChevronDown className="h-4 w-4" />
                   </button>
                   {activeDropdown === item.title && (
-                    <div className="absolute left-0 top-full mt-2 w-48 rounded-md border bg-background shadow-lg">
+                    <div className="absolute left-0 top-full mt-2 w-48 rounded-md border bg-background shadow-lg z-50">
                       <div className="p-2">
                         {item.children.map((child) => (
                           <Link
@@ -159,7 +174,7 @@ export default function Header() {
                   <>
                     <button
                       className={`flex items-center justify-between w-full text-sm font-medium transition-colors hover:text-primary ${
-                        pathname.startsWith(item.href) ? "text-primary" : "text-muted-foreground"
+                        pathname.startsWith(item.href.replace("#", "")) ? "text-primary" : "text-muted-foreground"
                       }`}
                       onClick={() => setActiveDropdown(activeDropdown === item.title ? null : item.title)}
                     >

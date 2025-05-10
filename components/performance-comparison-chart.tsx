@@ -33,11 +33,9 @@ const options: ChartOptions<"line"> = {
     },
     tooltip: {
       callbacks: {
-        label: function(context) {
-          return `${context.dataset.label}: ${context.parsed.y}% CAGR`
-        }
-      }
-    }
+        label: (context) => `${context.dataset.label}: ${context.parsed.y}% CAGR`,
+      },
+    },
   },
   scales: {
     x: {
@@ -54,9 +52,7 @@ const options: ChartOptions<"line"> = {
       },
       ticks: {
         color: "rgb(156 163 175)", // text-gray-400
-        callback: function(value) {
-          return value + '%'
-        }
+        callback: (value) => value + "%",
       },
     },
   },

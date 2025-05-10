@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -43,18 +41,8 @@ export default function ContactForm() {
     },
   })
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true)
-
-    const formData = new FormData(e.currentTarget)
-    const formValues = {
-      name: formData.get("name") as string,
-      email: formData.get("email") as string,
-      phone: formData.get("phone") as string,
-      message: formData.get("message") as string,
-      service: formData.get("service") as "PMS" | "AIF" | "Other",
-    }
 
     try {
       const response = await fetch("/api/inquiries", {
@@ -62,7 +50,7 @@ export default function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formValues),
+        body: JSON.stringify(values),
       })
 
       if (response.ok) {
@@ -71,7 +59,7 @@ export default function ContactForm() {
           description: "Your message has been sent. We'll get back to you soon.",
         })
         // Reset the form
-        e.currentTarget.reset()
+        form.reset()
       } else {
         const error = await response.json()
         throw new Error(error.error || "Something went wrong")
@@ -89,7 +77,7 @@ export default function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <FormField
           control={form.control}
           name="name"

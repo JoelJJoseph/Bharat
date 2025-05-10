@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X, ChevronDown } from "lucide-react"
-import { AnimatedButton } from "@/components/ui/animated-button"
 import { CalendlyButton } from "@/components/calendly-button"
+import { Button } from "@/components/ui/button"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -91,7 +91,13 @@ export default function Header() {
               {activeDropdown === "aif" && (
                 <div className="absolute left-0 mt-2 w-64 rounded-md bg-white py-2 shadow-xl">
                   <DropdownLink href="/aif/what-is-aif" label="What is AIF?" />
-                  <DropdownLink href="/aif/do-you-need-aif" label="Do You Need AIF?" />
+                  <DropdownLink href="/aif/who-should-invest" label="Who Should Invest in AIF?" />
+                  <DropdownLink href="/aif/faqs" label="AIF FAQ" />
+                  <DropdownLink href="/aif/top-cat-1-aifs" label="Top CAT 1 AIFs in India" />
+                  <DropdownLink href="/aif/top-cat-2-aifs" label="Top CAT 2 AIFs in India" />
+                  <DropdownLink href="/aif/top-cat-3-aifs" label="Top CAT 3 AIFs in India" />
+                  <DropdownLink href="/aif/gift-city-funds" label="Gift City Funds for NRIs" />
+                  <DropdownLink href="/aif/top-gift-city-funds" label="Top Gift City Funds for NRIs" />
                 </div>
               )}
             </div>
@@ -111,7 +117,10 @@ export default function Header() {
               </button>
               {activeDropdown === "resources" && (
                 <div className="absolute left-0 mt-2 w-64 rounded-md bg-white py-2 shadow-xl">
-                  <DropdownLink href="/resources/nifty-pe-ratio" label="Nifty PE Ratio" />
+                  <DropdownLink href="/resources/pms-newsletter" label="PMS Newsletter" />
+                  <DropdownLink href="/resources/aif-newsletter" label="AIF Newsletter" />
+                  <DropdownLink href="/resources/blog" label="Blog" />
+                  <DropdownLink href="/resources/nifty-pe-ratio" label="Nifty PE Ratio Chart" />
                 </div>
               )}
             </div>
@@ -120,11 +129,14 @@ export default function Header() {
             <NavLink href="/contact" label="Contact Us" isScrolled={isScrolled} />
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <CalendlyButton variant="primary" size="default">
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex lg:items-center lg:space-x-4">
+            <CalendlyButton variant="default" size="default">
               Book a Call
             </CalendlyButton>
+            <Button variant="outline" size="default" asChild>
+              <Link href="/contact">Get Started</Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -140,8 +152,8 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden">
-          <div className="container mx-auto px-4 pb-6">
+        <div className="fixed inset-0 top-20 z-50 bg-white lg:hidden overflow-y-auto">
+          <div className="container mx-auto px-4 py-6">
             <nav className="flex flex-col space-y-4">
               <MobileNavLink href="/" label="Home" onClick={() => setIsMenuOpen(false)} />
               <MobileNavLink href="/about" label="About" onClick={() => setIsMenuOpen(false)} />
@@ -202,8 +214,34 @@ export default function Header() {
                       onClick={() => setIsMenuOpen(false)}
                     />
                     <MobileDropdownLink
-                      href="/aif/do-you-need-aif"
-                      label="Do You Need AIF?"
+                      href="/aif/who-should-invest"
+                      label="Who Should Invest in AIF?"
+                      onClick={() => setIsMenuOpen(false)}
+                    />
+                    <MobileDropdownLink href="/aif/faqs" label="AIF FAQ" onClick={() => setIsMenuOpen(false)} />
+                    <MobileDropdownLink
+                      href="/aif/top-cat-1-aifs"
+                      label="Top CAT 1 AIFs in India"
+                      onClick={() => setIsMenuOpen(false)}
+                    />
+                    <MobileDropdownLink
+                      href="/aif/top-cat-2-aifs"
+                      label="Top CAT 2 AIFs in India"
+                      onClick={() => setIsMenuOpen(false)}
+                    />
+                    <MobileDropdownLink
+                      href="/aif/top-cat-3-aifs"
+                      label="Top CAT 3 AIFs in India"
+                      onClick={() => setIsMenuOpen(false)}
+                    />
+                    <MobileDropdownLink
+                      href="/aif/gift-city-funds"
+                      label="Gift City Funds for NRIs"
+                      onClick={() => setIsMenuOpen(false)}
+                    />
+                    <MobileDropdownLink
+                      href="/aif/top-gift-city-funds"
+                      label="Top Gift City Funds for NRIs"
                       onClick={() => setIsMenuOpen(false)}
                     />
                   </div>
@@ -218,16 +256,25 @@ export default function Header() {
                 >
                   <span>Resources</span>
                   <ChevronDown
-                    className={`h-5 w-5 transition-transform ${
-                      activeDropdown === "mobile-resources" ? "rotate-180" : ""
-                    }`}
+                    className={`h-5 w-5 transition-transform ${activeDropdown === "mobile-resources" ? "rotate-180" : ""}`}
                   />
                 </button>
                 {activeDropdown === "mobile-resources" && (
                   <div className="mt-2 ml-4 flex flex-col space-y-2">
                     <MobileDropdownLink
+                      href="/resources/pms-newsletter"
+                      label="PMS Newsletter"
+                      onClick={() => setIsMenuOpen(false)}
+                    />
+                    <MobileDropdownLink
+                      href="/resources/aif-newsletter"
+                      label="AIF Newsletter"
+                      onClick={() => setIsMenuOpen(false)}
+                    />
+                    <MobileDropdownLink href="/resources/blog" label="Blog" onClick={() => setIsMenuOpen(false)} />
+                    <MobileDropdownLink
                       href="/resources/nifty-pe-ratio"
-                      label="Nifty PE Ratio"
+                      label="Nifty PE Ratio Chart"
                       onClick={() => setIsMenuOpen(false)}
                     />
                   </div>
@@ -237,10 +284,13 @@ export default function Header() {
               <MobileNavLink href="/our-clients" label="Our Clients" onClick={() => setIsMenuOpen(false)} />
               <MobileNavLink href="/contact" label="Contact Us" onClick={() => setIsMenuOpen(false)} />
 
-              <div className="pt-4">
-                <CalendlyButton variant="primary" size="lg" className="w-full">
+              <div className="pt-4 space-y-3">
+                <CalendlyButton variant="default" size="lg" className="w-full">
                   Book a Call
                 </CalendlyButton>
+                <Button variant="outline" size="lg" className="w-full" asChild>
+                  <Link href="/contact">Get Started</Link>
+                </Button>
               </div>
             </nav>
           </div>

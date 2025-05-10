@@ -72,8 +72,8 @@ export function MainSidebar() {
       icon: TrendingUp,
       dropdown: [
         { name: "What is AIF?", href: "/aif/what-is-aif" },
-        { name: "Do you need AIF?", href: "/aif/do-you-need-aif" },
         { name: "Who should invest in AIF?", href: "/aif/who-should-invest" },
+        { name: "AIF FAQ", href: "/aif/faqs" },
         { name: "Top CAT 1 AIFs in India", href: "/aif/top-cat-1-aifs" },
         { name: "Top CAT 2 AIFs in India", href: "/aif/top-cat-2-aifs" },
         { name: "Top CAT 3 AIFs in India", href: "/aif/top-cat-3-aifs" },

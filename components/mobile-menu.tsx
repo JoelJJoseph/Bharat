@@ -51,14 +51,81 @@ export function MobileMenu() {
       ],
     },
     {
-      href: "/nri",
-      label: "NRI",
-      active: pathname === "/nri",
+      href: "#",
+      label: "AIF",
+      active: pathname.includes("/aif"),
+      children: [
+        {
+          href: "/aif/what-is-aif",
+          label: "What is AIF?",
+          active: pathname === "/aif/what-is-aif",
+        },
+        {
+          href: "/aif/who-should-invest",
+          label: "Who should invest in AIF?",
+          active: pathname === "/aif/who-should-invest",
+        },
+        {
+          href: "/aif/top-cat-1-aifs",
+          label: "Top CAT 1 AIFs in India",
+          active: pathname === "/aif/top-cat-1-aifs",
+        },
+        {
+          href: "/aif/top-cat-2-aifs",
+          label: "Top CAT 2 AIFs in India",
+          active: pathname === "/aif/top-cat-2-aifs",
+        },
+        {
+          href: "/aif/top-cat-3-aifs",
+          label: "Top CAT 3 AIFs in India",
+          active: pathname === "/aif/top-cat-3-aifs",
+        },
+        {
+          href: "/aif/faqs",
+          label: "AIF FAQs",
+          active: pathname === "/aif/faqs",
+        },
+      ],
     },
     {
-      href: "/resources/blog",
-      label: "Blog",
-      active: pathname === "/resources/blog",
+      href: "/library",
+      label: "Library",
+      active: pathname === "/library",
+    },
+    {
+      href: "#",
+      label: "NRI",
+      active: pathname.includes("/nri"),
+      children: [
+        {
+          href: "/nri/pms-for-nri",
+          label: "PMS for NRI",
+          active: pathname === "/nri/pms-for-nri",
+        },
+        {
+          href: "/nri/gift-city-aif",
+          label: "Gift City AIF",
+          active: pathname === "/nri/gift-city-aif",
+        }
+        
+      ],
+    },
+    {
+      href: "#",
+      label: "Others",
+      active: pathname.includes("/others"),
+      children: [
+        {
+          href: "/others/mutual-funds",
+          label: "Mutual Funds",
+          active: pathname === "/others/mutual-funds",
+        },
+        {
+          href: "/others/unlisted-investments",
+          label: "Unlisted Investments",
+          active: pathname === "/others/unlisted-investments",
+        }
+      ],
     },
     {
       href: "/contact",
@@ -121,6 +188,13 @@ export function MobileMenu() {
               </Link>
             ),
           )}
+          <div className="mt-4 pt-4 border-t">
+            <Button asChild className="w-full">
+              <Link href="/contact" onClick={() => setOpen(false)}>
+                Book a Call
+              </Link>
+            </Button>
+          </div>
         </nav>
       </SheetContent>
     </Sheet>

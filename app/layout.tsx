@@ -6,7 +6,6 @@ import Footer from "@/components/footer"
 import { Toaster } from "@/components/ui/toaster"
 import Script from "next/script"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { ImprovedDropdown } from "@/components/improved-dropdown"
 import { MobileMenu } from "@/components/mobile-menu"
 import { ContactFloat } from "@/components/contact-float"
@@ -104,28 +103,34 @@ export default function RootLayout({
                   title="AIF"
                   items={[
                     { name: "What is AIF?", href: "/aif/what-is-aif" },
-                    { name: "Do you need AIF?", href: "/aif/do-you-need-aif" },
                     { name: "Who Should Invest in AIF?", href: "/aif/who-should-invest" },
+                    { name: "AIF FAQ", href: "/aif/faqs" },
+                    { name: "Top CAT 1 AIFs in India", href: "/aif/top-cat-1-aifs" },
+                    { name: "Top CAT 2 AIFs in India", href: "/aif/top-cat-2-aifs" },
+                    { name: "Top CAT 3 AIFs in India", href: "/aif/top-cat-3-aifs" },
+                    
                   ]}
                 />
-
-                <Link href="/nri" className="text-sm font-medium hover:text-primary transition-colors">
-                  NRI
-                </Link>
 
                 <ImprovedDropdown
-                  title="Resources"
+                  title="NRI"
                   items={[
-                    { name: "PMS Newsletter", href: "/resources/pms-newsletter" },
-                    { name: "AIF Newsletter", href: "/resources/aif-newsletter" },
-                    { name: "Blog", href: "/resources/blog" },
-                    { name: "Nifty PE Ratio Chart", href: "/resources/nifty-pe-ratio" },
+                    { name: "PMS for NRI", href: "/nri/pms-for-nri" },
+                    { name: "Gift City AIF", href: "/nri/gift-city-aif" },
+                    
                   ]}
                 />
 
-                <Link href="/our-clients" className="text-sm font-medium hover:text-primary transition-colors">
-                  Our Clients
-                </Link>
+                <ImprovedDropdown title="Library" items={[{ name: "Video Library", href: "/library" }]} />
+                
+                <ImprovedDropdown
+                  title="Others"
+                  items={[
+                    { name: "Mutual Funds", href: "/others/mutual-funds" },
+                    { name: "Unlisted Investments", href: "/others/unlisted-investments" },
+                  ]}
+                />
+
                 <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">
                   Contact Us
                 </Link>

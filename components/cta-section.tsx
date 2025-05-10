@@ -13,7 +13,7 @@ interface CTASectionProps {
   backgroundClass?: string
 }
 
-export default function CTASection({
+export function CTASection({
   title,
   description,
   buttonText,

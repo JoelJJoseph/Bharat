@@ -1,5 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react"
-import ContactForm from "@/components/contact-form"
+import GoogleFormEmbed from "@/components/google-form-embed"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function ContactPage() {
@@ -20,12 +20,9 @@ export default function ContactPage() {
         <div className="container-custom">
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-bold">Get in Touch</h2>
-              <p className="mt-4 text-muted-foreground">
-                Fill out the form below, and our team will get back to you within 24 hours.
-              </p>
+              <h2 className="text-3xl font-bold">Contact Us</h2>
               <div className="mt-8">
-                <ContactForm />
+                <GoogleFormEmbed />
               </div>
             </div>
             <div className="space-y-8">
@@ -42,11 +39,9 @@ export default function ContactPage() {
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-base text-foreground">
-                      123 Financial District,
+                      71/48 Prem Nagar,
                       <br />
-                      Mumbai, Maharashtra 400001,
-                      <br />
-                      India
+                      Janakpuri, New Delhi 110058
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -58,7 +53,7 @@ export default function ContactPage() {
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-base text-foreground">
-                      +91 98765 43210
+                      +91 85275 12552
                       <br />
                       Monday to Friday, 9am to 6pm
                     </CardDescription>
@@ -71,17 +66,13 @@ export default function ContactPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-base text-foreground">
-                      info@pmsexpert.com
-                      <br />
-                      support@pmsexpert.com
-                    </CardDescription>
+                    <CardDescription className="text-base text-foreground">Bharatalternates@gmail.com</CardDescription>
                   </CardContent>
                 </Card>
               </div>
               <div className="mt-8 overflow-hidden rounded-lg border shadow-sm">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.8976454779513!2d72.8554!3d19.0176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDAxJzAzLjQiTiA3MsKwNTEnMTkuNCJF!5e0!3m2!1sen!2sin!4v1625661051695!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.0789089166456!2d77.08988121508791!3d28.6562983824072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04aa188f8a6d%3A0x8de4083be3d6cc38!2sPrem%20Nagar%2C%20Janakpuri%2C%20Delhi%2C%20110058!5e0!3m2!1sen!2sin!4v1654683269588!5m2!1sen!2sin"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}

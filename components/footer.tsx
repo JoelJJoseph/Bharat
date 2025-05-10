@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer ref={footerRef} className="bg-gray-50 border-t">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="footer-column space-y-4">
             <Link href="/" className="flex items-center">
@@ -41,8 +41,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/our-clients" className="text-sm text-gray-600 hover:text-primary transition-colors">
-                  Our Clients
+                <Link href="/library" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Library
                 </Link>
               </li>
             </ul>
@@ -107,6 +107,43 @@ export default function Footer() {
                   className="text-sm text-gray-600 hover:text-primary transition-colors"
                 >
                   Who Should Invest?
+                </Link>
+              </li>
+              <li>
+                <Link href="/aif/top-cat-1-aifs" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Top CAT 1 AIFs
+                </Link>
+              </li>
+              <li>
+                <Link href="/aif/top-cat-2-aifs" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Top CAT 2 AIFs
+                </Link>
+              </li>
+              <li>
+                <Link href="/aif/top-cat-3-aifs" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Top CAT 3 AIFs
+                </Link>
+              </li>
+              <li>
+                <Link href="/aif/faqs" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  AIF FAQs
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* NRI Links */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">NRI</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/nri/pms-for-nri" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  PMS for NRI
+                </Link>
+              </li>
+              <li>
+                <Link href="/nri/gift-city-aif" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Gift City AIF
                 </Link>
               </li>
             </ul>

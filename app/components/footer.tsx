@@ -44,7 +44,7 @@ export default function Footer() {
               </span>
             </Link>
             <div className="space-y-3">
-              <p className="text-gray-600 font-medium text-base leading-relaxed">
+              <p className="text-gray-800 font-bold text-base leading-relaxed border-l-4 border-primary pl-3 py-1">
                 Your trusted partner in Portfolio Management Services and Alternative Investment Funds.
               </p>
               <p className="text-sm text-gray-500">Empowering investors with data-driven insights.</p>
@@ -56,18 +56,28 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
+                <Link href="/" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="text-sm text-gray-600 hover:text-primary transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-gray-600 hover:text-primary transition-colors">
-                  Contact Us
+                <Link href="/why-choose-us" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Why Choose Us
                 </Link>
               </li>
               <li>
                 <Link href="/our-clients" className="text-sm text-gray-600 hover:text-primary transition-colors">
                   Our Clients
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Contact Us
                 </Link>
               </li>
             </ul>
@@ -106,6 +116,11 @@ export default function Footer() {
                   Top PMSs in India
                 </Link>
               </li>
+              <li>
+                <Link href="/pms/pms-faq" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  PMS FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -134,7 +149,142 @@ export default function Footer() {
                   Who Should Invest?
                 </Link>
               </li>
+              <li>
+                <Link href="/aif/faqs" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  AIF FAQ
+                </Link>
+              </li>
+              <li>
+                <Link href="/aif/top-cat-1-aifs" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Top CAT 1 AIFs
+                </Link>
+              </li>
+              <li>
+                <Link href="/aif/top-cat-2-aifs" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Top CAT 2 AIFs
+                </Link>
+              </li>
+              <li>
+                <Link href="/aif/top-cat-3-aifs" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                  Top CAT 3 AIFs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/aif/gift-city-funds"
+                  className="text-sm text-gray-600 hover:text-primary transition-colors"
+                >
+                  Gift City Funds
+                </Link>
+              </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Resources Section */}
+        <div className="mt-8 pt-8 border-t">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="font-semibold text-lg mb-4">Resources</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/resources/blog" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/resources/newsletters"
+                    className="text-sm text-gray-600 hover:text-primary transition-colors"
+                  >
+                    Newsletters
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/resources/nifty-pe-ratio"
+                    className="text-sm text-gray-600 hover:text-primary transition-colors"
+                  >
+                    Nifty PE Ratio Chart
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-lg mb-4">For NRIs</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/nri" className="text-sm text-gray-600 hover:text-primary transition-colors">
+                    NRI Investment Options
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/aif/gift-city-funds"
+                    className="text-sm text-gray-600 hover:text-primary transition-colors"
+                  >
+                    Gift City Funds
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-lg mb-4">Connect With Us</h3>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-600 hover:text-primary">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-5 w-5"
+                  >
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                  </svg>
+                </a>
+                <a href="#" className="text-gray-600 hover:text-primary">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-5 w-5"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </a>
+                <a href="#" className="text-gray-600 hover:text-primary">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-5 w-5"
+                  >
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
