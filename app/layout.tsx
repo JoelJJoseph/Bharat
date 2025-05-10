@@ -126,8 +126,7 @@ export default function RootLayout({
                 <ImprovedDropdown
                   title="Others"
                   items={[
-                    { name: "Mutual Funds", href: "/others/mutual-funds" },
-                    { name: "Unlisted Investments", href: "/others/unlisted-investments" },
+                    { name: "Mutual Funds", href: "/others/mutual-funds" }
                   ]}
                 />
 
