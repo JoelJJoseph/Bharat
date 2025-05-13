@@ -66,19 +66,9 @@ export function MobileMenu() {
           active: pathname === "/aif/who-should-invest",
         },
         {
-          href: "/aif/top-cat-1-aifs",
-          label: "Top CAT 1 AIFs in India",
-          active: pathname === "/aif/top-cat-1-aifs",
-        },
-        {
-          href: "/aif/top-cat-2-aifs",
-          label: "Top CAT 2 AIFs in India",
-          active: pathname === "/aif/top-cat-2-aifs",
-        },
-        {
-          href: "/aif/top-cat-3-aifs",
-          label: "Top CAT 3 AIFs in India",
-          active: pathname === "/aif/top-cat-3-aifs",
+          href: "/aif/top-aif-in-india",
+          label: "Top AIF in India",
+          active: pathname === "/aif/top-aif-in-india",
         },
         {
           href: "/aif/faqs",
@@ -112,7 +102,7 @@ export function MobileMenu() {
     },
     {
       href: "#",
-      label: "Others",
+      label: "More",
       active: pathname.includes("/others"),
       children: [
         {

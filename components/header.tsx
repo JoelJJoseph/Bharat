@@ -53,7 +53,7 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    title: "Others",
+    title: "More",
     href: "#",
     children: [
       { title: "Mutual Funds", href: "/others/mutual-funds" },

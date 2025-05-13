@@ -43,7 +43,7 @@ export default function LogoSlider({
     // Simple animation with requestAnimationFrame for desktop
     let animationId: number
     let lastTimestamp = 0
-    const speed = 0.5 // pixels per millisecond
+    const speed = 0.2 // pixels per millisecond, reduced from 0.5 to slow down the animation
 
     const animate = (timestamp: number) => {
       if (!slider) return

@@ -104,12 +104,8 @@ export default function RootLayout({
                   items={[
                     { name: "What is AIF?", href: "/aif/what-is-aif" },
                     { name: "Who Should Invest in AIF?", href: "/aif/who-should-invest" },
+                    { name: "Top AIF in India", href: "/aif/top-aif-in-india" },
                     { name: "AIF FAQ", href: "/aif/faqs" },
-                    { name: "Top CAT 1 AIFs in India", href: "/aif/top-cat-1-aifs" },
-                    { name: "Top CAT 2 AIFs in India", href: "/aif/top-cat-2-aifs" },
-                    { name: "Top CAT 3 AIFs in India", href: "/aif/top-cat-3-aifs" },
-                    { name: "Gift City Funds for NRIs", href: "/aif/gift-city-funds" },
-                    { name: "Top Gift City Funds for NRIs", href: "/aif/top-gift-city-funds" },
                   ]}
                 />
 
@@ -125,7 +121,7 @@ export default function RootLayout({
                 <ImprovedDropdown title="Library" items={[{ name: "Video Library", href: "/library" }]} />
                 
                 <ImprovedDropdown
-                  title="Others"
+                  title="More"
                   items={[
                     { name: "Mutual Funds", href: "/others/mutual-funds" },
                     { name: "Unlisted Investments", href: "/others/unlisted-investments" },

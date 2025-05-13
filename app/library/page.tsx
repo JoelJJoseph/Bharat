@@ -42,6 +42,7 @@ export default function LibraryPage() {
                     className={styles.carouselItemImg}
                     src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
                     alt={video.title}
+                    loading="lazy"
                   />
                   <div className={styles.carouselItemDetails}>
                     <div className={styles.controls}>
